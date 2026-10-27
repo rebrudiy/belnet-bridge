@@ -1,0 +1,24 @@
+# docker compose -f docker/compose.yml up --build
+name: belnet-bridge
+services:
+  bridge:
+    build: { context: .., dockerfile: docker/Dockerfile }
+    platform: linux/amd64
+    entrypoint: server-entrypoint.sh
+    environment: { BRIDGE_TOKEN: demo-token }
+    cap_add: [NET_ADMIN]
+    devices: [/dev/net/tun]
+    sysctls: { net.ipv4.ip_forward: 1 }
+    networks: { net: { ipv4_address: 172.30.0.10 } }
+  client:
+    build: { context: .., dockerfile: docker/Dockerfile }
+    platform: linux/amd64
+    entrypoint: client-entrypoint.sh
+    environment: { BRIDGE_TOKEN: demo-token, BRIDGE_IP: 172.30.0.10, CENSOR: "1" }
+    cap_add: [NET_ADMIN]
+    devices: [/dev/net/tun]
+    depends_on: [bridge]
+    networks: { net: { ipv4_address: 172.30.0.20 } }
+networks:
+  net:
+    ipam: { config: [{ subnet: 172.30.0.0/24 }] }
