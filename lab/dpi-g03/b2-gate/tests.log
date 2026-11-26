@@ -1,0 +1,46 @@
+✔ Validate never reads vault bytes; authorized resolve fills onlyNULL test fields (8.952416ms)
+✔ Missing primary policy fails before private content read (1.754375ms)
+✔ Missing policy freeze timestamp fails before private read (2.367791ms)
+✔ Policy at or before latest actual development capture is rejected (2.51075ms)
+✔ Nanosecond chronology permits strictlylater values without millisecond truncation (2.434833ms)
+✔ B2 freeze at policy time is rejected (2.26375ms)
+✔ 70-group cohort cannot unseal (1.486042ms)
+✔ Incomplete andqualification records cannot substitute for primaryB1 completion (5.222458ms)
+✔ Unknown test group is rejected before any vault read (1.696042ms)
+✔ Already unsealed or partially NULL test row is rejected early (4.647625ms)
+✔ Source workload IDs cannot cross train/test splits (1.49725ms)
+✔ Policy projection andcollector bytes are actually verified (6.338291ms)
+✔ Projection must contain all 71 IDs; Q cannot be an extra (4.947458ms)
+✔ Projection wrong collector/source or splits cannot be rescued by count 71 (6.989625ms)
+✔ Calibration counts alone cannot omit validation cohort (2.11475ms)
+✔ Disabled auxiliary is not read; enabled missing/early auxiliary blocks (6.266625ms)
+✔ Explicit enabled valid auxiliary also must precede B2 freeze (3.632ms)
+✔ Bad commitment is rejected before JSON decode of malformed vault bytes (2.291291ms)
+✔ Vault IDs/source seed sharing/ranges/nonces are checked after commitment (17.547916ms)
+✔ Forged/reused receipt never reads vault again (2.687042ms)
+✔ Public asset changes after validation block before private read (2.324416ms)
+✔ Callers cannot mutate receipt plan between validation and unseal (2.562875ms)
+✔ Policy alias to private vault is rejected before any content read (5.620833ms)
+✔ Explicit 6 candidate supplements require complete audits, per-group source binding and late freeze (10.930833ms)
+✔ Future-dated B2 freeze does not authorize a private read yet (1.571583ms)
+✔ Correct commitment with malformed JSON is decoded only after authorization (2.5355ms)
+✔ Enabled auxiliary binds its own projection, not the classical projection (3.422542ms)
+✔ Disabled auxiliary never reads an absent or vault-alias projection (3.584917ms)
+✔ Enabled auxiliary with missing projection blocks before any content read (1.840667ms)
+✔ Auxiliary policy cannot point at classical SHA instead of its projection (2.722333ms)
+✔ Auxiliary projection byte SHA is checked before vault bytes (2.699375ms)
+✔ Auxiliary group class/split/source/collector/IDs must match classical cohort (15.6415ms)
+✔ Auxiliary definitions/library/order hashes must match both policy and B2 pins (13.466209ms)
+✔ Optional auxiliary coverage semantics must match when either side supplies it (5.107291ms)
+✔ Stale optional coverage binding without metadata is rejected (2.349875ms)
+✔ Auxiliary projection alias of vault is blocked before any content read (2.670084ms)
+✔ Auxiliary projection mutation after receipt blocks before private read (3.013333ms)
+✔ Auxiliary separate projection retains all original and declared supplement source bindings (4.543292ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 241.911208

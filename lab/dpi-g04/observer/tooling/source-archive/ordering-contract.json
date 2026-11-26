@@ -1,0 +1,23 @@
+{
+  "schema": "g04-header-ordering/v1",
+  "evidence_unit": "tls23_header_declared_length",
+  "metadata_selection": "earliest64 per window by(header_available_raw_ns,header_callback_ordinal); original PCAP file order and timestamps unchanged; bounded two-pass SHADOW only",
+  "causal_validity": "TCP availability and TLS header availability monotonic within direction; header event timestamp is max of all5 header bytes and required contiguous prefix; body delivery timestamp cannot move an already available header",
+  "cross_direction_packet_order": "diagnostic only; never proof of stream-causal error",
+  "ambiguity": [
+    "opposite-direction header callback file/time reversal",
+    "equal raw header-availability timestamp across directions",
+    "equal projected at_micros across directions"
+  ],
+  "classic_masked_rules": [
+    "r05",
+    "r06",
+    "r10",
+    "r15"
+  ],
+  "longflow_masked_features": [
+    "lf05_immediate_reply_share"
+  ],
+  "mask_application": "delete inadmissible scores before joint group/actual-flow calibration or decision; raw scores diagnostic only",
+  "physical_claim": "capture-time header adjacency is not plaintext request/reply causality; no timing-error bound inferred"
+}

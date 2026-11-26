@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "role": "offline-adaptive-classical-ledger-preparation",
+  "source_ready": true,
+  "actual_complete_cycles": 0,
+  "pending_cycles": 15,
+  "tests": {
+    "passed": 36,
+    "failed": 0,
+    "command": "node --test lab/dpi-g03/iterations/index.test.cjs",
+    "fixtures": "temporary synthetic files only",
+    "log": "lab/dpi-g03/iterations/tests-host-platform.log"
+  },
+  "prohibited_actions_performed": [],
+  "actual_network_collection": false,
+  "docker_started": false,
+  "fit_started": false,
+  "test_vault_read": false,
+  "integration_required": [
+    "lead maps native plan into candidate preparation/master freeze",
+    "lead maps actual collector and analysis artifacts into evidence DTOs"
+  ],
+  "files_sha256": {
+    "lab/dpi-g03/iterations/index.cjs": "199861d54d6d0597e334a1bd681c21d9ba73303af30409b45f1f9fb386a1424c",
+    "lab/dpi-g03/iterations/index.test.cjs": "e9d6472bc58c3f247eb964a1f6a379dc97e8ef3020dcd444f1603bf32588d7fc",
+    "lab/dpi-g03/iterations/cli.cjs": "89f053acc77dd35fb1f831b80c5436ba6742fb2bfa14f860020476ccff9a165d",
+    "lab/dpi-g03/iterations/package.json": "5f29477afcfbe915d4ed479658e0da37b128b886a54dd6a336f28354afe9fb41",
+    "lab/dpi-g03/iterations/ledger.json": "aa74d58dcaa45c75424c33955c09753a9d4395c90eb6a6b5a14cef79db6df473",
+    "lab/dpi-g03/iterations/protocol-r4.snapshot.md": "a2a0ddc4b2d361ed06ec88a6f8609327a696962666a8dc76ad2afd8ab74520ec",
+    "lab/dpi-g03/iterations/README.md": "f60cd5b69c19c18b30cea7bb8e25f64881cf9e8c0a31e539e4179c6e2071dece",
+    "lab/dpi-g03/iterations/tests.log": "680b97da94af2ee39f7a018500d8205175f41cfdeead1410e4b5f8c1fa59c35d",
+    "lab/dpi-g03/iterations/tests-g04.log": "8e03d4b23289dc24ccf5491e1c45d378e626567924e1b49c824cd2e0d6e7651b",
+    "lab/dpi-g03/iterations/tests-host-platform.log": "2a037545d52b80b2726e218490eed26a7afe60ba0a4c584127a1fd7ca687b954"
+  },
+  "worst_case_analysis_contract": "r4-worst-case-benign-fp-v1",
+  "backward_compatible_strict_contract": true,
+  "analysis_contract_source_sha256": "1a493dd9f88b8625f10fc8acaa13a4d0921a2a8ae1d421e8d818d310bc5c933f",
+  "header_classical_version_supported": true,
+  "host_detector_formats": [
+    "ELF",
+    "Mach-O ARM64 MH_EXECUTE"
+  ],
+  "deployed_wrapper_format": "ELF",
+  "complete_bounded_Go_nil_affected_slice_supported": true,
+  "host_detector_command_table_checked": true
+}

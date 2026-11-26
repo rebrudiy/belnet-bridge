@@ -1,0 +1,128 @@
+{
+  "schema": "belnet-adaptive-classical-ledger/v1",
+  "protocol": {
+    "path": "lab/dpi-g03/iterations/protocol-r4.snapshot.md",
+    "sha256": "a2a0ddc4b2d361ed06ec88a6f8609327a696962666a8dc76ad2afd8ab74520ec"
+  },
+  "scope": "train_validation_only",
+  "count": 15,
+  "budgets": {
+    "group_fpr": 0.05,
+    "direct_flow_fpr": 0.05,
+    "max_native_per_cycle": 6,
+    "max_native_concurrent": 1
+  },
+  "baseline": null,
+  "cycles": [
+    {
+      "cycle": 1,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    },
+    {
+      "cycle": 2,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    },
+    {
+      "cycle": 3,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    },
+    {
+      "cycle": 4,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    },
+    {
+      "cycle": 5,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    },
+    {
+      "cycle": 6,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    },
+    {
+      "cycle": 7,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    },
+    {
+      "cycle": 8,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    },
+    {
+      "cycle": 9,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    },
+    {
+      "cycle": 10,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    },
+    {
+      "cycle": 11,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    },
+    {
+      "cycle": 12,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    },
+    {
+      "cycle": 13,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    },
+    {
+      "cycle": 14,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    },
+    {
+      "cycle": 15,
+      "state": "pending",
+      "hypothesis": null,
+      "evidence": null,
+      "decision": null
+    }
+  ],
+  "post_iterations": {
+    "refactoring": "pending",
+    "last_adaptive_response": "pending",
+    "B2": "sealed"
+  }
+}

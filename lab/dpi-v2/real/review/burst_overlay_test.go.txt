@@ -1,0 +1,148 @@
+package main
+
+import (
+	"context"
+	"github.com/coder/websocket"
+	"github.com/rebrudiy/belnet-bridge/internal/cell"
+	"net"
+	"net/http"
+	"net/http/httptest"
+	"strings"
+	"testing"
+	"time"
+)
+
+type reviewSmallBufferListener struct{ net.Listener }
+
+func (l reviewSmallBufferListener) Accept() (net.Conn, error) {
+	c, e := l.Listener.Accept()
+	if tcp, ok := c.(*net.TCPConn); ok {
+		tcp.SetReadBuffer(512)
+		tcp.SetWriteBuffer(512)
+	}
+	return c, e
+}
+func TestReviewBurstBoundedSocketBackpressure(t *testing.T) {
+	target := udpSocket(t)
+	bridge := NewUDPBridge(target.LocalAddr().(*net.UDPAddr), "secret", "/ws", 8)
+	defer bridge.Close()
+	server := httptest.NewUnstartedServer(bridge)
+	server.Listener = reviewSmallBufferListener{server.Listener}
+	server.StartTLS()
+	defer server.Close()
+	transport := server.Client().Transport.(*http.Transport).Clone()
+	transport.DialContext = func(ctx context.Context, network, address string) (net.Conn, error) {
+		c, e := (&net.Dialer{}).DialContext(ctx, network, address)
+		if tcp, ok := c.(*net.TCPConn); ok {
+			tcp.SetReadBuffer(512)
+			tcp.SetWriteBuffer(512)
+		}
+		return c, e
+	}
+	defer transport.CloseIdleConnections()
+	client := *server.Client()
+	client.Transport = transport
+	profile := cellProfile{Name: "review-max-burst", MinSize: 8192, MaxSize: 8192, IntervalMS: 2, BurstCells: 8}
+	headers, e := cellHeaders("secret", strings.Repeat("d", 64), profile, "/ws")
+	if e != nil {
+		t.Fatal(e)
+	}
+	ctx, cancel := context.WithTimeout(context.Background(), 4*time.Second)
+	defer cancel()
+	ws, _, e := websocket.Dial(ctx, "wss"+strings.TrimPrefix(server.URL, "https")+"/ws", &websocket.DialOptions{HTTPClient: &client, HTTPHeader: headers})
+	if e != nil {
+		t.Fatal(e)
+	}
+	defer ws.CloseNow()
+	ws.SetReadLimit(8192)
+	encoder := cell.NewEncoder(nil)
+	for i := range 8 {
+		frame, e := encoder.Next(8192)
+		if e != nil {
+			t.Fatal(e)
+		}
+		if e = ws.Write(ctx, websocket.MessageBinary, frame); e != nil {
+			t.Fatalf("burst stalled before read, write index %d: %v", i, e)
+		}
+	}
+	for i := range 8 {
+		if _, _, e := ws.Read(ctx); e != nil {
+			t.Fatalf("reply index %d: %v", i, e)
+		}
+	}
+}
+
+type reviewPipeListener struct {
+	incoming chan net.Conn
+	closed   chan struct{}
+}
+
+func (l *reviewPipeListener) Accept() (net.Conn, error) {
+	select {
+	case c := <-l.incoming:
+		return c, nil
+	case <-l.closed:
+		return nil, net.ErrClosed
+	}
+}
+func (l *reviewPipeListener) Close() error {
+	select {
+	case <-l.closed:
+	default:
+		close(l.closed)
+	}
+	return nil
+}
+func (l *reviewPipeListener) Addr() net.Addr {
+	return &net.TCPAddr{IP: net.IPv4(127, 0, 0, 1), Port: 9999}
+}
+func TestReviewBurstUnbufferedDuplex(t *testing.T) {
+	target := udpSocket(t)
+	bridge := NewUDPBridge(target.LocalAddr().(*net.UDPAddr), "secret", "/ws", 8)
+	defer bridge.Close()
+	listener := &reviewPipeListener{incoming: make(chan net.Conn), closed: make(chan struct{})}
+	server := httptest.NewUnstartedServer(bridge)
+	server.Listener.Close()
+	server.Listener = listener
+	server.Start()
+	defer server.Close()
+	transport := &http.Transport{DialContext: func(ctx context.Context, network, address string) (net.Conn, error) {
+		client, server := net.Pipe()
+		select {
+		case listener.incoming <- server:
+			return client, nil
+		case <-ctx.Done():
+			client.Close()
+			server.Close()
+			return nil, ctx.Err()
+		}
+	}}
+	defer transport.CloseIdleConnections()
+	profile := cellProfile{Name: "review-pipe", MinSize: 8192, MaxSize: 8192, IntervalMS: 2, BurstCells: 8}
+	headers, e := cellHeaders("secret", strings.Repeat("f", 64), profile, "/ws")
+	if e != nil {
+		t.Fatal(e)
+	}
+	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+	defer cancel()
+	ws, _, e := websocket.Dial(ctx, "ws://127.0.0.1:9999/ws", &websocket.DialOptions{HTTPClient: &http.Client{Transport: transport}, HTTPHeader: headers})
+	if e != nil {
+		t.Fatal(e)
+	}
+	defer ws.CloseNow()
+	encoder := cell.NewEncoder(nil)
+	for i := range 8 {
+		frame, e := encoder.Next(8192)
+		if e != nil {
+			t.Fatal(e)
+		}
+		if e = ws.Write(ctx, websocket.MessageBinary, frame); e != nil {
+			t.Fatalf("write-before-read backpressure at poll %d: %v", i, e)
+		}
+	}
+	for i := range 8 {
+		if _, _, e := ws.Read(ctx); e != nil {
+			t.Fatalf("reply %d: %v", i, e)
+		}
+	}
+}

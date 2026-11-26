@@ -24,7 +24,7 @@ import (
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Fprintln(os.Stderr, "usage: belnet-bridge server|client [flags]")
+		fmt.Fprintln(os.Stderr, "usage: belnet-bridge udp-server|udp-client|server|client [flags]")
 		os.Exit(2)
 	}
 	var err error
@@ -33,6 +33,14 @@ func main() {
 		err = runServer(os.Args[2:])
 	case "client":
 		err = runClient(os.Args[2:])
+	case "udp-server":
+		err = runUDPServer(os.Args[2:])
+	case "udp-client":
+		err = runUDPClient(os.Args[2:])
+	case "udp-stream-server":
+		err = runUDPStreamServer(os.Args[2:])
+	case "udp-stream-client":
+		err = runUDPStreamClient(os.Args[2:])
 	default:
 		err = fmt.Errorf("unknown command %q", os.Args[1])
 	}

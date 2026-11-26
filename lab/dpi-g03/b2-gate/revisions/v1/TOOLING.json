@@ -1,0 +1,36 @@
+{
+  "schema": "g03-b2-gate-tooling-v1",
+  "created_utc": "2026-11-19T19:45:41.565508+00:00",
+  "status": "SOURCE_READY_SYNTHETIC_TESTS_ONLY",
+  "node": "v26.3.0",
+  "source_sha256": {
+    "README.md": "474215f8ecfb03ca862fa406d9093c52ff38b84b98ac973edb003a7026499932",
+    "index.cjs": "9a3d5f66fc323dedf2987c1e16e9b2c484472d50736e99cc0e3af8c82c7cb4d4",
+    "index.test.cjs": "dd4acac764dd32fb67b30161b6f05e0bbd7b60e939781aadc13d86fd0b13ee31",
+    "time.cjs": "697f8bcaf61cccdc24c426040a26ece1030e24855b06497abf6fb2e463228c68"
+  },
+  "checks": {
+    "command": "node --test lab/dpi-g03/b2-gate/index.test.cjs",
+    "passed": 26,
+    "failed": 0,
+    "test_log_sha256": "ce2237e87db676356fa13a4309e69b490ef018da697b388c0bbe2c63c8b4436a",
+    "filesystem_scope": "fresh temporary synthetic fixtures removed afterward"
+  },
+  "API": [
+    "validateBeforeUnseal(spec,options) -> opaque single-use receipt",
+    "resolveCommittedTestRows(receipt,options) -> {assignments,resolvedTestRows,audit}",
+    "sha256Canonical(value)",
+    "sha256Bytes(Buffer)"
+  ],
+  "requires_original_primary_B1_groups": 71,
+  "requires_exact_committed_test_groups": 25,
+  "optional_explicit_supplement_groups": 6,
+  "vault_bytes_read_during_validate": false,
+  "vault_identity_stat_realpath_during_validate": true,
+  "private_SHA_before_JSON_decode": true,
+  "actual_vault_read": false,
+  "actual_Q_B1_reports_read": false,
+  "fitting_or_Docker_or_acquisition": false,
+  "writes_scope": "lab/dpi-g03/b2-gate/** only",
+  "integration_status": "Runtime-b2 adapter/freeze/actual collection remain lead ownership"
+}

@@ -1,0 +1,10 @@
+{
+  "version": "g03-coverage-v3",
+  "initial_syn_required": true,
+  "raw_tcp_payload": "Count every selected TCP payload byte per flow before SYN/handshake/reassembly branches; include SYN/TFO bytes, retransmissions and grace; malformed/truncated packets remain global UNKNOWN.",
+  "zero_payload_setup": "Captured initial SYN and zero raw TCP payload: missing SYNACK is setup-incomplete/noTLS evidence abstention, not inferred capture loss or inferred connection-failure cause. All other errors remain strict.",
+  "primary_scope": "Flow observed before primary end and not closed before primary start; grace-only attempts are not primary obligations.",
+  "zero_payload_setup_only": "Explicit measurement start required; at least one initial SYN inside primary interval; every primary-scope flow has captured initial SYN and zero raw TCP payload. This permits null TLS anchor only; all other capture/clock/flow errors remain strict. No fake TLS anchor or classifier evidence.",
+  "denominator": "Retain primary zero-payload flow identities in actual flow denominator; noTLS is unsupported evidence, not stealth.",
+  "ordering": "Unchanged a285 semantics and masks; no tolerance, raw sorting or clamping."
+}

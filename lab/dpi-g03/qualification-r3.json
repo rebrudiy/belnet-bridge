@@ -1,0 +1,182 @@
+{
+  "schema": "belnet-g03-qualification/v1",
+  "revision": "R3",
+  "stage": "Q",
+  "test_vault_required": false,
+  "detector_fitting_allowed": false,
+  "purpose": "One80s heavy-native-DOWNLOAD/ChromeGoogle/GoIdle capture qualification; excluded from B1/B2",
+  "primary_seconds": 80,
+  "capture_seconds": 82,
+  "prefix_grace_seconds": 2,
+  "window_offsets_seconds": [
+    0,
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64,
+    72,
+    78
+  ],
+  "window_seconds": 2,
+  "resource_limits": {
+    "max_active_groups": 3,
+    "max_active_native_groups": 1,
+    "capture_bytes_per_group": 268435456
+  },
+  "capture_shutdown": {
+    "immediate_mode": true,
+    "min_postquiesce_drain_micros": 500000,
+    "stats_observation_budget_ms": 2500,
+    "required_identical_healthy_stats": 2,
+    "stats_semantics": "SIGUSR1 reports counters; it does not flush kernel capture. Final LAST statistics still must reconcile."
+  },
+  "stages": {
+    "Q": {
+      "splits": [
+        "development"
+      ],
+      "count": 3,
+      "order": [
+        "q-native-download",
+        "q-chrome-google",
+        "q-go-idle"
+      ],
+      "batches": [
+        [
+          "q-native-download",
+          "q-chrome-google",
+          "q-go-idle"
+        ]
+      ]
+    }
+  },
+  "groups": [
+    {
+      "group_id": "q-native-download",
+      "source_workload_id": "q-r3-g03-source-train-download-1",
+      "split": "development",
+      "scope": "diagnostic",
+      "measured_seconds": 80,
+      "prefix_grace_seconds": 2,
+      "startup_seconds": 35,
+      "workload_start_seconds": 35,
+      "seed_hex": "00000ddb3cdda6b0",
+      "seed_int": 15235270158000,
+      "sealed_seed_ref": null,
+      "nonce": "997bc3f13ef15779c84338cdbf4e2a99dddbcb57e755e635a295bc3656b0f2f5",
+      "initial_nonce": "60efdecd138c82bc06e1fb2d9f3b0edfb194c6bd5245a806847a05677362e400",
+      "warmup_nonces": [
+        "a21bfb4f83605e84bdbdbe12eedffb46e897f50e7a77f8f5d668b32909d93a59",
+        "52cd80d326e45fb22594364487f84f164eb053752b1cbcf6afe920083764e538",
+        "36d081c075907b3817d9f6bf068353bcd80b21459fe5977793e1d2e3954374dd"
+      ],
+      "sealed_nonce_ref": null,
+      "class": "belnet",
+      "stratum": "native",
+      "transport": "reality",
+      "family": "download",
+      "profile": "native-expiry100-download",
+      "client_stack": "native-belnet+sing-box-utls-chrome",
+      "workload_mode": "matched45",
+      "workload_duration_seconds": 45,
+      "target_entries": [
+        1,
+        2
+      ],
+      "max_queue_age_micros": 100000,
+      "application_budget_bytes_per_direction": 4194304,
+      "fresh_native_identity_required": true,
+      "synthetic_application": true,
+      "qualification_source_group_id": "b-train-native-download-1"
+    },
+    {
+      "group_id": "q-chrome-google",
+      "source_workload_id": "q-r3-g03-source-train-public-google",
+      "split": "development",
+      "scope": "diagnostic",
+      "measured_seconds": 80,
+      "prefix_grace_seconds": 2,
+      "startup_seconds": 35,
+      "workload_start_seconds": 0,
+      "seed_hex": "0000853fa171ba21",
+      "seed_int": 146508338018849,
+      "sealed_seed_ref": null,
+      "nonce": "4874b3042c19b862a8db6774102e6557c88e4df7771c4453cd1b843df73f6d76",
+      "initial_nonce": "58acdc51ffad593dbcf9072bd1244aceee3ccd7dedcafc195e04aeb0733d1d85",
+      "warmup_nonces": [
+        "46aead864ee319626e593d579f3d3458d6fbc8063ad8a27b2c3cb6c931c95b07",
+        "66915dc823d7b530bc3327119533ded8e9d9b7a3cc7f8dd29711a5aa18e7ef3d",
+        "df085668ad0914af4bf139a13e56532edc179a02130adbfe29684181905283a1"
+      ],
+      "sealed_nonce_ref": null,
+      "class": "benign",
+      "stratum": "public_browser",
+      "transport": "ordinary-tls",
+      "client_stack": "chrome",
+      "family": "google",
+      "profile": "public-chrome-google",
+      "url": "https://www.google.com/",
+      "workload_mode": "public80",
+      "workload_duration_seconds": 80,
+      "synthetic_application": false,
+      "fresh_profile_required": true,
+      "require_actual_access_evidence": true,
+      "download_directory": "run-artifacts-only",
+      "qualification_source_group_id": "b-train-public-google"
+    },
+    {
+      "group_id": "q-go-idle",
+      "source_workload_id": "q-r3-g03-source-train-long-idle-2",
+      "split": "development",
+      "scope": "diagnostic",
+      "measured_seconds": 80,
+      "prefix_grace_seconds": 2,
+      "startup_seconds": 35,
+      "workload_start_seconds": 0,
+      "seed_hex": "00004a6e80835a65",
+      "seed_int": 81838462949989,
+      "sealed_seed_ref": null,
+      "nonce": "b83bbc57bfc713a9cc51062b1bdb3194fbd5113861c12553f46b30cc4ddda0d9",
+      "initial_nonce": "59e0d6ea73b82d205f49ecee70f4bcad255bd6124645be31abccec3440f0553f",
+      "warmup_nonces": [
+        "4961b1eac127df5b193baf8f620128976f502d6a4ea9882eb814b1c838f0107a",
+        "4facb8778a970c6becbd7994314c986390e20cce8a2745f1a2e27242553a1785",
+        "219f8c7c8ee61f206b2a7fe0ffd32eafc8c058e5bddd3566791c0faa646bf0d7"
+      ],
+      "sealed_nonce_ref": null,
+      "class": "benign",
+      "stratum": "local_ordinary",
+      "transport": "ordinary-tls",
+      "family": "idle",
+      "profile": "ordinary-long80-idle",
+      "client_stack": "go-wss",
+      "workload_mode": "long80",
+      "workload_duration_seconds": 80,
+      "entry_index": 2,
+      "application_budget_bytes_per_direction": 4194304,
+      "synthetic_application": true,
+      "qualification_source_group_id": "b-train-long-idle-2"
+    }
+  ],
+  "lineage": {
+    "created_utc": "2026-11-19T19:47:00.692Z",
+    "source_assignments_sha256": "23c2edf8de26d58532b479c11cb866afd20869e74e0a5403f72cc472c046d7fb",
+    "parent_collector_sha256": "8b223e6dadc726a75c8fa08770d83bed86b678465104e4b9628bd7897b287c7b",
+    "generator_sha256": "37071e75b2dde145fa7e868ff25e44aeaf1b3ade9b1e741dabfd7234426d5fc2",
+    "prior_public_plans": [
+      {
+        "path": "lab/dpi-g03/assignments.json",
+        "sha256": "598645dd447a3ce88eabafc36cdc018537ed6ae39a5b6621ad93c03e74245928"
+      },
+      {
+        "path": "lab/dpi-g03/qualification-r2.json",
+        "sha256": "8087e390cebe6785ffb785c143167183c234344f611a9bfee90b5c83ebd10f7a"
+      }
+    ],
+    "private_test_values_read": false
+  }
+}

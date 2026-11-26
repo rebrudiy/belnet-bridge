@@ -1,0 +1,20 @@
+{
+  "result": "failed_oom",
+  "container": "bb-source-resume-o0-1100m",
+  "platform": "linux/arm64",
+  "memory_bytes": 1153433600,
+  "memory_swap_total_limit_bytes": 1153433600,
+  "actual_swap_bytes": 0,
+  "cpu_limit": 1,
+  "optimization_override": "service/endpoint.cpp -O0 only; all other Release flags retained",
+  "source_modified": false,
+  "source_patch_applied": false,
+  "testnet": true,
+  "started_at": "2026-11-19T03:57:51.450039331Z",
+  "finished_at": "2026-11-19T03:58:36.203462736Z",
+  "peak_memory_bytes": 1153433600,
+  "oom_kills": 1,
+  "log": "build-unmodified-o0-1100m.log",
+  "daemon_produced": false,
+  "remaining_ninja_steps": 18
+}

@@ -1,0 +1,36 @@
+{
+  "definitions_sha256": "caab5bbb1020062eb14d59ebf1ed769050143e3a81417fbd8b8db7045553c649",
+  "features": [
+    {
+      "id": "lf01_exact26_share",
+      "definition": "TLS23 headers with declared record length26 bytes / all TLS23 headers available inside primary80s",
+      "minimum_evidence": "16 headers"
+    },
+    {
+      "id": "lf02_tiny_le64_share",
+      "definition": "TLS23 headers with declared record length\u003c=64 bytes / all TLS23 headers available inside primary80s",
+      "minimum_evidence": "16 headers"
+    },
+    {
+      "id": "lf03_length_concentration",
+      "definition": "1 - exact Shannon declared-header-length entropy / log2(header count); censored histogram abstains",
+      "minimum_evidence": "16 headers; exact uncensored declared-length histogram"
+    },
+    {
+      "id": "lf04_duplex_byte_balance",
+      "definition": "1-abs(upDeclaredTLSbytes-downDeclaredTLSbytes)/(upDeclaredTLSbytes+downDeclaredTLSbytes); lengths observed at header availability, not delivered bytes",
+      "minimum_evidence": "16 headers and4 in each direction"
+    },
+    {
+      "id": "lf05_immediate_reply_share",
+      "definition": "within-flow uplink header availability immediately followed by downlink header availability within0..10ms / uplink headers; no cross-flow pairing",
+      "minimum_evidence": "16 headers and8 uplink; unambiguous header cross-direction order including raw/projected ties; no negative adjacency"
+    },
+    {
+      "id": "lf06_directional_regularity",
+      "definition": "maximum eligible uplink/downlink1/(1+CVpositive same-direction header-availability gaps), pooled only within TCP flow instances",
+      "minimum_evidence": "8 positive gaps and200ms summed within-flow gap span in a direction; no negative gaps"
+    }
+  ],
+  "version": "g04-header-longflow-v1"
+}

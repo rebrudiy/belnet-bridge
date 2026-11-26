@@ -1,0 +1,1306 @@
+{
+  "artifact": "lab/results/20261119T025556Z-dpi-tunnel",
+  "method": "Independent stdlib PCAP Ethernet/IPv4 transport parsing, TLS record-prefix check, log nonce joins, adjacent build TX/router log correlation; not decryption or per-request path attribution.",
+  "requests": {
+    "requests.jsonl": {
+      "rows": 2,
+      "ok": 1,
+      "failed": 1,
+      "successful_nonce_joins": [
+        {
+          "nonce": "ad35f6c875e9e10b0aa2d0dc932bb6ba",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        }
+      ]
+    },
+    "outage-requests.jsonl": {
+      "rows": 1,
+      "ok": 0,
+      "failed": 1,
+      "successful_nonce_joins": []
+    },
+    "recovery-requests.jsonl": {
+      "rows": 8,
+      "ok": 0,
+      "failed": 8,
+      "successful_nonce_joins": []
+    },
+    "steady-requests.jsonl": {
+      "rows": 10,
+      "ok": 10,
+      "failed": 0,
+      "successful_nonce_joins": [
+        {
+          "nonce": "2b9d230c99e33bf417336084446d158f",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "078f196ff3c1155b101d397f1c3c0f67",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "a39dc389e7e464466e9c8b589726c2df",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "7ee6f0efdfca7c21e06aa6ad3137e275",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "9dcf24d100c1eb5794fa075280ab8759",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "05a2f36afe6aec6731493fe88dccb57d",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "d743c84cf8b28c76974ba85db32b4ec7",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "e70c853800727d36c4df2d82846989b9",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "fb4384a965fb582c6d2481a3f178b1c1",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "bef6cd9c501d3a26225726a3d5ac07e3",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        }
+      ]
+    }
+  },
+  "pcaps": {
+    "client.pcap": {
+      "sha256": "20ddc63ca6e0ceb4c8b865a7e2d74fa9bf59fcf22477fe21aeb64def155e6807",
+      "packets": 1521,
+      "ether_types": {
+        "0x86dd": 7,
+        "0x806": 6,
+        "0x800": 1508
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.20:39430 -> 10.88.0.12:443 TCP": 430,
+        "10.88.0.12:443 -> 10.88.0.20:39430 TCP": 468,
+        "10.88.0.20:45619 -> 10.88.0.11:1099 UDP": 1,
+        "10.88.0.11:1099 -> 10.88.0.20:45619 UDP": 1,
+        "10.88.0.20:53474 -> 10.88.0.11:443 TCP": 11,
+        "10.88.0.11:443 -> 10.88.0.20:53474 TCP": 10,
+        "10.88.0.20:45608 -> 10.88.0.11:443 TCP": 157,
+        "10.88.0.11:443 -> 10.88.0.20:45608 TCP": 182,
+        "10.88.0.20:42980 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:42980 TCP": 1,
+        "10.88.0.20:49022 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:49022 TCP": 1,
+        "10.88.0.20:42994 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:42994 TCP": 1,
+        "10.88.0.20:49028 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:49028 TCP": 1,
+        "10.88.0.20:43000 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:43000 TCP": 1,
+        "10.88.0.20:49042 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:49042 TCP": 1,
+        "10.88.0.20:43014 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:43014 TCP": 1,
+        "10.88.0.20:49048 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:49048 TCP": 1,
+        "10.88.0.20:43028 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:43028 TCP": 1,
+        "10.88.0.20:49050 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:49050 TCP": 1,
+        "10.88.0.20:43032 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:43032 TCP": 1,
+        "10.88.0.20:49056 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:49056 TCP": 1,
+        "10.88.0.20:40998 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:40998 TCP": 1,
+        "10.88.0.20:58442 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:58442 TCP": 1,
+        "10.88.0.20:41012 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:41012 TCP": 1,
+        "10.88.0.20:58456 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:58456 TCP": 1,
+        "10.88.0.20:39796 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:39796 TCP": 1,
+        "10.88.0.20:56356 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:56356 TCP": 1,
+        "10.88.0.20:39808 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:39808 TCP": 1,
+        "10.88.0.20:56366 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:56366 TCP": 1,
+        "10.88.0.20:57194 -> 10.88.0.11:443 TCP": 83,
+        "10.88.0.11:443 -> 10.88.0.20:57194 TCP": 33,
+        "10.88.0.20:45514 -> 10.88.0.12:443 TCP": 67,
+        "10.88.0.12:443 -> 10.88.0.20:45514 TCP": 25
+      },
+      "successful_nonce_plaintext_hits": []
+    },
+    "entry1.pcap": {
+      "sha256": "e5baa2cb3e5001f224aa5ce5582c543315719680e8dffd740b9eb592e6058d77",
+      "packets": 1482,
+      "ether_types": {
+        "0x86dd": 5,
+        "0x806": 69,
+        "0x800": 1408
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.20:45619 -> 10.88.0.11:1099 UDP": 1,
+        "10.88.0.11:1099 -> 10.88.0.20:45619 UDP": 1,
+        "10.88.0.20:53474 -> 10.88.0.11:443 TCP": 11,
+        "10.88.0.11:443 -> 10.88.0.20:53474 TCP": 10,
+        "10.88.0.10:1090 -> 10.88.0.11:48998 UDP": 76,
+        "10.88.0.11:48998 -> 10.88.0.10:1090 UDP": 72,
+        "10.88.0.12:44151 -> 10.88.0.11:1090 UDP": 46,
+        "10.88.0.11:48998 -> 10.88.0.13:1090 UDP": 82,
+        "10.88.0.11:1090 -> 10.88.0.12:44151 UDP": 34,
+        "10.88.0.11:48998 -> 10.88.0.12:1090 UDP": 46,
+        "10.88.0.13:1090 -> 10.88.0.11:48998 UDP": 86,
+        "10.88.0.12:1090 -> 10.88.0.11:48998 UDP": 34,
+        "10.88.0.21:45367 -> 10.88.0.11:1090 UDP": 62,
+        "10.88.0.11:1090 -> 10.88.0.21:45367 UDP": 66,
+        "10.88.0.11:48998 -> 10.88.0.14:1090 UDP": 95,
+        "10.88.0.14:1090 -> 10.88.0.11:48998 UDP": 102,
+        "10.88.0.11:48998 -> 10.88.0.15:1090 UDP": 54,
+        "10.88.0.15:1090 -> 10.88.0.11:48998 UDP": 55,
+        "10.88.0.20:45608 -> 10.88.0.11:443 TCP": 157,
+        "10.88.0.11:443 -> 10.88.0.20:45608 TCP": 182,
+        "10.88.0.20:42980 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:42980 TCP": 1,
+        "10.88.0.20:42994 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:42994 TCP": 1,
+        "10.88.0.20:43000 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:43000 TCP": 1,
+        "10.88.0.20:43014 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:43014 TCP": 1,
+        "10.88.0.20:43028 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:43028 TCP": 1,
+        "10.88.0.20:43032 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:43032 TCP": 1,
+        "10.88.0.20:40998 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:40998 TCP": 1,
+        "10.88.0.20:41012 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:41012 TCP": 1,
+        "10.88.0.20:39796 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:39796 TCP": 1,
+        "10.88.0.20:39808 -> 10.88.0.11:443 TCP": 1,
+        "10.88.0.11:443 -> 10.88.0.20:39808 TCP": 1,
+        "10.88.0.20:57194 -> 10.88.0.11:443 TCP": 83,
+        "10.88.0.11:443 -> 10.88.0.20:57194 TCP": 33
+      },
+      "successful_nonce_plaintext_hits": []
+    },
+    "entry2.pcap": {
+      "sha256": "29b64c1173d833347373edc19a3c1d423b1dfb2f500cb26f4a2e94cd6ef9513b",
+      "packets": 3333,
+      "ether_types": {
+        "0x806": 59,
+        "0x800": 3270,
+        "0x86dd": 4
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.20:39430 -> 10.88.0.12:443 TCP": 430,
+        "10.88.0.12:443 -> 10.88.0.20:39430 TCP": 468,
+        "10.88.0.21:45367 -> 10.88.0.12:1090 UDP": 203,
+        "10.88.0.12:1090 -> 10.88.0.21:45367 UDP": 205,
+        "10.88.0.12:44151 -> 10.88.0.10:1090 UDP": 354,
+        "10.88.0.13:1090 -> 10.88.0.12:44151 UDP": 119,
+        "10.88.0.10:1090 -> 10.88.0.12:44151 UDP": 350,
+        "10.88.0.12:44151 -> 10.88.0.11:1090 UDP": 46,
+        "10.88.0.12:44151 -> 10.88.0.13:1090 UDP": 105,
+        "10.88.0.11:1090 -> 10.88.0.12:44151 UDP": 34,
+        "10.88.0.11:48998 -> 10.88.0.12:1090 UDP": 46,
+        "10.88.0.12:1090 -> 10.88.0.11:48998 UDP": 34,
+        "10.88.0.12:44151 -> 10.88.0.14:1090 UDP": 327,
+        "10.88.0.14:1090 -> 10.88.0.12:44151 UDP": 324,
+        "10.88.0.12:44151 -> 10.88.0.15:1090 UDP": 57,
+        "10.88.0.15:1090 -> 10.88.0.12:44151 UDP": 56,
+        "10.88.0.20:49022 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:49022 TCP": 1,
+        "10.88.0.20:49028 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:49028 TCP": 1,
+        "10.88.0.20:49042 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:49042 TCP": 1,
+        "10.88.0.20:49048 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:49048 TCP": 1,
+        "10.88.0.20:49050 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:49050 TCP": 1,
+        "10.88.0.20:49056 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:49056 TCP": 1,
+        "10.88.0.20:58442 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:58442 TCP": 1,
+        "10.88.0.20:58456 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:58456 TCP": 1,
+        "10.88.0.20:56356 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:56356 TCP": 1,
+        "10.88.0.20:56366 -> 10.88.0.12:443 TCP": 1,
+        "10.88.0.12:443 -> 10.88.0.20:56366 TCP": 1,
+        "10.88.0.20:45514 -> 10.88.0.12:443 TCP": 67,
+        "10.88.0.12:443 -> 10.88.0.20:45514 TCP": 25
+      },
+      "successful_nonce_plaintext_hits": []
+    },
+    "relay1.pcap": {
+      "sha256": "41d443a67de3749df8f5440595d5805023cf4b4c8a962e0ca923da1780a6b781",
+      "packets": 856,
+      "ether_types": {
+        "0x806": 66,
+        "0x800": 786,
+        "0x86dd": 4
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.21:45367 -> 10.88.0.13:1090 UDP": 60,
+        "10.88.0.13:1090 -> 10.88.0.21:45367 UDP": 60,
+        "10.88.0.13:1090 -> 10.88.0.12:44151 UDP": 119,
+        "10.88.0.12:44151 -> 10.88.0.13:1090 UDP": 105,
+        "10.88.0.11:48998 -> 10.88.0.13:1090 UDP": 82,
+        "10.88.0.13:1090 -> 10.88.0.11:48998 UDP": 86,
+        "10.88.0.13:49287 -> 10.88.0.10:1090 UDP": 38,
+        "10.88.0.10:1090 -> 10.88.0.13:49287 UDP": 26,
+        "10.88.0.10:52328 -> 10.88.0.13:1090 UDP": 46,
+        "10.88.0.13:1090 -> 10.88.0.10:52328 UDP": 30,
+        "10.88.0.13:49287 -> 10.88.0.14:1090 UDP": 35,
+        "10.88.0.14:1090 -> 10.88.0.13:49287 UDP": 35,
+        "10.88.0.13:49287 -> 10.88.0.15:1090 UDP": 16,
+        "10.88.0.15:53323 -> 10.88.0.13:1090 UDP": 16,
+        "10.88.0.13:1090 -> 10.88.0.15:53323 UDP": 16,
+        "10.88.0.15:1090 -> 10.88.0.13:49287 UDP": 16
+      },
+      "successful_nonce_plaintext_hits": []
+    },
+    "relay2.pcap": {
+      "sha256": "116d158a8f487d3fd53b141e9743feb0c9c8911a7ee000988acab60c598c6a03",
+      "packets": 1186,
+      "ether_types": {
+        "0x806": 48,
+        "0x86dd": 5,
+        "0x800": 1133
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.11:48998 -> 10.88.0.14:1090 UDP": 95,
+        "10.88.0.14:1090 -> 10.88.0.11:48998 UDP": 102,
+        "10.88.0.14:1090 -> 10.88.0.15:53323 UDP": 70,
+        "10.88.0.15:53323 -> 10.88.0.14:1090 UDP": 70,
+        "10.88.0.13:49287 -> 10.88.0.14:1090 UDP": 35,
+        "10.88.0.14:1090 -> 10.88.0.13:49287 UDP": 35,
+        "10.88.0.10:52328 -> 10.88.0.14:1090 UDP": 37,
+        "10.88.0.14:1090 -> 10.88.0.10:52328 UDP": 38,
+        "10.88.0.12:44151 -> 10.88.0.14:1090 UDP": 327,
+        "10.88.0.14:1090 -> 10.88.0.12:44151 UDP": 324
+      },
+      "successful_nonce_plaintext_hits": []
+    },
+    "relay3.pcap": {
+      "sha256": "92364bb3ac19664c55c1f62701c49436ac24b61b20b36aaafe0f4b0bd63652bc",
+      "packets": 676,
+      "ether_types": {
+        "0x806": 58,
+        "0x86dd": 5,
+        "0x800": 613
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.10:52328 -> 10.88.0.15:1090 UDP": 60,
+        "10.88.0.15:1090 -> 10.88.0.10:52328 UDP": 36,
+        "10.88.0.14:1090 -> 10.88.0.15:53323 UDP": 70,
+        "10.88.0.15:53323 -> 10.88.0.10:1090 UDP": 55,
+        "10.88.0.10:1090 -> 10.88.0.15:53323 UDP": 36,
+        "10.88.0.15:53323 -> 10.88.0.14:1090 UDP": 70,
+        "10.88.0.11:48998 -> 10.88.0.15:1090 UDP": 54,
+        "10.88.0.15:1090 -> 10.88.0.11:48998 UDP": 55,
+        "10.88.0.12:44151 -> 10.88.0.15:1090 UDP": 57,
+        "10.88.0.15:1090 -> 10.88.0.12:44151 UDP": 56,
+        "10.88.0.13:49287 -> 10.88.0.15:1090 UDP": 16,
+        "10.88.0.15:53323 -> 10.88.0.13:1090 UDP": 16,
+        "10.88.0.13:1090 -> 10.88.0.15:53323 UDP": 16,
+        "10.88.0.15:1090 -> 10.88.0.13:49287 UDP": 16
+      },
+      "successful_nonce_plaintext_hits": []
+    },
+    "seed.pcap": {
+      "sha256": "55902d9c490cff69339706edad36230d8bd2f9aef569b833f40955d56a013ede",
+      "packets": 1515,
+      "ether_types": {
+        "0x86dd": 7,
+        "0x806": 72,
+        "0x800": 1436
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.21:45367 -> 10.88.0.10:1090 UDP": 90,
+        "10.88.0.10:1090 -> 10.88.0.21:45367 UDP": 92,
+        "10.88.0.10:1090 -> 10.88.0.11:48998 UDP": 76,
+        "10.88.0.11:48998 -> 10.88.0.10:1090 UDP": 72,
+        "10.88.0.12:44151 -> 10.88.0.10:1090 UDP": 354,
+        "10.88.0.10:1090 -> 10.88.0.12:44151 UDP": 350,
+        "10.88.0.13:49287 -> 10.88.0.10:1090 UDP": 38,
+        "10.88.0.10:1090 -> 10.88.0.13:49287 UDP": 26,
+        "10.88.0.10:52328 -> 10.88.0.13:1090 UDP": 46,
+        "10.88.0.13:1090 -> 10.88.0.10:52328 UDP": 30,
+        "10.88.0.10:52328 -> 10.88.0.15:1090 UDP": 60,
+        "10.88.0.15:1090 -> 10.88.0.10:52328 UDP": 36,
+        "10.88.0.15:53323 -> 10.88.0.10:1090 UDP": 55,
+        "10.88.0.10:1090 -> 10.88.0.15:53323 UDP": 36,
+        "10.88.0.10:52328 -> 10.88.0.14:1090 UDP": 37,
+        "10.88.0.14:1090 -> 10.88.0.10:52328 UDP": 38
+      },
+      "successful_nonce_plaintext_hits": []
+    },
+    "service.pcap": {
+      "sha256": "c0b2f79850849feb676395b089a32c0718f1f57486abe431e2e3f075a8a4dc76",
+      "packets": 884,
+      "ether_types": {
+        "0x806": 42,
+        "0x800": 838,
+        "0x86dd": 4
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.21:45367 -> 10.88.0.13:1090 UDP": 60,
+        "10.88.0.21:45367 -> 10.88.0.12:1090 UDP": 203,
+        "10.88.0.21:45367 -> 10.88.0.10:1090 UDP": 90,
+        "10.88.0.10:1090 -> 10.88.0.21:45367 UDP": 92,
+        "10.88.0.12:1090 -> 10.88.0.21:45367 UDP": 205,
+        "10.88.0.13:1090 -> 10.88.0.21:45367 UDP": 60,
+        "10.88.0.21:45367 -> 10.88.0.11:1090 UDP": 62,
+        "10.88.0.11:1090 -> 10.88.0.21:45367 UDP": 66
+      },
+      "successful_nonce_plaintext_hits": []
+    }
+  },
+  "client_tls_streams": {
+    "10.88.0.20:39430 -> 10.88.0.12:443 TCP": {
+      "payload_segments": 321,
+      "initial_bytes_hex": "16030105aa010005",
+      "first_record_looks_tls": true
+    },
+    "10.88.0.12:443 -> 10.88.0.20:39430 TCP": {
+      "payload_segments": 322,
+      "initial_bytes_hex": "16030304ba020004",
+      "first_record_looks_tls": true
+    },
+    "10.88.0.20:53474 -> 10.88.0.11:443 TCP": {
+      "payload_segments": 5,
+      "initial_bytes_hex": "1603010200010001",
+      "first_record_looks_tls": true
+    },
+    "10.88.0.11:443 -> 10.88.0.20:53474 TCP": {
+      "payload_segments": 7,
+      "initial_bytes_hex": "160303007a020000",
+      "first_record_looks_tls": true
+    },
+    "10.88.0.20:45608 -> 10.88.0.11:443 TCP": {
+      "payload_segments": 111,
+      "initial_bytes_hex": "16030105aa010005",
+      "first_record_looks_tls": true
+    },
+    "10.88.0.11:443 -> 10.88.0.20:45608 TCP": {
+      "payload_segments": 122,
+      "initial_bytes_hex": "16030304ba020004",
+      "first_record_looks_tls": true
+    },
+    "10.88.0.20:57194 -> 10.88.0.11:443 TCP": {
+      "payload_segments": 74,
+      "initial_bytes_hex": "16030105aa010005",
+      "first_record_looks_tls": true
+    },
+    "10.88.0.20:45514 -> 10.88.0.12:443 TCP": {
+      "payload_segments": 60,
+      "initial_bytes_hex": "16030105aa010005",
+      "first_record_looks_tls": true
+    },
+    "10.88.0.11:443 -> 10.88.0.20:57194 TCP": {
+      "payload_segments": 13,
+      "initial_bytes_hex": "16030304ba020004",
+      "first_record_looks_tls": true
+    },
+    "10.88.0.12:443 -> 10.88.0.20:45514 TCP": {
+      "payload_segments": 6,
+      "initial_bytes_hex": "16030304ba020004",
+      "first_record_looks_tls": true
+    }
+  },
+  "built_paths": {
+    "client": [
+      {
+        "tx": "1642ef72da339160634c48b2df152cd1",
+        "build_seconds": 0.546,
+        "nodes": [
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "rt6zbinxij1qek1hywcdr53szy134wyzdrfp6mishz6i1tp4dhmo.mnode",
+          "xjxmza8k6q95krzqumpedqq61fini7q6xze8s6d17agxj3u45fjy.mnode"
+        ],
+        "node_roles": [
+          "entry2",
+          "relay1",
+          "seed"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "60064e8fae43cf2dff4f1f174bd8a088",
+        "build_seconds": 5.863,
+        "nodes": [
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "xjxmza8k6q95krzqumpedqq61fini7q6xze8s6d17agxj3u45fjy.mnode",
+          "pn9d16cbn7yd5p3sjiksk5ciztbs4p4f4rqnhtqh8zsymo4mhhxo.mnode"
+        ],
+        "node_roles": [
+          "entry2",
+          "seed",
+          "relay3"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "9c6580ad9d7e82c3436b37b076872481",
+        "build_seconds": 2.587,
+        "nodes": [
+          "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode",
+          "pn9d16cbn7yd5p3sjiksk5ciztbs4p4f4rqnhtqh8zsymo4mhhxo.mnode",
+          "ah4jnpc4p7g4sq73y3c9d7fttmag1eswnd5f13p5mz8g3a3qo87o.mnode"
+        ],
+        "node_roles": [
+          "entry1",
+          "relay3",
+          "relay2"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "037b40f5767ca5998f58b650cfde728e",
+        "build_seconds": 3.604,
+        "nodes": [
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "ah4jnpc4p7g4sq73y3c9d7fttmag1eswnd5f13p5mz8g3a3qo87o.mnode",
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode"
+        ],
+        "node_roles": [
+          "entry2",
+          "relay2",
+          "entry2"
+        ],
+        "distinct_nodes": 2
+      },
+      {
+        "tx": "b3488e1c9461304a4f147fef1ee2cb95",
+        "build_seconds": 0.434,
+        "nodes": [
+          "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode",
+          "ah4jnpc4p7g4sq73y3c9d7fttmag1eswnd5f13p5mz8g3a3qo87o.mnode",
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode"
+        ],
+        "node_roles": [
+          "entry1",
+          "relay2",
+          "entry2"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "7b42911f6675030c51e371cfb50fd756",
+        "build_seconds": 0.436,
+        "nodes": [
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "ah4jnpc4p7g4sq73y3c9d7fttmag1eswnd5f13p5mz8g3a3qo87o.mnode",
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode"
+        ],
+        "node_roles": [
+          "entry2",
+          "relay2",
+          "entry2"
+        ],
+        "distinct_nodes": 2
+      },
+      {
+        "tx": "61d187ad36a6cb3088f9a6f2ead13269",
+        "build_seconds": 0.639,
+        "nodes": [
+          "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode",
+          "rt6zbinxij1qek1hywcdr53szy134wyzdrfp6mishz6i1tp4dhmo.mnode",
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode"
+        ],
+        "node_roles": [
+          "entry1",
+          "relay1",
+          "entry2"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "17a5025ac45b0d659f5fb58f6b265a29",
+        "build_seconds": 0.389,
+        "nodes": [
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "pn9d16cbn7yd5p3sjiksk5ciztbs4p4f4rqnhtqh8zsymo4mhhxo.mnode",
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode"
+        ],
+        "node_roles": [
+          "entry2",
+          "relay3",
+          "entry2"
+        ],
+        "distinct_nodes": 2
+      }
+    ],
+    "service": [
+      {
+        "tx": "e234ab9cadeffeb017ae3772381a91af",
+        "build_seconds": 0.249,
+        "nodes": [
+          "rt6zbinxij1qek1hywcdr53szy134wyzdrfp6mishz6i1tp4dhmo.mnode",
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode"
+        ],
+        "node_roles": [
+          "relay1",
+          "entry2",
+          "entry1"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "2180c1a078fe257a7c408147d89bd7cf",
+        "build_seconds": 1.251,
+        "nodes": [
+          "xjxmza8k6q95krzqumpedqq61fini7q6xze8s6d17agxj3u45fjy.mnode",
+          "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode",
+          "rt6zbinxij1qek1hywcdr53szy134wyzdrfp6mishz6i1tp4dhmo.mnode"
+        ],
+        "node_roles": [
+          "seed",
+          "entry1",
+          "relay1"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "85996f2e589fbcf2f62bc1039adc532f",
+        "build_seconds": 0.505,
+        "nodes": [
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "xjxmza8k6q95krzqumpedqq61fini7q6xze8s6d17agxj3u45fjy.mnode",
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode"
+        ],
+        "node_roles": [
+          "entry2",
+          "seed",
+          "entry2"
+        ],
+        "distinct_nodes": 2
+      },
+      {
+        "tx": "07734c083e80e3ccb0486f556e58922d",
+        "build_seconds": 0.35,
+        "nodes": [
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode",
+          "ah4jnpc4p7g4sq73y3c9d7fttmag1eswnd5f13p5mz8g3a3qo87o.mnode"
+        ],
+        "node_roles": [
+          "entry2",
+          "entry1",
+          "relay2"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "1b226ea9a221ac1481d88901a74af4ac",
+        "build_seconds": 0.609,
+        "nodes": [
+          "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode",
+          "ah4jnpc4p7g4sq73y3c9d7fttmag1eswnd5f13p5mz8g3a3qo87o.mnode",
+          "pn9d16cbn7yd5p3sjiksk5ciztbs4p4f4rqnhtqh8zsymo4mhhxo.mnode"
+        ],
+        "node_roles": [
+          "entry1",
+          "relay2",
+          "relay3"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "adce75685119eea73c3c7b5e3673afb2",
+        "build_seconds": 0.86,
+        "nodes": [
+          "xjxmza8k6q95krzqumpedqq61fini7q6xze8s6d17agxj3u45fjy.mnode",
+          "pn9d16cbn7yd5p3sjiksk5ciztbs4p4f4rqnhtqh8zsymo4mhhxo.mnode",
+          "xjxmza8k6q95krzqumpedqq61fini7q6xze8s6d17agxj3u45fjy.mnode"
+        ],
+        "node_roles": [
+          "seed",
+          "relay3",
+          "seed"
+        ],
+        "distinct_nodes": 2
+      }
+    ]
+  },
+  "node_identity_map": {
+    "xjxmza8k6q95krzqumpedqq61fini7q6xze8s6d17agxj3u45fjy.mnode": "seed",
+    "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode": "entry1",
+    "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode": "entry2",
+    "rt6zbinxij1qek1hywcdr53szy134wyzdrfp6mishz6i1tp4dhmo.mnode": "relay1",
+    "pn9d16cbn7yd5p3sjiksk5ciztbs4p4f4rqnhtqh8zsymo4mhhxo.mnode": "relay3",
+    "ah4jnpc4p7g4sq73y3c9d7fttmag1eswnd5f13p5mz8g3a3qo87o.mnode": "relay2"
+  },
+  "limitations": [
+    "Capture begins after processes start; only captured interval is audited.",
+    "TLS record-prefix recognition does not prove browser indistinguishability.",
+    "Logs establish built paths; encrypted packet captures do not attribute each HTTP request to one path.",
+    "Final rebuilt-image run includes deliberate outage; separate measurement/teardown intervals must be distinguished."
+  ],
+  "all_node_log_events": {
+    "seed": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 2,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 0,
+      "paths_built": 0
+    },
+    "entry1": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 1,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 0,
+      "paths_built": 0
+    },
+    "entry2": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 0,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 0,
+      "paths_built": 0
+    },
+    "relay1": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 2,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 0,
+      "paths_built": 0
+    },
+    "relay2": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 5,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 0,
+      "paths_built": 0
+    },
+    "relay3": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 2,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 0,
+      "paths_built": 0
+    },
+    "client": {
+      "established_session_timeouts": 2,
+      "pending_session_timeouts": 32,
+      "peer_deregister_events": 12,
+      "path_build_timeouts": 4,
+      "path_build_failures": 10,
+      "paths_built": 8
+    },
+    "service": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 0,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 0,
+      "paths_built": 6
+    }
+  },
+  "capture_health": {
+    "seed": [
+      "1515 packets captured",
+      "1515 packets received by filter",
+      "0 packets dropped by kernel"
+    ],
+    "entry1": [
+      "1482 packets captured",
+      "1482 packets received by filter",
+      "0 packets dropped by kernel"
+    ],
+    "entry2": [
+      "3333 packets captured",
+      "3334 packets received by filter",
+      "0 packets dropped by kernel"
+    ],
+    "relay1": [
+      "856 packets captured",
+      "856 packets received by filter",
+      "0 packets dropped by kernel"
+    ],
+    "relay2": [
+      "1186 packets captured",
+      "1186 packets received by filter",
+      "0 packets dropped by kernel"
+    ],
+    "relay3": [
+      "676 packets captured",
+      "676 packets received by filter",
+      "0 packets dropped by kernel"
+    ],
+    "client": [
+      "1521 packets captured",
+      "1521 packets received by filter",
+      "0 packets dropped by kernel"
+    ],
+    "service": [
+      "884 packets captured",
+      "884 packets received by filter",
+      "0 packets dropped by kernel"
+    ]
+  },
+  "phase_log_events": {
+    "seed": {
+      "before_deliberate_outage": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 2,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      },
+      "outage_and_recovery": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      },
+      "after_measurement_end": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      }
+    },
+    "entry1": {
+      "before_deliberate_outage": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      },
+      "outage_and_recovery": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 1,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      },
+      "after_measurement_end": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      }
+    },
+    "entry2": {
+      "before_deliberate_outage": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      },
+      "outage_and_recovery": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      },
+      "after_measurement_end": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      }
+    },
+    "relay1": {
+      "before_deliberate_outage": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 2,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      },
+      "outage_and_recovery": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      },
+      "after_measurement_end": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      }
+    },
+    "relay2": {
+      "before_deliberate_outage": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 5,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      },
+      "outage_and_recovery": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      },
+      "after_measurement_end": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      }
+    },
+    "relay3": {
+      "before_deliberate_outage": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 2,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      },
+      "outage_and_recovery": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      },
+      "after_measurement_end": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      }
+    },
+    "client": {
+      "before_deliberate_outage": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 7,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 10,
+        "paths_built": 8
+      },
+      "outage_and_recovery": {
+        "established_session_timeouts": 2,
+        "pending_session_timeouts": 25,
+        "deregister_events": 12,
+        "path_build_timeouts": 4,
+        "path_build_failures": 0,
+        "paths_built": 0
+      },
+      "after_measurement_end": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      }
+    },
+    "service": {
+      "before_deliberate_outage": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 6
+      },
+      "outage_and_recovery": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      },
+      "after_measurement_end": {
+        "established_session_timeouts": 0,
+        "pending_session_timeouts": 0,
+        "deregister_events": 0,
+        "path_build_timeouts": 0,
+        "path_build_failures": 0,
+        "paths_built": 0
+      }
+    }
+  },
+  "binary_verification": {
+    "recorded": {
+      "/usr/local/bin/belnet": "1b35e57e1a5ddb55358a46d55f5eb08fa82aa10a8e19867e7b479486d09958d0",
+      "/usr/local/bin/belnet-bridge": "67690794769e76de0f9a759080a47dac86ec4501139554d33b609762f5ad0623",
+      "/lab/probe-linux": "e3d6fa02ebe4a79884f7bc8401e4537c1cef21d225f1766a4379fb526bcf0944",
+      "/lab/iwp-censor-linux": "4fc53ec7b04056f2cbc97e7b7b423f175f1f61a2511001febcdb456b91bd2446"
+    },
+    "matches_current_host_build": {
+      "/usr/local/bin/belnet-bridge": true,
+      "/lab/probe-linux": true,
+      "/lab/iwp-censor-linux": true
+    },
+    "expected_image_in_manifest": true
+  },
+  "censor_log": [
+    {
+      "event": "ready",
+      "policy": "drop verified initial IWP; accept other packets",
+      "public_identities": 6,
+      "queue": 42,
+      "time": "2026-11-19T02:55:54.65202656Z"
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "7a5ebbe0eaf3bfb512ee9ada81b9de916a2af5de7dd07b7872ee0cf4e67ad952",
+      "packet_id": 1,
+      "time": "2026-11-19T02:55:56.605490995Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "247d70d44faa64e42a5c0518326f36b8259d5017190adf2eb6e5fd5945ba1f17",
+      "packet_id": 2,
+      "time": "2026-11-19T02:55:56.606541021Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "68be39798117403db7364d55656d95bc436d3745d11c2e45dc3dec05c34be71f",
+      "packet_id": 3,
+      "time": "2026-11-19T02:55:56.607050032Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "68be39798117403db7364d55656d95bc436d3745d11c2e45dc3dec05c34be71f",
+      "packet_id": 120,
+      "time": "2026-11-19T02:56:04.910622131Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "7a5ebbe0eaf3bfb512ee9ada81b9de916a2af5de7dd07b7872ee0cf4e67ad952",
+      "packet_id": 121,
+      "time": "2026-11-19T02:56:04.911046967Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "247d70d44faa64e42a5c0518326f36b8259d5017190adf2eb6e5fd5945ba1f17",
+      "packet_id": 347,
+      "time": "2026-11-19T02:56:10.215052706Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "c73491359a6f4dab3bb90659f1f4b18af06922d410f65965bb5dce6ce32e81fb",
+      "packet_id": 348,
+      "time": "2026-11-19T02:56:10.218170573Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "247d70d44faa64e42a5c0518326f36b8259d5017190adf2eb6e5fd5945ba1f17",
+      "packet_id": 524,
+      "time": "2026-11-19T02:56:16.245937244Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "68be39798117403db7364d55656d95bc436d3745d11c2e45dc3dec05c34be71f",
+      "packet_id": 525,
+      "time": "2026-11-19T02:56:16.246222428Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "68be39798117403db7364d55656d95bc436d3745d11c2e45dc3dec05c34be71f",
+      "packet_id": 612,
+      "time": "2026-11-19T02:56:22.529081388Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "7a5ebbe0eaf3bfb512ee9ada81b9de916a2af5de7dd07b7872ee0cf4e67ad952",
+      "packet_id": 614,
+      "time": "2026-11-19T02:56:22.529590496Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "c73491359a6f4dab3bb90659f1f4b18af06922d410f65965bb5dce6ce32e81fb",
+      "packet_id": 623,
+      "time": "2026-11-19T02:56:29.594308456Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "247d70d44faa64e42a5c0518326f36b8259d5017190adf2eb6e5fd5945ba1f17",
+      "packet_id": 624,
+      "time": "2026-11-19T02:56:29.596488052Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "7a5ebbe0eaf3bfb512ee9ada81b9de916a2af5de7dd07b7872ee0cf4e67ad952",
+      "packet_id": 627,
+      "time": "2026-11-19T02:56:34.65759418Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "247d70d44faa64e42a5c0518326f36b8259d5017190adf2eb6e5fd5945ba1f17",
+      "packet_id": 628,
+      "time": "2026-11-19T02:56:34.659422173Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "247d70d44faa64e42a5c0518326f36b8259d5017190adf2eb6e5fd5945ba1f17",
+      "packet_id": 631,
+      "time": "2026-11-19T02:56:39.72617045Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "c73491359a6f4dab3bb90659f1f4b18af06922d410f65965bb5dce6ce32e81fb",
+      "packet_id": 632,
+      "time": "2026-11-19T02:56:39.728323869Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "c73491359a6f4dab3bb90659f1f4b18af06922d410f65965bb5dce6ce32e81fb",
+      "packet_id": 637,
+      "time": "2026-11-19T02:56:50.116379123Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "247d70d44faa64e42a5c0518326f36b8259d5017190adf2eb6e5fd5945ba1f17",
+      "packet_id": 638,
+      "time": "2026-11-19T02:56:50.118199033Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "68be39798117403db7364d55656d95bc436d3745d11c2e45dc3dec05c34be71f",
+      "packet_id": 770,
+      "time": "2026-11-19T02:56:58.990357936Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "c73491359a6f4dab3bb90659f1f4b18af06922d410f65965bb5dce6ce32e81fb",
+      "packet_id": 771,
+      "time": "2026-11-19T02:56:58.992595983Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "c73491359a6f4dab3bb90659f1f4b18af06922d410f65965bb5dce6ce32e81fb",
+      "packet_id": 779,
+      "time": "2026-11-19T02:57:06.070225666Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "68be39798117403db7364d55656d95bc436d3745d11c2e45dc3dec05c34be71f",
+      "packet_id": 780,
+      "time": "2026-11-19T02:57:06.071085711Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "c73491359a6f4dab3bb90659f1f4b18af06922d410f65965bb5dce6ce32e81fb",
+      "packet_id": 785,
+      "time": "2026-11-19T02:57:13.147195756Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "68be39798117403db7364d55656d95bc436d3745d11c2e45dc3dec05c34be71f",
+      "packet_id": 786,
+      "time": "2026-11-19T02:57:13.147584128Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "c73491359a6f4dab3bb90659f1f4b18af06922d410f65965bb5dce6ce32e81fb",
+      "packet_id": 787,
+      "time": "2026-11-19T02:57:20.468484882Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "68be39798117403db7364d55656d95bc436d3745d11c2e45dc3dec05c34be71f",
+      "packet_id": 788,
+      "time": "2026-11-19T02:57:20.469349785Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "c73491359a6f4dab3bb90659f1f4b18af06922d410f65965bb5dce6ce32e81fb",
+      "packet_id": 793,
+      "time": "2026-11-19T02:57:27.497628109Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "68be39798117403db7364d55656d95bc436d3745d11c2e45dc3dec05c34be71f",
+      "packet_id": 794,
+      "time": "2026-11-19T02:57:27.497967001Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "68be39798117403db7364d55656d95bc436d3745d11c2e45dc3dec05c34be71f",
+      "packet_id": 795,
+      "time": "2026-11-19T02:57:34.863922439Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "c73491359a6f4dab3bb90659f1f4b18af06922d410f65965bb5dce6ce32e81fb",
+      "packet_id": 796,
+      "time": "2026-11-19T02:57:34.865767687Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "c73491359a6f4dab3bb90659f1f4b18af06922d410f65965bb5dce6ce32e81fb",
+      "packet_id": 801,
+      "time": "2026-11-19T02:57:41.947225829Z",
+      "udp_bytes": 224
+    },
+    {
+      "event": "drop_iwp_intro",
+      "identity": "68be39798117403db7364d55656d95bc436d3745d11c2e45dc3dec05c34be71f",
+      "packet_id": 802,
+      "time": "2026-11-19T02:57:41.947731785Z",
+      "udp_bytes": 224
+    },
+    {
+      "dropped_iwp": 33,
+      "event": "summary",
+      "packets": 802,
+      "time": "2026-11-19T02:57:48.934890785Z",
+      "udp": 34
+    }
+  ],
+  "events": [
+    {
+      "time": "2026-11-19T02:56:21Z",
+      "event": "stop_both_entry_https_transports"
+    },
+    {
+      "time": "2026-11-19T02:56:51Z",
+      "event": "restart_both_entry_https_transports"
+    },
+    {
+      "time": "2026-11-19T02:57:48Z",
+      "event": "recovery_http_no"
+    }
+  ],
+  "phase_boundaries": {
+    "before_outage_exclusive": "2026-11-19 02:56:21",
+    "recovery_measurement_last_event": "2026-11-19 02:57:48",
+    "nfqueue_stopped": "2026-11-19T02:57:48.934890785Z",
+    "note": "Node log timestamps have one-second resolution. Snapshot intervals differ between nodes. NFQUEUE stop occurs after recovery measurement and can cause later fail-closed disconnects."
+  },
+  "steady_latency_ms": {
+    "sorted": [
+      44,
+      45,
+      50,
+      55,
+      55,
+      64,
+      64,
+      74,
+      76,
+      82
+    ],
+    "conventional_median": 59.5
+  },
+  "successful_nonce_joins_verified": true,
+  "all_eight_pcaps_without_plaintext_successful_nonce": true,
+  "all_eight_node_counts_match_report": {
+    "seed": true,
+    "entry1": true,
+    "entry2": true,
+    "relay1": true,
+    "relay2": true,
+    "relay3": true,
+    "client": true,
+    "service": true
+  },
+  "independent_image_binary_hashes": {
+    "belnet": "1b35e57e1a5ddb55358a46d55f5eb08fa82aa10a8e19867e7b479486d09958d0",
+    "belnet-bridge": "67690794769e76de0f9a759080a47dac86ec4501139554d33b609762f5ad0623"
+  },
+  "censor_drop_log_check": {
+    "drop_event_count": 33,
+    "matches_summary": true,
+    "all_identities_from_declared_public_set": true
+  }
+}

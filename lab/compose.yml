@@ -1,0 +1,54 @@
+name: bb-lab
+x-node: &node
+  image: ${BB_IMAGE:-belnet-bridge:native}
+  platform: ${BB_PLATFORM:-linux/amd64}
+  entrypoint: ["/bin/sh", "/lab/node.sh"]
+  volumes: [".:/lab"]
+  cap_add: [NET_ADMIN]
+  devices: [/dev/net/tun]
+  stop_grace_period: 5s
+services:
+  seed:
+    <<: *node
+    environment: {NODE: seed, ROLE: relay, NODE_IP: 10.88.0.10}
+    networks: {private: {ipv4_address: 10.88.0.10}}
+  entry1:
+    <<: *node
+    environment: {NODE: entry1, ROLE: relay, NODE_IP: 10.88.0.11}
+    networks: {private: {ipv4_address: 10.88.0.11}}
+  entry2:
+    <<: *node
+    environment: {NODE: entry2, ROLE: relay, NODE_IP: 10.88.0.12}
+    networks: {private: {ipv4_address: 10.88.0.12}}
+  relay1:
+    <<: *node
+    environment: {NODE: relay1, ROLE: relay, NODE_IP: 10.88.0.13}
+    networks: {private: {ipv4_address: 10.88.0.13}}
+  relay2:
+    <<: *node
+    environment: {NODE: relay2, ROLE: relay, NODE_IP: 10.88.0.14}
+    networks: {private: {ipv4_address: 10.88.0.14}}
+  relay3:
+    <<: *node
+    environment: {NODE: relay3, ROLE: relay, NODE_IP: 10.88.0.15}
+    networks: {private: {ipv4_address: 10.88.0.15}}
+  client:
+    <<: *node
+    environment: {NODE: client, ROLE: client, NODE_IP: 10.88.0.20, MODE: "${BB_MODE:-control}"}
+    sysctls:
+      net.ipv4.conf.all.route_localnet: "1"
+      net.ipv4.conf.lo.route_localnet: "1"
+      net.ipv4.conf.all.accept_local: "1"
+      net.ipv4.conf.lo.accept_local: "1"
+      net.ipv4.conf.all.rp_filter: "0"
+      net.ipv4.conf.lo.rp_filter: "0"
+    networks: {private: {ipv4_address: 10.88.0.20}}
+  service:
+    <<: *node
+    environment: {NODE: service, ROLE: client, NODE_IP: 10.88.0.21}
+    networks: {private: {ipv4_address: 10.88.0.21}}
+networks:
+  private:
+    internal: true
+    ipam:
+      config: [{subnet: 10.88.0.0/24}]

@@ -1,0 +1,88 @@
+=== RUN   TestCollectorUnionKeepsOriginalChronologyAndExactMembership
+--- PASS: TestCollectorUnionKeepsOriginalChronologyAndExactMembership (0.00s)
+=== RUN   TestEngineeredConjunctionStaysWithinActualFlowAndMissingAbstains
+--- PASS: TestEngineeredConjunctionStaysWithinActualFlowAndMissingAbstains (0.00s)
+=== RUN   TestEngineeredDefinitionsBindEveryTermAndRemainJointlyCalibrated
+--- PASS: TestEngineeredDefinitionsBindEveryTermAndRemainJointlyCalibrated (0.02s)
+=== RUN   TestPolicyRecipeRoundTripAllowsEmptyButBindsNonemptyDefinitions
+--- PASS: TestPolicyRecipeRoundTripAllowsEmptyButBindsNonemptyDefinitions (0.00s)
+=== RUN   TestZeroPayloadSetupIsEvidenceAbstentionNotStealth
+--- PASS: TestZeroPayloadSetupIsEvidenceAbstentionNotStealth (0.00s)
+=== RUN   TestZeroPayloadFlagCannotHidePayloadMissingSynOrEmptyPrimary
+--- PASS: TestZeroPayloadFlagCannotHidePayloadMissingSynOrEmptyPrimary (0.00s)
+=== RUN   TestActualAttemptDenominatorAndEvidenceDenominatorStaySeparate
+--- PASS: TestActualAttemptDenominatorAndEvidenceDenominatorStaySeparate (0.00s)
+=== RUN   TestUnsampledPayloadWithoutHandshakeAndAckOnlyRemainUnknown
+--- PASS: TestUnsampledPayloadWithoutHandshakeAndAckOnlyRemainUnknown (0.00s)
+=== RUN   TestPrimaryScopeCannotHideCapturedAttemptOrCountGrace
+--- PASS: TestPrimaryScopeCannotHideCapturedAttemptOrCountGrace (0.00s)
+=== RUN   TestZeroPrimaryMayHaveVerifiedGraceTLSButNoPrimaryTLSInAnyView
+--- PASS: TestZeroPrimaryMayHaveVerifiedGraceTLSButNoPrimaryTLSInAnyView (0.00s)
+=== RUN   TestPreprimaryHeaderHistoryDoesNotHideInPrimaryEvidence
+--- PASS: TestPreprimaryHeaderHistoryDoesNotHideInPrimaryEvidence (0.00s)
+=== RUN   TestPreexistingIdleHeaderHistoryIsExplicitAbstentionWithoutNewSyn
+--- PASS: TestPreexistingIdleHeaderHistoryIsExplicitAbstentionWithoutNewSyn (0.00s)
+=== RUN   TestPartialHeaderOnlyAfterEvidenceDeadlineDoesNotPoisonPrimary
+--- PASS: TestPartialHeaderOnlyAfterEvidenceDeadlineDoesNotPoisonPrimary (0.00s)
+=== RUN   TestLatePrimaryPrefixExtendsHeaderProofDeadline
+--- PASS: TestLatePrimaryPrefixExtendsHeaderProofDeadline (0.00s)
+=== RUN   TestOngoingBodyIsKnownHeaderMetadataNotCompleteTLSSession
+--- PASS: TestOngoingBodyIsKnownHeaderMetadataNotCompleteTLSSession (0.00s)
+=== RUN   TestClosedPartialHeaderAbsenceRequiresActualCloseAndValidCensus
+--- PASS: TestClosedPartialHeaderAbsenceRequiresActualCloseAndValidCensus (0.00s)
+=== RUN   TestHeaderCounterAndAbsenceContradictionsRejected
+--- PASS: TestHeaderCounterAndAbsenceContradictionsRejected (0.00s)
+=== RUN   TestSelectedEventsCannotBeInventedOnClosedFourByteHeader
+--- PASS: TestSelectedEventsCannotBeInventedOnClosedFourByteHeader (0.00s)
+=== RUN   TestFirst64HeaderSelectionRetainsExactLargeCount
+--- PASS: TestFirst64HeaderSelectionRetainsExactLargeCount (0.00s)
+=== RUN   TestPartialHeaderCloseTimestampMustFollowObservedHeader
+--- PASS: TestPartialHeaderCloseTimestampMustFollowObservedHeader (0.00s)
+=== RUN   TestJoint23RulesDoesNotGiveEachDetectorFivePercent
+--- PASS: TestJoint23RulesDoesNotGiveEachDetectorFivePercent (0.06s)
+=== RUN   TestWholeFlowReusesActualFlowDenominator
+--- PASS: TestWholeFlowReusesActualFlowDenominator (0.00s)
+=== RUN   TestWholeFlowProvenanceAndAbstention
+--- PASS: TestWholeFlowProvenanceAndAbstention (0.00s)
+=== RUN   TestNoTLSLongflowCannotInventFeaturesAndValidAttemptRemains
+--- PASS: TestNoTLSLongflowCannotInventFeaturesAndValidAttemptRemains (0.00s)
+=== RUN   TestJointGroupBudgetAcrossAllWindowsRulesAndReconnects
+--- PASS: TestJointGroupBudgetAcrossAllWindowsRulesAndReconnects (0.01s)
+=== RUN   TestLateReconnectFlagsGroupOnce
+--- PASS: TestLateReconnectFlagsGroupOnce (0.01s)
+=== RUN   TestCompleteSparseAbstainsAndCensoredNeverBecomesPass
+--- PASS: TestCompleteSparseAbstainsAndCensoredNeverBecomesPass (0.01s)
+=== RUN   TestTestDataCannotEnterCalibration
+--- PASS: TestTestDataCannotEnterCalibration (0.00s)
+=== RUN   TestTieCutoffAndDeterminism
+--- PASS: TestTieCutoffAndDeterminism (0.13s)
+=== RUN   TestFreezeGatesAndMalformedPolicy
+--- PASS: TestFreezeGatesAndMalformedPolicy (0.01s)
+=== RUN   TestExistingScoreEngineIsReusedExactly
+--- PASS: TestExistingScoreEngineIsReusedExactly (0.63s)
+=== RUN   TestHighFanoutGroupCannotHideDirectFlowFalsePositives
+--- PASS: TestHighFanoutGroupCannotHideDirectFlowFalsePositives (0.03s)
+=== RUN   TestAmbiguityMasksLogicalRulesButPreservesCaptureView
+--- PASS: TestAmbiguityMasksLogicalRulesButPreservesCaptureView (0.00s)
+=== RUN   TestMissingMaskOrDuplicateOrdinalCannotPass
+--- PASS: TestMissingMaskOrDuplicateOrdinalCannotPass (0.00s)
+=== RUN   TestSourceClusterORDoesNotPretendReplicasIndependent
+--- PASS: TestSourceClusterORDoesNotPretendReplicasIndependent (0.00s)
+=== RUN   TestVisibleAmbiguityCannotBeHiddenByFalseFlag
+--- PASS: TestVisibleAmbiguityCannotBeHiddenByFalseFlag (0.00s)
+=== RUN   TestUnknownUnionCountsAlreadyObservedHitOnce
+--- PASS: TestUnknownUnionCountsAlreadyObservedHitOnce (0.01s)
+=== RUN   TestUnknownWithoutHitStillConsumesBudgetBeforeCalibration
+--- PASS: TestUnknownWithoutHitStillConsumesBudgetBeforeCalibration (0.01s)
+=== RUN   TestFloorOrUnboundedInventoryIsTypedInconclusive
+--- PASS: TestFloorOrUnboundedInventoryIsTypedInconclusive (0.01s)
+=== RUN   TestSemanticMappingRequiresEveryReasonAndPreservesActualInventory
+--- PASS: TestSemanticMappingRequiresEveryReasonAndPreservesActualInventory (0.00s)
+=== RUN   TestIncompletePositiveHitsAreOnlyObservedLowerBound
+--- PASS: TestIncompletePositiveHitsAreOnlyObservedLowerBound (0.00s)
+=== RUN   TestUnmappedOrEmptyGroupWindowCannotBeLocalizedByAnotherFlowFault
+--- PASS: TestUnmappedOrEmptyGroupWindowCannotBeLocalizedByAnotherFlowFault (0.00s)
+=== RUN   TestMissingLongflowViewAffectsAllKnownFlows
+--- PASS: TestMissingLongflowViewAffectsAllKnownFlows (0.00s)
+PASS
+ok  	github.com/rebrudiy/belnet-bridge/lab/dpi-g04/ensemble	2.203s

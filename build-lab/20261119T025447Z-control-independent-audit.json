@@ -1,0 +1,686 @@
+{
+  "artifact": "lab/results/20261119T025447Z-control",
+  "method": "Independent stdlib PCAP Ethernet/IPv4 transport parsing, TLS record-prefix check, log nonce joins, adjacent build TX/router log correlation; not decryption or per-request path attribution.",
+  "requests": {
+    "requests.jsonl": {
+      "rows": 4,
+      "ok": 1,
+      "failed": 3,
+      "successful_nonce_joins": [
+        {
+          "nonce": "9b3aff55567e814dfb33f328db1f3e19",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        }
+      ]
+    },
+    "steady-requests.jsonl": {
+      "rows": 10,
+      "ok": 10,
+      "failed": 0,
+      "successful_nonce_joins": [
+        {
+          "nonce": "75dc3cc98f0c5dbb8b1a363ffaba1906",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "6d047964f5f51bdf89b1108dcd2ea185",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "40abc506a7d59b95bfee8cf12c5a857d",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "141925ce04ee4f0d00369a599339d769",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "93de954ef2721a23aadf6ec7e9aa83aa",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "80d883d1a87b874c93bf6e61d4c0cdb5",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "ef29e67ed80bf4a01078deccf1bc265d",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "eafe27267d48e7fd8b8661b1c08a7bc5",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "d6af971c0a698f97302fff4463fb848e",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        },
+        {
+          "nonce": "d2548416c3a702fb23e5550d62420388",
+          "body_matches": true,
+          "service_log_occurrences": 1
+        }
+      ]
+    }
+  },
+  "pcaps": {
+    "client.pcap": {
+      "sha256": "fcdc158cf0419184ea343b248d84d105d6a85b515efbe23a7991138f6fd83403",
+      "packets": 776,
+      "ether_types": {
+        "0x86dd": 6,
+        "0x806": 21,
+        "0x800": 749
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.20:33651 -> 10.88.0.12:1090 UDP": 289,
+        "10.88.0.12:1090 -> 10.88.0.20:33651 UDP": 286,
+        "10.88.0.20:33651 -> 10.88.0.11:1090 UDP": 85,
+        "10.88.0.11:1090 -> 10.88.0.20:33651 UDP": 89
+      },
+      "successful_nonce_plaintext_hits": []
+    },
+    "entry1.pcap": {
+      "sha256": "b7da897903b5b67e8804a01f2a5b29c0ac3cb0f231bb88f98192e42dc367dd70",
+      "packets": 768,
+      "ether_types": {
+        "0x806": 69,
+        "0x800": 693,
+        "0x86dd": 6
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.13:40484 -> 10.88.0.11:1090 UDP": 1,
+        "10.88.0.11 -> 10.88.0.13 IP-proto-1": 1,
+        "10.88.0.14:34761 -> 10.88.0.11:1090 UDP": 1,
+        "10.88.0.11 -> 10.88.0.14 IP-proto-1": 1,
+        "10.88.0.15:46596 -> 10.88.0.11:1090 UDP": 1,
+        "10.88.0.11 -> 10.88.0.15 IP-proto-1": 1,
+        "10.88.0.10:59954 -> 10.88.0.11:1090 UDP": 1,
+        "10.88.0.11 -> 10.88.0.10 IP-proto-1": 1,
+        "10.88.0.12:55140 -> 10.88.0.11:1090 UDP": 1,
+        "10.88.0.11 -> 10.88.0.12 IP-proto-1": 1,
+        "10.88.0.11:43318 -> 10.88.0.13:1090 UDP": 49,
+        "10.88.0.13:1090 -> 10.88.0.11:43318 UDP": 50,
+        "10.88.0.11:43318 -> 10.88.0.15:1090 UDP": 85,
+        "10.88.0.11:43318 -> 10.88.0.10:1090 UDP": 51,
+        "10.88.0.15:1090 -> 10.88.0.11:43318 UDP": 85,
+        "10.88.0.11:43318 -> 10.88.0.12:1090 UDP": 27,
+        "10.88.0.11:43318 -> 10.88.0.14:1090 UDP": 44,
+        "10.88.0.10:1090 -> 10.88.0.11:43318 UDP": 50,
+        "10.88.0.14:1090 -> 10.88.0.11:43318 UDP": 42,
+        "10.88.0.12:1090 -> 10.88.0.11:43318 UDP": 26,
+        "10.88.0.20:33651 -> 10.88.0.11:1090 UDP": 85,
+        "10.88.0.11:1090 -> 10.88.0.20:33651 UDP": 89
+      },
+      "successful_nonce_plaintext_hits": []
+    },
+    "entry2.pcap": {
+      "sha256": "3581a20fc0d2a6171fd6dbdfd5cb7205a245a9a818760807491c1a068f81a560",
+      "packets": 2167,
+      "ether_types": {
+        "0x806": 66,
+        "0x800": 2095,
+        "0x86dd": 6
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.13:40484 -> 10.88.0.12:1090 UDP": 1,
+        "10.88.0.12 -> 10.88.0.13 IP-proto-1": 1,
+        "10.88.0.14:34761 -> 10.88.0.12:1090 UDP": 1,
+        "10.88.0.12 -> 10.88.0.14 IP-proto-1": 1,
+        "10.88.0.15:46596 -> 10.88.0.12:1090 UDP": 1,
+        "10.88.0.12 -> 10.88.0.15 IP-proto-1": 1,
+        "10.88.0.10:59954 -> 10.88.0.12:1090 UDP": 1,
+        "10.88.0.12 -> 10.88.0.10 IP-proto-1": 1,
+        "10.88.0.12:55140 -> 10.88.0.13:1090 UDP": 162,
+        "10.88.0.13:1090 -> 10.88.0.12:55140 UDP": 162,
+        "10.88.0.12:55140 -> 10.88.0.11:1090 UDP": 1,
+        "10.88.0.11 -> 10.88.0.12 IP-proto-1": 1,
+        "10.88.0.12:55140 -> 10.88.0.15:1090 UDP": 195,
+        "10.88.0.12:55140 -> 10.88.0.10:1090 UDP": 106,
+        "10.88.0.10:1090 -> 10.88.0.12:55140 UDP": 120,
+        "10.88.0.15:1090 -> 10.88.0.12:55140 UDP": 192,
+        "10.88.0.12:55140 -> 10.88.0.14:1090 UDP": 213,
+        "10.88.0.14:1090 -> 10.88.0.12:55140 UDP": 211,
+        "10.88.0.11:43318 -> 10.88.0.12:1090 UDP": 27,
+        "10.88.0.12:1090 -> 10.88.0.11:43318 UDP": 26,
+        "10.88.0.20:33651 -> 10.88.0.12:1090 UDP": 289,
+        "10.88.0.12:1090 -> 10.88.0.20:33651 UDP": 286,
+        "10.88.0.21:48510 -> 10.88.0.12:1090 UDP": 48,
+        "10.88.0.12:1090 -> 10.88.0.21:48510 UDP": 48
+      },
+      "successful_nonce_plaintext_hits": []
+    },
+    "relay1.pcap": {
+      "sha256": "2b05110c74f0a1d3b5a9e556abea456d74e5e6e37708bd5b7a82a77f09847694",
+      "packets": 1179,
+      "ether_types": {
+        "0x806": 65,
+        "0x800": 1108,
+        "0x86dd": 6
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.13:40484 -> 10.88.0.11:1090 UDP": 1,
+        "10.88.0.11 -> 10.88.0.13 IP-proto-1": 1,
+        "10.88.0.13:40484 -> 10.88.0.15:1090 UDP": 1,
+        "10.88.0.15 -> 10.88.0.13 IP-proto-1": 1,
+        "10.88.0.13:40484 -> 10.88.0.10:1090 UDP": 1,
+        "10.88.0.10 -> 10.88.0.13 IP-proto-1": 1,
+        "10.88.0.13:40484 -> 10.88.0.12:1090 UDP": 1,
+        "10.88.0.12 -> 10.88.0.13 IP-proto-1": 1,
+        "10.88.0.13:40484 -> 10.88.0.14:1090 UDP": 92,
+        "10.88.0.14:1090 -> 10.88.0.13:40484 UDP": 76,
+        "10.88.0.14:34761 -> 10.88.0.13:1090 UDP": 89,
+        "10.88.0.13:1090 -> 10.88.0.14:34761 UDP": 74,
+        "10.88.0.15:46596 -> 10.88.0.13:1090 UDP": 64,
+        "10.88.0.13:1090 -> 10.88.0.15:46596 UDP": 65,
+        "10.88.0.10:59954 -> 10.88.0.13:1090 UDP": 69,
+        "10.88.0.13:1090 -> 10.88.0.10:59954 UDP": 63,
+        "10.88.0.12:55140 -> 10.88.0.13:1090 UDP": 162,
+        "10.88.0.13:1090 -> 10.88.0.12:55140 UDP": 162,
+        "10.88.0.11:43318 -> 10.88.0.13:1090 UDP": 49,
+        "10.88.0.13:1090 -> 10.88.0.11:43318 UDP": 50,
+        "10.88.0.21:48510 -> 10.88.0.13:1090 UDP": 41,
+        "10.88.0.13:1090 -> 10.88.0.21:48510 UDP": 44
+      },
+      "successful_nonce_plaintext_hits": []
+    },
+    "relay2.pcap": {
+      "sha256": "d0a503dba03efba139e394e039d70fa92939a149dd50cc9cc1024ae1b46d2e27",
+      "packets": 1177,
+      "ether_types": {
+        "0x800": 1122,
+        "0x806": 49,
+        "0x86dd": 6
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.14:34761 -> 10.88.0.13:1090 UDP": 89,
+        "10.88.0.14:34761 -> 10.88.0.11:1090 UDP": 1,
+        "10.88.0.11 -> 10.88.0.14 IP-proto-1": 1,
+        "10.88.0.14:34761 -> 10.88.0.15:1090 UDP": 36,
+        "10.88.0.13:1090 -> 10.88.0.14:34761 UDP": 74,
+        "10.88.0.14:34761 -> 10.88.0.10:1090 UDP": 28,
+        "10.88.0.14:34761 -> 10.88.0.12:1090 UDP": 1,
+        "10.88.0.12 -> 10.88.0.14 IP-proto-1": 1,
+        "10.88.0.14:1090 -> 10.88.0.13:40484 UDP": 75,
+        "10.88.0.13:40484 -> 10.88.0.14:1090 UDP": 90,
+        "10.88.0.15:46596 -> 10.88.0.14:1090 UDP": 33,
+        "10.88.0.14:1090 -> 10.88.0.15:46596 UDP": 19,
+        "10.88.0.15:1090 -> 10.88.0.14:34761 UDP": 19,
+        "10.88.0.10:59954 -> 10.88.0.14:1090 UDP": 24,
+        "10.88.0.14:1090 -> 10.88.0.10:59954 UDP": 17,
+        "10.88.0.10:1090 -> 10.88.0.14:34761 UDP": 17,
+        "10.88.0.12:55140 -> 10.88.0.14:1090 UDP": 213,
+        "10.88.0.14:1090 -> 10.88.0.12:55140 UDP": 211,
+        "10.88.0.11:43318 -> 10.88.0.14:1090 UDP": 44,
+        "10.88.0.14:1090 -> 10.88.0.11:43318 UDP": 42,
+        "10.88.0.21:48510 -> 10.88.0.14:1090 UDP": 43,
+        "10.88.0.14:1090 -> 10.88.0.21:48510 UDP": 44
+      },
+      "successful_nonce_plaintext_hits": []
+    },
+    "relay3.pcap": {
+      "sha256": "4bab97ed0c89f4c75c9bef4322ac437200e338c3040115aae7dc77b615577a99",
+      "packets": 1249,
+      "ether_types": {
+        "0x800": 1199,
+        "0x806": 46,
+        "0x86dd": 4
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.15:1090 -> 10.88.0.14:34761 UDP": 19,
+        "10.88.0.14:34761 -> 10.88.0.15:1090 UDP": 35,
+        "10.88.0.15:46596 -> 10.88.0.13:1090 UDP": 63,
+        "10.88.0.15:46596 -> 10.88.0.14:1090 UDP": 32,
+        "10.88.0.13:1090 -> 10.88.0.15:46596 UDP": 64,
+        "10.88.0.14:1090 -> 10.88.0.15:46596 UDP": 18,
+        "10.88.0.10:59954 -> 10.88.0.15:1090 UDP": 13,
+        "10.88.0.10:1090 -> 10.88.0.15:46596 UDP": 11,
+        "10.88.0.15:1090 -> 10.88.0.10:59954 UDP": 13,
+        "10.88.0.15:46596 -> 10.88.0.10:1090 UDP": 11,
+        "10.88.0.12:55140 -> 10.88.0.15:1090 UDP": 195,
+        "10.88.0.15:1090 -> 10.88.0.12:55140 UDP": 192,
+        "10.88.0.11:43318 -> 10.88.0.15:1090 UDP": 85,
+        "10.88.0.15:1090 -> 10.88.0.11:43318 UDP": 85,
+        "10.88.0.21:48510 -> 10.88.0.15:1090 UDP": 181,
+        "10.88.0.15:1090 -> 10.88.0.21:48510 UDP": 182
+      },
+      "successful_nonce_plaintext_hits": []
+    },
+    "seed.pcap": {
+      "sha256": "f24ed48bee483c0fab06cc7cc64052b0e0fdf2548d400341c9f41ad3c66cbd96",
+      "packets": 666,
+      "ether_types": {
+        "0x86dd": 8,
+        "0x806": 58,
+        "0x800": 600
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.13:40484 -> 10.88.0.10:1090 UDP": 1,
+        "10.88.0.10 -> 10.88.0.13 IP-proto-1": 1,
+        "10.88.0.14:34761 -> 10.88.0.10:1090 UDP": 28,
+        "10.88.0.15:46596 -> 10.88.0.10:1090 UDP": 12,
+        "10.88.0.10:59954 -> 10.88.0.13:1090 UDP": 69,
+        "10.88.0.13:1090 -> 10.88.0.10:59954 UDP": 63,
+        "10.88.0.10:59954 -> 10.88.0.11:1090 UDP": 1,
+        "10.88.0.11 -> 10.88.0.10 IP-proto-1": 1,
+        "10.88.0.10:59954 -> 10.88.0.15:1090 UDP": 13,
+        "10.88.0.10:59954 -> 10.88.0.12:1090 UDP": 1,
+        "10.88.0.12 -> 10.88.0.10 IP-proto-1": 1,
+        "10.88.0.10:59954 -> 10.88.0.14:1090 UDP": 24,
+        "10.88.0.14:1090 -> 10.88.0.10:59954 UDP": 17,
+        "10.88.0.10:1090 -> 10.88.0.14:34761 UDP": 17,
+        "10.88.0.10:1090 -> 10.88.0.15:46596 UDP": 11,
+        "10.88.0.15:1090 -> 10.88.0.10:59954 UDP": 13,
+        "10.88.0.12:55140 -> 10.88.0.10:1090 UDP": 106,
+        "10.88.0.10:1090 -> 10.88.0.12:55140 UDP": 120,
+        "10.88.0.11:43318 -> 10.88.0.10:1090 UDP": 51,
+        "10.88.0.10:1090 -> 10.88.0.11:43318 UDP": 50
+      },
+      "successful_nonce_plaintext_hits": []
+    },
+    "service.pcap": {
+      "sha256": "a0df70987961f9ecb6d66abd1d6c8f31b1fd930692737df4bfc4f0c18b06238a",
+      "packets": 673,
+      "ether_types": {
+        "0x806": 38,
+        "0x800": 631,
+        "0x86dd": 4
+      },
+      "fragment_packets": 0,
+      "flows": {
+        "10.88.0.21:48510 -> 10.88.0.12:1090 UDP": 48,
+        "10.88.0.12:1090 -> 10.88.0.21:48510 UDP": 48,
+        "10.88.0.21:48510 -> 10.88.0.14:1090 UDP": 43,
+        "10.88.0.14:1090 -> 10.88.0.21:48510 UDP": 44,
+        "10.88.0.21:48510 -> 10.88.0.15:1090 UDP": 181,
+        "10.88.0.15:1090 -> 10.88.0.21:48510 UDP": 182,
+        "10.88.0.21:48510 -> 10.88.0.13:1090 UDP": 41,
+        "10.88.0.13:1090 -> 10.88.0.21:48510 UDP": 44
+      },
+      "successful_nonce_plaintext_hits": []
+    }
+  },
+  "client_tls_streams": {},
+  "built_paths": {
+    "client": [
+      {
+        "tx": "b39702dae5d649313c290f12467978bb",
+        "build_seconds": 0.424,
+        "nodes": [
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "xjxmza8k6q95krzqumpedqq61fini7q6xze8s6d17agxj3u45fjy.mnode",
+          "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode"
+        ],
+        "node_roles": [
+          "entry2",
+          "seed",
+          "entry1"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "6a5b45f27e92d0934804e53b3cce2a94",
+        "build_seconds": 5.47,
+        "nodes": [
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "xjxmza8k6q95krzqumpedqq61fini7q6xze8s6d17agxj3u45fjy.mnode",
+          "rt6zbinxij1qek1hywcdr53szy134wyzdrfp6mishz6i1tp4dhmo.mnode"
+        ],
+        "node_roles": [
+          "entry2",
+          "seed",
+          "relay1"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "eed26324d5725dfee58d43c08afac835",
+        "build_seconds": 0.078,
+        "nodes": [
+          "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode",
+          "pn9d16cbn7yd5p3sjiksk5ciztbs4p4f4rqnhtqh8zsymo4mhhxo.mnode",
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode"
+        ],
+        "node_roles": [
+          "entry1",
+          "relay3",
+          "entry2"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "8988c222807aef84b581e5d164e82529",
+        "build_seconds": 0.993,
+        "nodes": [
+          "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode",
+          "rt6zbinxij1qek1hywcdr53szy134wyzdrfp6mishz6i1tp4dhmo.mnode",
+          "xjxmza8k6q95krzqumpedqq61fini7q6xze8s6d17agxj3u45fjy.mnode"
+        ],
+        "node_roles": [
+          "entry1",
+          "relay1",
+          "seed"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "f643fa5482f12be01c804b34521e083b",
+        "build_seconds": 1.244,
+        "nodes": [
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "xjxmza8k6q95krzqumpedqq61fini7q6xze8s6d17agxj3u45fjy.mnode",
+          "ah4jnpc4p7g4sq73y3c9d7fttmag1eswnd5f13p5mz8g3a3qo87o.mnode"
+        ],
+        "node_roles": [
+          "entry2",
+          "seed",
+          "relay2"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "85d9fd82dd6ddfedcbce60275c09b305",
+        "build_seconds": 5.378,
+        "nodes": [
+          "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode",
+          "pn9d16cbn7yd5p3sjiksk5ciztbs4p4f4rqnhtqh8zsymo4mhhxo.mnode",
+          "rt6zbinxij1qek1hywcdr53szy134wyzdrfp6mishz6i1tp4dhmo.mnode"
+        ],
+        "node_roles": [
+          "entry1",
+          "relay3",
+          "relay1"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "4be41598fede224e53ba28b3266a59d7",
+        "build_seconds": 4.883,
+        "nodes": [
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "pn9d16cbn7yd5p3sjiksk5ciztbs4p4f4rqnhtqh8zsymo4mhhxo.mnode",
+          "rt6zbinxij1qek1hywcdr53szy134wyzdrfp6mishz6i1tp4dhmo.mnode"
+        ],
+        "node_roles": [
+          "entry2",
+          "relay3",
+          "relay1"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "a9c604407dde4f1f0e9d405159ca535e",
+        "build_seconds": 1.702,
+        "nodes": [
+          "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode",
+          "pn9d16cbn7yd5p3sjiksk5ciztbs4p4f4rqnhtqh8zsymo4mhhxo.mnode",
+          "rt6zbinxij1qek1hywcdr53szy134wyzdrfp6mishz6i1tp4dhmo.mnode"
+        ],
+        "node_roles": [
+          "entry1",
+          "relay3",
+          "relay1"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "fb43d0cfbdc975eb14d8f5289947ce6d",
+        "build_seconds": 1.454,
+        "nodes": [
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "ah4jnpc4p7g4sq73y3c9d7fttmag1eswnd5f13p5mz8g3a3qo87o.mnode",
+          "rt6zbinxij1qek1hywcdr53szy134wyzdrfp6mishz6i1tp4dhmo.mnode"
+        ],
+        "node_roles": [
+          "entry2",
+          "relay2",
+          "relay1"
+        ],
+        "distinct_nodes": 3
+      }
+    ],
+    "service": [
+      {
+        "tx": "7edd2d321ef99b70eff3b663f3ab89ad",
+        "build_seconds": 0.238,
+        "nodes": [
+          "pn9d16cbn7yd5p3sjiksk5ciztbs4p4f4rqnhtqh8zsymo4mhhxo.mnode",
+          "ah4jnpc4p7g4sq73y3c9d7fttmag1eswnd5f13p5mz8g3a3qo87o.mnode",
+          "pn9d16cbn7yd5p3sjiksk5ciztbs4p4f4rqnhtqh8zsymo4mhhxo.mnode"
+        ],
+        "node_roles": [
+          "relay3",
+          "relay2",
+          "relay3"
+        ],
+        "distinct_nodes": 2
+      },
+      {
+        "tx": "920269eeb5e570df874b6ea5315037b4",
+        "build_seconds": 7.061,
+        "nodes": [
+          "ah4jnpc4p7g4sq73y3c9d7fttmag1eswnd5f13p5mz8g3a3qo87o.mnode",
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "xjxmza8k6q95krzqumpedqq61fini7q6xze8s6d17agxj3u45fjy.mnode"
+        ],
+        "node_roles": [
+          "relay2",
+          "entry2",
+          "seed"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "8b885f3791af2c6a02808ccb51daf5a5",
+        "build_seconds": 6.559,
+        "nodes": [
+          "pn9d16cbn7yd5p3sjiksk5ciztbs4p4f4rqnhtqh8zsymo4mhhxo.mnode",
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "rt6zbinxij1qek1hywcdr53szy134wyzdrfp6mishz6i1tp4dhmo.mnode"
+        ],
+        "node_roles": [
+          "relay3",
+          "entry2",
+          "relay1"
+        ],
+        "distinct_nodes": 3
+      },
+      {
+        "tx": "1ad96ef5d4214af04cf1656171f04391",
+        "build_seconds": 6.812,
+        "nodes": [
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode",
+          "ah4jnpc4p7g4sq73y3c9d7fttmag1eswnd5f13p5mz8g3a3qo87o.mnode",
+          "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode"
+        ],
+        "node_roles": [
+          "entry2",
+          "relay2",
+          "entry2"
+        ],
+        "distinct_nodes": 2
+      },
+      {
+        "tx": "125d3cb46f35bd89fa4611ae7ce2d314",
+        "build_seconds": 7.316,
+        "nodes": [
+          "rt6zbinxij1qek1hywcdr53szy134wyzdrfp6mishz6i1tp4dhmo.mnode",
+          "ah4jnpc4p7g4sq73y3c9d7fttmag1eswnd5f13p5mz8g3a3qo87o.mnode",
+          "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode"
+        ],
+        "node_roles": [
+          "relay1",
+          "relay2",
+          "entry1"
+        ],
+        "distinct_nodes": 3
+      }
+    ]
+  },
+  "node_identity_map": {
+    "xjxmza8k6q95krzqumpedqq61fini7q6xze8s6d17agxj3u45fjy.mnode": "seed",
+    "m6dcqzrwhp3mi9dfjkd4cuh9g38aqnzto8hwx56qiu4tm7ipep9y.mnode": "entry1",
+    "ww8554aahogkushnzdkym44pqnw17j3mk6x5ncna8gg83y81pipy.mnode": "entry2",
+    "rt6zbinxij1qek1hywcdr53szy134wyzdrfp6mishz6i1tp4dhmo.mnode": "relay1",
+    "pn9d16cbn7yd5p3sjiksk5ciztbs4p4f4rqnhtqh8zsymo4mhhxo.mnode": "relay3",
+    "ah4jnpc4p7g4sq73y3c9d7fttmag1eswnd5f13p5mz8g3a3qo87o.mnode": "relay2"
+  },
+  "limitations": [
+    "Capture begins after processes start; only captured interval is audited.",
+    "TLS record-prefix recognition does not prove browser indistinguishability.",
+    "Logs establish built paths; encrypted packet captures do not attribute each HTTP request to one path.",
+    "Final rebuilt-image run; separate outage audit applies only to tunnel mode."
+  ],
+  "all_node_log_events": {
+    "seed": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 2,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 0,
+      "paths_built": 0
+    },
+    "entry1": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 0,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 0,
+      "paths_built": 0
+    },
+    "entry2": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 1,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 0,
+      "paths_built": 0
+    },
+    "relay1": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 4,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 0,
+      "paths_built": 0
+    },
+    "relay2": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 2,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 0,
+      "paths_built": 0
+    },
+    "relay3": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 2,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 0,
+      "paths_built": 0
+    },
+    "client": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 11,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 5,
+      "paths_built": 9
+    },
+    "service": {
+      "established_session_timeouts": 0,
+      "pending_session_timeouts": 0,
+      "peer_deregister_events": 0,
+      "path_build_timeouts": 0,
+      "path_build_failures": 0,
+      "paths_built": 5
+    }
+  },
+  "capture_health": {
+    "seed": [
+      "666 packets captured",
+      "666 packets received by filter",
+      "0 packets dropped by kernel"
+    ],
+    "entry1": [
+      "768 packets captured",
+      "768 packets received by filter",
+      "0 packets dropped by kernel"
+    ],
+    "entry2": [
+      "2167 packets captured",
+      "2167 packets received by filter",
+      "0 packets dropped by kernel"
+    ],
+    "relay1": [
+      "1179 packets captured",
+      "1179 packets received by filter",
+      "0 packets dropped by kernel"
+    ],
+    "relay2": [
+      "1177 packets captured",
+      "1177 packets received by filter",
+      "0 packets dropped by kernel"
+    ],
+    "relay3": [
+      "1249 packets captured",
+      "1249 packets received by filter",
+      "0 packets dropped by kernel"
+    ],
+    "client": [
+      "776 packets captured",
+      "776 packets received by filter",
+      "0 packets dropped by kernel"
+    ],
+    "service": [
+      "673 packets captured",
+      "673 packets received by filter",
+      "0 packets dropped by kernel"
+    ]
+  },
+  "binary_verification": {
+    "expected_image": "sha256:811e661c444e5e7b3a7511902c2c4b8a9e6b141fa785ffe1b9d64e3c342ee419",
+    "current_image": "sha256:811e661c444e5e7b3a7511902c2c4b8a9e6b141fa785ffe1b9d64e3c342ee419",
+    "manifest_has_expected_image": true,
+    "recorded": {
+      "/usr/local/bin/belnet": "1b35e57e1a5ddb55358a46d55f5eb08fa82aa10a8e19867e7b479486d09958d0",
+      "/usr/local/bin/belnet-bridge": "67690794769e76de0f9a759080a47dac86ec4501139554d33b609762f5ad0623",
+      "/lab/probe-linux": "e3d6fa02ebe4a79884f7bc8401e4537c1cef21d225f1766a4379fb526bcf0944"
+    },
+    "bridge_matches_current_host_build": true,
+    "probe_matches_current_host_build": true,
+    "censor_matches_current_host_build": null,
+    "censor_note": "Not used in control mode; hash is intentionally absent."
+  },
+  "all_eight_node_counts_match_report": {
+    "seed": true,
+    "entry1": true,
+    "entry2": true,
+    "relay1": true,
+    "relay2": true,
+    "relay3": true,
+    "client": true,
+    "service": true
+  },
+  "independent_image_binary_hashes": {
+    "belnet": "1b35e57e1a5ddb55358a46d55f5eb08fa82aa10a8e19867e7b479486d09958d0",
+    "belnet-bridge": "67690794769e76de0f9a759080a47dac86ec4501139554d33b609762f5ad0623"
+  }
+}

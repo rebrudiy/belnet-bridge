@@ -1,0 +1,70 @@
+{
+  "schema": "belnet-g02-stage-a2-plan/v1",
+  "stage": "A2",
+  "seed": 202611192100,
+  "client_ip": "10.88.0.42",
+  "phase_ms": 45000,
+  "warmup_start_ms": [
+    5000,
+    15000,
+    25000
+  ],
+  "warmup_timeout_ms": 8000,
+  "phase_fetch_start_ms": [
+    0,
+    3000,
+    12000,
+    17000,
+    22000,
+    27000,
+    32000,
+    37000
+  ],
+  "phase_fetch_timeout_ms": 5000,
+  "proof_sizes": [
+    4096,
+    16384
+  ],
+  "interruption_start_ms": 10000,
+  "interruption_ms": 2000,
+  "recovery_gate_ms": 10000,
+  "max_recovery_wait_ms": 30000,
+  "pcap_max_bytes": 268435456,
+  "metadata_max_bytes": 16777216,
+  "endpoint": "http://f3839udf9nsefrp3ug8zotg37jh6zcwejrps6hmdt4xstrpfupdy.bdx:8082",
+  "groups": [
+    {
+      "id": "a201-retain",
+      "kind": "framed",
+      "variant": "retain",
+      "max_queue_age": "0",
+      "split": "train"
+    },
+    {
+      "id": "a202-expiry100",
+      "kind": "framed",
+      "variant": "expiry100",
+      "max_queue_age": "100ms",
+      "split": "train"
+    },
+    {
+      "id": "a203-expiry100",
+      "kind": "framed",
+      "variant": "expiry100",
+      "max_queue_age": "100ms",
+      "split": "train"
+    },
+    {
+      "id": "a204-retain",
+      "kind": "framed",
+      "variant": "retain",
+      "max_queue_age": "0",
+      "split": "train"
+    }
+  ],
+  "scope": "Finite A2 engineering development: four fresh framed deployments, retain0 /expiry100ms /expiry100ms /retain0. No B/DPI collection. Expiry is client-only at write-start; not an assertion that all packets have <=100ms age.",
+  "candidate_reset": "Stop client sing-box core only, keep it absent2s, then start; native/Go PIDs and SID retained.",
+  "capture_scope": "Starts before initial native gate; includes fixed warmup and full45s phase. Phase UTC boundaries stored. Host sink stops at256MiB without overwriting older packets; cap/drop marks incomplete.",
+  "service": "Dedicated own bb-g02-service-helper in existing service namespace, JSON UTC/unix-microsecond nonce logs; no changes to old8081",
+  "clock": "Host performance clock schedules events only. All proof, phase and interruption comparisons use VM helper UTC/unix_micros. Before/after stop/start clocks bracket actual edges; ambiguous edge intervals remain straddling."
+}

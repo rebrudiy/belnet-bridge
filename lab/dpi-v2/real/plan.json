@@ -1,0 +1,219 @@
+{
+  "version": 1,
+  "seed": 202611190731,
+  "preregistered_at": "2026-11-19T16:33:13.435Z",
+  "scope": "20 fresh whole-session groups; 24 fresh browser visits; pilot excluded; entire group and its transport variants stay in same split",
+  "observer": "Chrome raw SOCKET NetLog client callback timestamp, encrypted outer TLS records only; QUIC separately reported, not fed to TCP detector",
+  "splits": {
+    "train": 12,
+    "validation": 4,
+    "test": 4
+  },
+  "pilot_excluded": true,
+  "groups": [
+    {
+      "group_id": "real-google-1",
+      "family": "google",
+      "url": "https://www.google.com/search?q=how+do+solar+panels+work",
+      "split": "train",
+      "variants": [
+        "default",
+        "tcp"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-google-2",
+      "family": "google",
+      "url": "https://www.google.com/search?q=history+of+public+libraries",
+      "split": "train",
+      "variants": [
+        "default"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-google-3",
+      "family": "google",
+      "url": "https://www.google.com/search?q=beginner+bread+recipe",
+      "split": "train",
+      "variants": [
+        "default"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-google-4",
+      "family": "google",
+      "url": "https://www.google.com/search?q=weather+cloud+types",
+      "split": "validation",
+      "variants": [
+        "default",
+        "tcp"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-google-5",
+      "family": "google",
+      "url": "https://www.google.com/search?q=architecture+of+ancient+bridges",
+      "split": "test",
+      "variants": [
+        "default"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-youtube-1",
+      "family": "youtube",
+      "url": "https://www.youtube.com/watch?v=aqz-KE-bpKQ&autoplay=1&hl=en",
+      "split": "train",
+      "variants": [
+        "default",
+        "tcp"
+      ],
+      "seconds": 30
+    },
+    {
+      "group_id": "real-youtube-2",
+      "family": "youtube",
+      "url": "https://www.youtube.com/watch?v=M7lc1UVf-VE&autoplay=1&hl=en",
+      "split": "train",
+      "variants": [
+        "default"
+      ],
+      "seconds": 30
+    },
+    {
+      "group_id": "real-youtube-3",
+      "family": "youtube",
+      "url": "https://www.youtube.com/watch?v=ysz5S6PUM-U&autoplay=1&hl=en",
+      "split": "train",
+      "variants": [
+        "default"
+      ],
+      "seconds": 30
+    },
+    {
+      "group_id": "real-youtube-4",
+      "family": "youtube",
+      "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw&autoplay=1&hl=en",
+      "split": "validation",
+      "variants": [
+        "default",
+        "tcp"
+      ],
+      "seconds": 30
+    },
+    {
+      "group_id": "real-youtube-5",
+      "family": "youtube",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXc&autoplay=1&hl=en",
+      "split": "test",
+      "variants": [
+        "default"
+      ],
+      "seconds": 30
+    },
+    {
+      "group_id": "real-docs-1",
+      "family": "docs",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+      "split": "train",
+      "variants": [
+        "default"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-docs-2",
+      "family": "docs",
+      "url": "https://en.wikipedia.org/wiki/Internet",
+      "split": "train",
+      "variants": [
+        "default"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-docs-3",
+      "family": "docs",
+      "url": "https://www.rfc-editor.org/rfc/rfc8446",
+      "split": "train",
+      "variants": [
+        "default"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-docs-4",
+      "family": "docs",
+      "url": "https://docs.python.org/3/tutorial/",
+      "split": "validation",
+      "variants": [
+        "default"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-docs-5",
+      "family": "docs",
+      "url": "https://go.dev/doc/effective_go",
+      "split": "test",
+      "variants": [
+        "default"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-download-1",
+      "family": "download",
+      "url": "https://speed.cloudflare.com/__down?bytes=1048576",
+      "split": "train",
+      "variants": [
+        "default"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-download-2",
+      "family": "download",
+      "url": "https://speed.cloudflare.com/__down?bytes=2097152",
+      "split": "train",
+      "variants": [
+        "default"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-download-3",
+      "family": "download",
+      "url": "https://www.gutenberg.org/cache/epub/1342/pg1342.txt",
+      "split": "train",
+      "variants": [
+        "default"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-download-4",
+      "family": "download",
+      "url": "https://speed.cloudflare.com/__down?bytes=524288",
+      "split": "validation",
+      "variants": [
+        "default"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-download-5",
+      "family": "download",
+      "url": "https://www.rfc-editor.org/rfc/rfc9000.txt",
+      "split": "test",
+      "variants": [
+        "default"
+      ],
+      "seconds": 15
+    }
+  ]
+}

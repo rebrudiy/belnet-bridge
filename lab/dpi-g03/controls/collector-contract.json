@@ -1,0 +1,157 @@
+{
+  "schema": "g03-controls-collector-v2",
+  "state": "offline_preparation_no_B_measurements",
+  "required_preregistration": [
+    "A2_viability_decision",
+    "whole_group_assignments",
+    "paired_source_workloads_same_split",
+    "source_ELF_core_config_allowlist_SPKI_hashes",
+    "finite_session_limit",
+    "failure_and_eligibility_rules"
+  ],
+  "group_metadata": [
+    "group_id",
+    "split",
+    "class",
+    "profile",
+    "source_workload_id",
+    "seed",
+    "nonce",
+    "client_stack_version",
+    "origin",
+    "server_ports",
+    "attempt_id"
+  ],
+  "wire": {
+    "nonce": "64 lowercase hexadecimal characters",
+    "seed": "16 lowercase hexadecimal characters",
+    "allowed_query_keys": [
+      "family",
+      "seed",
+      "duration_ms",
+      "nonce"
+    ],
+    "forbidden": [
+      "class",
+      "split",
+      "group_id",
+      "source_workload_id",
+      "corpus_id",
+      "label_headers"
+    ]
+  },
+  "classes": {
+    "primary_negative": [
+      "ordinary_Chrome_TLS_TCP",
+      "legitimate_Go_WSS"
+    ],
+    "primary_positive": "REALITY_carrying_actual_native_BelNet",
+    "diagnostic_only": [
+      "authenticated_REALITY_other_payload",
+      "genuinely_pre_measurement_flows_unplanned_for_B"
+    ]
+  },
+  "observer": {
+    "location": "same_Docker_CONNECT_egress_for_all_classes",
+    "clock": "Linux_VM_UTC_unix_microseconds",
+    "tcp_only": true,
+    "exclude_ingress_port": 8080,
+    "target_port": 443,
+    "join": [
+      "proxy_connection_id",
+      "upstream_local",
+      "upstream_remote",
+      "started_unix_micros",
+      "finished_unix_micros"
+    ],
+    "datalink_requirement": "Support actual Ethernet or Linux SLL/SLL2 without silently dropping private/public NIC traffic"
+  },
+  "phase": {
+    "measurement_start_unix_micros": "required explicit PRELAUNCH VM integer before first outer connect, both labels",
+    "measured_seconds": 80,
+    "window_offsets_seconds": [
+      0,
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64,
+      72,
+      78
+    ],
+    "window_seconds": 2,
+    "flow_prefix": "First2s of every new TCP/TLS flow/reconnect beginning inside primary80s; initial native bootstrap is PRIMARY",
+    "prefix_grace_seconds": 2,
+    "capture_seconds": 82,
+    "grace_rule": "Finish prefixes begun within80s only; no new grace-start obligations",
+    "prelude_seconds": 35,
+    "main_workload_seconds": 45,
+    "long_flow_control_seconds": 80
+  },
+  "capture_metadata": [
+    "capture_started_utc_VM",
+    "capture_ended_utc_VM",
+    "ready_banner",
+    "filter",
+    "datalink",
+    "cap_bytes",
+    "exit_status",
+    "received_packets",
+    "kernel_dropped_packets",
+    "saved_packets",
+    "received_vs_written_reconciliation",
+    "truncated",
+    "ineligible_reasons"
+  ],
+  "workload_evidence": [
+    "expected_plan",
+    "nonce",
+    "actual_started_unix_micros",
+    "actual_finished_unix_micros",
+    "completed_duration",
+    "up_down_messages",
+    "up_down_bytes",
+    "rpc_verified",
+    "invalid_messages",
+    "errors",
+    "server_nonce_event",
+    "actual_native_UDP_per_positive_window",
+    "download_pattern_verified_messages",
+    "download_received_sha256",
+    "upload_ack_verified",
+    "upload_acked_bytes",
+    "upload_verified_all_sent",
+    "integrity_status"
+  ],
+  "public_browser_evidence": [
+    "fresh_profile",
+    "Chrome_binary_version_hash",
+    "exact_flags",
+    "CDP_URL_status_protocol",
+    "media_response_bytes",
+    "video_currentTime_progress",
+    "access_failure_or_CAPTCHA_without_bypass"
+  ],
+  "eligibility": "Missing captures, absent flows, access failures, truncation and native inactivity are retained and explicitly classified; none is an evasion success",
+  "calibration": "Preserve whole groups. Calibrate the actual OR across all selected windows/reconnects. No posthoc final thresholds",
+  "confounds": [
+    "TLS_stack",
+    "certificate_lengths",
+    "origin",
+    "RTT",
+    "public_private_path",
+    "browser_vs_Go",
+    "handshake_vs_application_window"
+  ],
+  "scope_exclusions": [
+    "HTTP3_QUIC",
+    "system_trust_store_changes",
+    "user_browser_profiles",
+    "accounts",
+    "CAPTCHA_bypass",
+    "prior_development_proofs_as_fresh_tests"
+  ]
+}

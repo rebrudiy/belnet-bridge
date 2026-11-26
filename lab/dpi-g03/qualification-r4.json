@@ -1,0 +1,259 @@
+{
+  "schema": "belnet-g03-qualification/v1",
+  "revision": "R4",
+  "stage": "Q",
+  "test_vault_required": false,
+  "detector_fitting_allowed": false,
+  "purpose": "One80s heavy-native-DOWNLOAD/ChromeGoogle/GoIdle capture qualification using prospectively selected stress-tested sensor and v4 reporters; no calibration",
+  "primary_seconds": 80,
+  "capture_seconds": 82,
+  "prefix_grace_seconds": 2,
+  "window_offsets_seconds": [
+    0,
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64,
+    72,
+    78
+  ],
+  "window_seconds": 2,
+  "resource_limits": {
+    "max_active_groups": 3,
+    "max_active_native_groups": 1,
+    "capture_bytes_per_group": 268435456
+  },
+  "capture_shutdown": {
+    "capture_mode": "buffered",
+    "buffer_kib": 16384,
+    "immediate_mode": false,
+    "min_postquiesce_drain_micros": 500000,
+    "stats_observation_budget_ms": 2500,
+    "required_identical_healthy_stats": 2,
+    "final_statistics_required_after_stop_frontier": true,
+    "stats_semantics": "Live comma or multiline counters; final counters must be fresh after stop and equal raw PCAP records. SIGUSR1 does not flush capture."
+  },
+  "stages": {
+    "Q": {
+      "splits": [
+        "development"
+      ],
+      "count": 3,
+      "order": [
+        "q-native-download",
+        "q-chrome-google",
+        "q-go-idle"
+      ],
+      "batches": [
+        [
+          "q-native-download",
+          "q-chrome-google",
+          "q-go-idle"
+        ]
+      ]
+    }
+  },
+  "groups": [
+    {
+      "group_id": "q-native-download",
+      "source_workload_id": "q-r4-g03-source-train-download-1",
+      "split": "development",
+      "scope": "diagnostic",
+      "measured_seconds": 80,
+      "prefix_grace_seconds": 2,
+      "startup_seconds": 35,
+      "workload_start_seconds": 35,
+      "seed_hex": "00000ddb3cdda6b0",
+      "seed_int": 15235270158000,
+      "sealed_seed_ref": null,
+      "nonce": "d357d7505c8324ea501947ec26e902aa7d8cc99d5e628ac34f87a449b3af48bb",
+      "initial_nonce": "002830600153967377ecd0e129472b3461b02ba607b2011e5ac11a80d26d6465",
+      "warmup_nonces": [
+        "558fd4ecfb3cd5847f491d9980f26363cdf3898f3a2ef4a305c09786487c5f93",
+        "7ddd28ce90a9e38a97016ae42400d8d75c3f6c46208cf445cf21a026cadcdd43",
+        "17075c87fa785fd2b910ae544b42747b94432b3098a3ed7a088d28f8fa7bf09f"
+      ],
+      "sealed_nonce_ref": null,
+      "class": "belnet",
+      "stratum": "native",
+      "transport": "reality",
+      "family": "download",
+      "profile": "native-expiry100-download",
+      "client_stack": "native-belnet+sing-box-utls-chrome",
+      "workload_mode": "matched45",
+      "workload_duration_seconds": 45,
+      "target_entries": [
+        1,
+        2
+      ],
+      "max_queue_age_micros": 100000,
+      "application_budget_bytes_per_direction": 4194304,
+      "fresh_native_identity_required": true,
+      "synthetic_application": true,
+      "qualification_source_group_id": "b-train-native-download-1"
+    },
+    {
+      "group_id": "q-chrome-google",
+      "source_workload_id": "q-r4-g03-source-train-public-google",
+      "split": "development",
+      "scope": "diagnostic",
+      "measured_seconds": 80,
+      "prefix_grace_seconds": 2,
+      "startup_seconds": 35,
+      "workload_start_seconds": 0,
+      "seed_hex": "0000853fa171ba21",
+      "seed_int": 146508338018849,
+      "sealed_seed_ref": null,
+      "nonce": "c037576db67918d02078a22abc68140254529ab22770dab4e786e0bba54ca9b2",
+      "initial_nonce": "091dd93616d58ea39f2b53016cd16ce28ec1bdac0af1591f20d10299d7351f9c",
+      "warmup_nonces": [
+        "65f5a7c8660d2cc6cc45944661c80cc227e952265b17288e29ea21dbe0939e14",
+        "bb74e9b913f7d2accb843715fa4d44192052cc76f3095eaea1223365899782b2",
+        "ba7055769f747beff720f54ad8978a35a83e92f6d872eabaf2b67b65c2eea321"
+      ],
+      "sealed_nonce_ref": null,
+      "class": "benign",
+      "stratum": "public_browser",
+      "transport": "ordinary-tls",
+      "client_stack": "chrome",
+      "family": "google",
+      "profile": "public-chrome-google",
+      "url": "https://www.google.com/",
+      "workload_mode": "public80",
+      "workload_duration_seconds": 80,
+      "synthetic_application": false,
+      "fresh_profile_required": true,
+      "require_actual_access_evidence": true,
+      "download_directory": "run-artifacts-only",
+      "qualification_source_group_id": "b-train-public-google"
+    },
+    {
+      "group_id": "q-go-idle",
+      "source_workload_id": "q-r4-g03-source-train-long-idle-2",
+      "split": "development",
+      "scope": "diagnostic",
+      "measured_seconds": 80,
+      "prefix_grace_seconds": 2,
+      "startup_seconds": 35,
+      "workload_start_seconds": 0,
+      "seed_hex": "00004a6e80835a65",
+      "seed_int": 81838462949989,
+      "sealed_seed_ref": null,
+      "nonce": "4b4eac4f5bdf4999f6a41d0be8b0509f770af3f294d3d8c55cde44706cddc50d",
+      "initial_nonce": "2a5ed3cee985d1756c8d66c8252d873b51868a170dfc46bdcd1ace5591230e2e",
+      "warmup_nonces": [
+        "7a49bbf9c0bc54ed569dd3b06460162e8c91c59cdca95892dade95d7fa3a0e7d",
+        "a192d11bf246516b8e80a5ef8f9ec90a2325a7ff54f96654b97468624f24c718",
+        "47f94f04630548dd4251ee1805ec9f716400cbf5b426770dcf5b542df1bd079f"
+      ],
+      "sealed_nonce_ref": null,
+      "class": "benign",
+      "stratum": "local_ordinary",
+      "transport": "ordinary-tls",
+      "family": "idle",
+      "profile": "ordinary-long80-idle",
+      "client_stack": "go-wss",
+      "workload_mode": "long80",
+      "workload_duration_seconds": 80,
+      "entry_index": 2,
+      "application_budget_bytes_per_direction": 4194304,
+      "synthetic_application": true,
+      "qualification_source_group_id": "b-train-long-idle-2"
+    }
+  ],
+  "capture_selection": {
+    "selected": "buffered16",
+    "independent_auditor_sha256": "ed88a766f07138c01cd1dee5d27236f69ee76eee2be0cf50e540eff8aae7d3fd",
+    "source_input_sha256": {
+      "out/dpi-g03/capture-stress/dev-01/freeze.json": "1575a58c167a424e2917c0ff52b83eab74243d3efa9b6a0de0eab0bc989cef35",
+      "out/dpi-g03/capture-stress/dev-01/RESULT.json": "48d3c2d447b27903a9b931edc0c4c81ad71396fa2d80655c39b52299b5ea48ba",
+      "out/dpi-g03/capture-stress/dev-01/HANDOFF.json": "cdd8010e1ca2c72c14ecbc22953cb335f3a077169c655cc907c5d175b7cdeceb",
+      "out/dpi-g03/capture-stress/dev-01/audit.cjs": "fa5f14737b19e4b39bc5115ffe3ac048517ba63952d04d398e9168a1a9928a97",
+      "out/dpi-g03/capture-stress/dev-01/audit.json": "c8ad8077623422b204008238ebdba06318fea054cc07ee3d499f2a718cfd36d9",
+      "out/dpi-g03/capture-stress/dev-01/RESULT.md": "bfc07be11bbf27f6ab8822217bf8a81866a09dc56200c657fdad3b352d34a860",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/capture-stress/.gitignore": "8c0a66125e02e002ec95b1c8cc634a433c7ad7a3442672d947d6eda078c025ed",
+      "lab/dpi-g03/capture-stress/.gitignore": "8c0a66125e02e002ec95b1c8cc634a433c7ad7a3442672d947d6eda078c025ed",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/capture-stress/README.md": "fcd6a489f701f9134a4bc383e0b8ff13de49c3c95c5327ca91e9d1d0b6655a0e",
+      "lab/dpi-g03/capture-stress/README.md": "fcd6a489f701f9134a4bc383e0b8ff13de49c3c95c5327ca91e9d1d0b6655a0e",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/capture-stress/client.sh": "5a2c1074f366b0a727f7bc48fda529d6fd893df9812ddc80715fe1dfcba5011f",
+      "lab/dpi-g03/capture-stress/client.sh": "5a2c1074f366b0a727f7bc48fda529d6fd893df9812ddc80715fe1dfcba5011f",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/capture-stress/cmd/helper/main.go": "a98001dc7e6d396f500103135120ab983f032bfcd94c8a56269632aa079e663f",
+      "lab/dpi-g03/capture-stress/cmd/helper/main.go": "a98001dc7e6d396f500103135120ab983f032bfcd94c8a56269632aa079e663f",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/capture-stress/cmd/helper/main_test.go": "f9567422e8ddae2bdc6cf821f976f395ef4ecf0b0e4513faf7b62a0c87b63bd2",
+      "lab/dpi-g03/capture-stress/cmd/helper/main_test.go": "f9567422e8ddae2bdc6cf821f976f395ef4ecf0b0e4513faf7b62a0c87b63bd2",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/capture-stress/go.mod": "a5644bfa782ba9344c5c91a2bd630e9e177cade1c8b5b882bad759629d50ef05",
+      "lab/dpi-g03/capture-stress/go.mod": "a5644bfa782ba9344c5c91a2bd630e9e177cade1c8b5b882bad759629d50ef05",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/capture-stress/go.sum": "1f1676fc6bb94593d3b340f85b1913414d1a8c3c85f1179cb057c17b32d8c4f2",
+      "lab/dpi-g03/capture-stress/go.sum": "1f1676fc6bb94593d3b340f85b1913414d1a8c3c85f1179cb057c17b32d8c4f2",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/capture-stress/run.cjs": "22256870edc05bb44dcc5a11534fb4e9c47a873f366b7448e9be54e2f1f880b7",
+      "lab/dpi-g03/capture-stress/run.cjs": "22256870edc05bb44dcc5a11534fb4e9c47a873f366b7448e9be54e2f1f880b7",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/capture-stress/run.test.cjs": "974856ebf685542117cf65a9c1598119e730462cf8022a311cb7802fa09dff15",
+      "lab/dpi-g03/capture-stress/run.test.cjs": "974856ebf685542117cf65a9c1598119e730462cf8022a311cb7802fa09dff15",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/capture-stress/server.sh": "23ac467ccba3174abc8a85ec5b6c4bfe96322b8cf981eceee22d48d408c469f3",
+      "lab/dpi-g03/capture-stress/server.sh": "23ac467ccba3174abc8a85ec5b6c4bfe96322b8cf981eceee22d48d408c469f3",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/runtime-v4/capture.cjs": "0f835c90692e1076389d3022762323c51557d8e53fa052b0e2a860fd165234d7",
+      "lab/dpi-g03/runtime-v4/capture.cjs": "0f835c90692e1076389d3022762323c51557d8e53fa052b0e2a860fd165234d7",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g02/runtime/capture.cjs": "e1fd8c7af43bc656bfaa13a480c6d77e22ef506ddd4abf47e6e9e8bd5e47e6f6",
+      "lab/dpi-g02/runtime/capture.cjs": "e1fd8c7af43bc656bfaa13a480c6d77e22ef506ddd4abf47e6e9e8bd5e47e6f6",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g02/runtime/common.cjs": "1695a13c339aec5d090121aaa097c2a27701b57cf91eaf0866be4ca5c1ba88f7",
+      "lab/dpi-g02/runtime/common.cjs": "1695a13c339aec5d090121aaa097c2a27701b57cf91eaf0866be4ca5c1ba88f7",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/controls/go.mod": "c30b4670d4e8b517466d7f3bcd1ed1a0b5942864c1f454056988740e44b59f84",
+      "lab/dpi-g03/controls/go.mod": "c30b4670d4e8b517466d7f3bcd1ed1a0b5942864c1f454056988740e44b59f84",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/controls/bench/client.go": "8178c005ce638a88cc7bbcd69f43bde5832d825fd18afe5436221974774d9f4f",
+      "lab/dpi-g03/controls/bench/client.go": "8178c005ce638a88cc7bbcd69f43bde5832d825fd18afe5436221974774d9f4f",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/controls/bench/server.go": "3660baec74de0dc0b1f78ec3fccfa34101e74e7432fceb1f353e66cefd6b1e5e",
+      "lab/dpi-g03/controls/bench/server.go": "3660baec74de0dc0b1f78ec3fccfa34101e74e7432fceb1f353e66cefd6b1e5e",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/controls/bench/plan.go": "6c2ed92e9d3f23033676e5d843efa1dec9a725c5c36e053a75337c99da452b06",
+      "lab/dpi-g03/controls/bench/plan.go": "6c2ed92e9d3f23033676e5d843efa1dec9a725c5c36e053a75337c99da452b06",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/controls/bench/query.go": "320d8aa6c66a08452099024b0d3e5e093258efc6e17ac5841096d4c2696fcac8",
+      "lab/dpi-g03/controls/bench/query.go": "320d8aa6c66a08452099024b0d3e5e093258efc6e17ac5841096d4c2696fcac8",
+      "out/dpi-g03/capture-stress/dev-01/source/lab/dpi-g03/controls/bench/integrity.go": "171d93dc24da3d9ab656b67a094b1e1bea946fa30c375907bb2fcbe9e79c1160",
+      "lab/dpi-g03/controls/bench/integrity.go": "171d93dc24da3d9ab656b67a094b1e1bea946fa30c375907bb2fcbe9e79c1160",
+      "lab/dpi-g03/capture-stress/run/dev-01/bin/helper": "728d65b41c280f0812e20b3c0e4c3113740a877e725c97c67f53c4ab3ef473bd",
+      "lab/dpi-g03/quiesce-proxy/bin/connect-proxy-quiesce-v1-linux-arm64-8e1d6c8ada2e": "8e1d6c8ada2e85fb2ba11d516b0e133e85d0a17a19d22fda649d0bacf39861c8",
+      "out/dpi-g03/capture-stress/dev-01/buffered16/outer.pcap": "cb74ab49dce4a5fbd4d3a2638d2c76ccaa02d37513fac5c53f23f4b08be21e12",
+      "out/dpi-g03/capture-stress/dev-01/buffered16/proxy.log": "d891f3d75af0c5d9cd6dcf2683dd7997feff57b3e1557884a478eaac5d0b99ae",
+      "out/dpi-g03/capture-stress/dev-01/immediate64/outer.pcap": "4579dca63deefe5105588cf20e32a25f42af7df8d5f8346bbb7881d65d112559",
+      "out/dpi-g03/capture-stress/dev-01/immediate64/proxy.log": "2e51952ba091d1b1e3200c0bf008785c71c23cd315154f675cec5be325385d2e",
+      "out/dpi-g03/capture-stress/dev-01/bb-g03-capstress-dev-01-client-launch.json": "036a2fbe5b57bb581792503e262509023b5ef26a4b1aab355b4bf1a3da69fcda",
+      "out/dpi-g03/capture-stress/dev-01/bb-g03-capstress-dev-01-server-launch.json": "2ac59286cf7deb04b9b98a0e751ca9e49ead44ecd1648ef3d0c1efc564860559",
+      "out/dpi-g03/capture-stress/dev-01/network-create.json": "880d924cd1df82f977e3fb088739a944e0a24fb4e850ce18e5575672e05375a0"
+    },
+    "scope": "Fixed two-case synthetic stress; prospective native/Chrome/idle Q4 remains required."
+  },
+  "reporter_contract": {
+    "observer_version": "g03-observer-v4",
+    "observer_schema": 5,
+    "longflow_version": "g03-longflow-v4",
+    "longflow_schema": 3,
+    "coverage_contract_sha256": "5591ec10229a2cc49325fe709ce19a4fcad882858f4f2490f4fda343ed987810",
+    "whole_primary_scope_quality_required": true
+  },
+  "lineage": {
+    "created_utc": "2026-11-19T20:28:04.377Z",
+    "source_assignments_sha256": "23c2edf8de26d58532b479c11cb866afd20869e74e0a5403f72cc472c046d7fb",
+    "parent_collector_sha256": "8b223e6dadc726a75c8fa08770d83bed86b678465104e4b9628bd7897b287c7b",
+    "sensor_review_sha256": "caa1ea227cc3fdb410e218a63b6dda141a5dceeee0f33853189ba46db3866ae1",
+    "generator_sha256": "ba67b2e6070a0cc7f2c434362b65fe13409b6db0df8f60097ad41f0ae1b8ece7",
+    "generator_R3_dependency_sha256": "37071e75b2dde145fa7e868ff25e44aeaf1b3ade9b1e741dabfd7234426d5fc2",
+    "prior_public_plans": [
+      {
+        "path": "lab/dpi-g03/assignments.json",
+        "sha256": "598645dd447a3ce88eabafc36cdc018537ed6ae39a5b6621ad93c03e74245928"
+      },
+      {
+        "path": "lab/dpi-g03/qualification-r2.json",
+        "sha256": "8087e390cebe6785ffb785c143167183c234344f611a9bfee90b5c83ebd10f7a"
+      },
+      {
+        "path": "lab/dpi-g03/qualification-r3.json",
+        "sha256": "ba7732a1b254f536be5714d8a1358ddb33712d85ff92619d0d6a03019beb6fa6"
+      }
+    ],
+    "private_test_values_read": false
+  }
+}

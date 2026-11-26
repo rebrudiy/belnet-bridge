@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "role": "source-only-header-view-handoff",
+  "version": "g04-header-longflow-v1",
+  "descriptor": {
+    "path": "lab/dpi-g04/longflow/tooling/TOOLING.json",
+    "sha256": "33ee3af5c995d46b294cd1a5db9e0c01437134e1c9fb1befbf91bd78f38fadac"
+  },
+  "synthetic_tests_passed": 75,
+  "race": "PASS",
+  "vet": "PASS",
+  "source_and_binaries_integrity": "PASS",
+  "protected_g03_integrity": "PASS",
+  "coverage_semantics_sha256": "9be744e6aebb9bbd73a0b9b2c861f01f82f30978ec331d366dfa611232f23184",
+  "ordering_semantics_sha256": "3bedeecc9596777cf4f858748590a9c3b0380bc78b84de0518fd7a051972ca42",
+  "feature_definitions_sha256": "caab5bbb1020062eb14d59ebf1ed769050143e3a81417fbd8b8db7045553c649",
+  "binary": {
+    "longflow": {
+      "sha256": "0add0ad82e5dcaa4549eae9157f0bf94d96bbc5b30214a22c06274dd23892ada",
+      "versioned_path": "lab/dpi-g04/longflow/tooling/longflow-g04-header-v1-darwin-arm64-0add0ad82e5d"
+    },
+    "longflow-linux-arm64": {
+      "sha256": "c9e72be25a04444a5f2f58361635bde888cdf2ae626c7d6b2b13b8059bb33128",
+      "versioned_path": "lab/dpi-g04/longflow/tooling/longflow-g04-header-v1-linux-arm64-c9e72be25a04"
+    }
+  },
+  "actual_data_reads": 0,
+  "actual_extraction": 0,
+  "fitting": 0,
+  "Docker": 0,
+  "network_collection": 0,
+  "preliminary_revisions": [
+    "pre-primary-scope",
+    "pre-close-proof"
+  ],
+  "limitations": [
+    "Offline two-pass SHADOW, not online censor",
+    "Declared TLS lengths are not delivered wire bytes",
+    "Header evidence is not a complete TLS session",
+    "Global retained history bound is logical bytes per pass; allocation/working overhead additional",
+    "Raw sensor acquisition, native application proof and final classifier budgets require independent joins"
+  ]
+}

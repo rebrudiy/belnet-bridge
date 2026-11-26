@@ -1,0 +1,5 @@
+{
+  "observer_outbound_to_add": {"type":"http","tag":"observer-connect","server":"PROXY_DOCKER_IP","server_port":8080},
+  "native_vless_outbound_fields_to_set": {"server":"decoy.test","server_port":443,"detour":"observer-connect"},
+  "scope":"Configuration fragment, not a deployed/tested B pipeline. Preserve frozen UUID, REALITY key/shortID/uTLS; ordinary TLS/WSS reaches the legitimate fallback on18444. Keep other REALITY payload diagnostic-only."
+}

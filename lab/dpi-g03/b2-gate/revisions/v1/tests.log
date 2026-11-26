@@ -1,0 +1,34 @@
+✔ Validate never reads vault bytes; authorized resolve fills onlyNULL test fields (8.315291ms)
+✔ Missing primary policy fails before private content read (1.65075ms)
+✔ Missing policy freeze timestamp fails before private read (2.218667ms)
+✔ Policy at or before latest actual development capture is rejected (2.139916ms)
+✔ Nanosecond chronology permits strictlylater values without millisecond truncation (2.289125ms)
+✔ B2 freeze at policy time is rejected (1.910833ms)
+✔ 70-group cohort cannot unseal (1.178417ms)
+✔ Incomplete andqualification records cannot substitute for primaryB1 completion (4.888333ms)
+✔ Unknown test group is rejected before any vault read (1.372709ms)
+✔ Already unsealed or partially NULL test row is rejected early (4.305958ms)
+✔ Source workload IDs cannot cross train/test splits (1.571958ms)
+✔ Policy projection andcollector bytes are actually verified (5.924209ms)
+✔ Projection must contain all 71 IDs; Q cannot be an extra (4.490167ms)
+✔ Projection wrong collector/source or splits cannot be rescued by count 71 (6.568584ms)
+✔ Calibration counts alone cannot omit validation cohort (1.799708ms)
+✔ Disabled auxiliary is not read; enabled missing/early auxiliary blocks (5.137875ms)
+✔ Explicit enabled valid auxiliary also must precede B2 freeze (2.800333ms)
+✔ Bad commitment is rejected before JSON decode of malformed vault bytes (2.347833ms)
+✔ Vault IDs/source seed sharing/ranges/nonces are checked after commitment (16.136375ms)
+✔ Forged/reused receipt never reads vault again (2.563291ms)
+✔ Public asset changes after validation block before private read (1.9935ms)
+✔ Callers cannot mutate receipt plan between validation and unseal (2.451084ms)
+✔ Policy alias to private vault is rejected before any content read (5.767791ms)
+✔ Explicit 6 candidate supplements require complete audits, per-group source binding and late freeze (10.5805ms)
+✔ Future-dated B2 freeze does not authorize a private read yet (1.609041ms)
+✔ Correct commitment with malformed JSON is decoded only after authorization (2.418ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 176.656708

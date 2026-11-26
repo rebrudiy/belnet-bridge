@@ -1,0 +1,143 @@
+{
+  "definitions_sha256": "03a1c01fe0d745b3da6ae161d94a23a1ef22863433c7ca1bf32e0dc475ff09e8",
+  "rules": [
+    {
+      "id": "r01",
+      "name": "uplink modal length",
+      "definition": "max exact-length count / uplink records; \u003e=8 uplink records; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": "Vary uplink cell lengths."
+    },
+    {
+      "id": "r02",
+      "name": "downlink modal length",
+      "definition": "max exact-length count / downlink records; \u003e=8 downlink records; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": "Vary downlink cell lengths independently."
+    },
+    {
+      "id": "r03",
+      "name": "shared modal length",
+      "definition": "max_L min(uplink_fraction[L], downlink_fraction[L]); \u003e=8 each direction; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": "Remove persistent identical request/reply sizes."
+    },
+    {
+      "id": "r04",
+      "name": "low length entropy",
+      "definition": "1 - Shannon entropy(length)/log2(record count); \u003e=16 total records; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": "Broaden the length distribution rather than only changing one fixed size."
+    },
+    {
+      "id": "r05",
+      "name": "strict direction alternation",
+      "definition": "adjacent direction changes / adjacent pairs; \u003e=16 records; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included; abstains when cross-direction ordering is ambiguous under 3bedeecc9596777cf4f858748590a9c3b0380bc78b84de0518fd7a051972ca42",
+      "transport_hypothesis": "Permit asymmetric and burst delivery."
+    },
+    {
+      "id": "r06",
+      "name": "equal opposite-direction neighbors",
+      "definition": "opposite-direction adjacent equal-length pairs / all adjacent pairs; \u003e=16 records; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included; abstains when cross-direction ordering is ambiguous under 3bedeecc9596777cf4f858748590a9c3b0380bc78b84de0518fd7a051972ca42",
+      "transport_hypothesis": "Decouple request/reply lengths."
+    },
+    {
+      "id": "r07",
+      "name": "regular uplink clock",
+      "definition": "1/(1+CV(positive uplink gaps)); \u003e=8 gaps and \u003e=200 ms span; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": "Jitter uplink cadence."
+    },
+    {
+      "id": "r08",
+      "name": "regular downlink clock",
+      "definition": "1/(1+CV(positive downlink gaps)); \u003e=8 gaps and \u003e=200 ms span; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": "Avoid a separate fixed downlink clock."
+    },
+    {
+      "id": "r09",
+      "name": "uplink phase grid",
+      "definition": "max circular phase concentration at fixed10/20/25/40/45/50/100 ms grids; \u003e=9 uplink records, span\u003e=200 ms; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": "Use nonperiodic timing; uniform jitter can leave a detectable phase grid."
+    },
+    {
+      "id": "r10",
+      "name": "immediate paired reply",
+      "definition": "uplink immediately followed by downlink within10 ms / uplink count; \u003e=8 uplink and \u003e=16 total; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included; abstains when cross-direction ordering is ambiguous under 3bedeecc9596777cf4f858748590a9c3b0380bc78b84de0518fd7a051972ca42",
+      "transport_hypothesis": "Decouple server reply timing from each poll where operationally acceptable."
+    },
+    {
+      "id": "r11",
+      "name": "narrow uplink padding band",
+      "definition": "1-(q90(length)-q10(length))/(q90(length)+q10(length)); \u003e=10 uplink records; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": "Use a wider measured size mixture."
+    },
+    {
+      "id": "r12",
+      "name": "two dominant lengths",
+      "definition": "mass of two most frequent exact lengths / all records; \u003e=16 records; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": "Avoid a two-size mixture that only replaces one fixed size."
+    },
+    {
+      "id": "r13",
+      "name": "frequent small uplink records",
+      "definition": "fraction uplink records\u003c=512 bytes; \u003e=8 uplink records, span\u003e=200 ms; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": "Measure idle polling leakage; reduce unnecessary small periodic writes."
+    },
+    {
+      "id": "r14",
+      "name": "duplex byte symmetry",
+      "definition": "1-abs(up_bytes-down_bytes)/(up_bytes+down_bytes); \u003e=16 records, \u003e=4 each direction; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": "Avoid forced byte symmetry when real workloads are asymmetric."
+    },
+    {
+      "id": "r15",
+      "name": "sustained fixed-cell polling",
+      "definition": "min(shared modal length, direction alternation, fraction occupied200 ms bins having both directions); \u003e=3 occupied bins and \u003e=8 each direction; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included; abstains when cross-direction ordering is ambiguous under 3bedeecc9596777cf4f858748590a9c3b0380bc78b84de0518fd7a051972ca42",
+      "transport_hypothesis": "Combine length, timing and directional changes; changing one feature may leave the composite signature."
+    },
+    {
+      "id": "lf01_exact26_share",
+      "name": "Exact26 byte TLS23 record share",
+      "definition": "records with full TLS record length26/all TLS23 records; \u003e=16 records; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": ""
+    },
+    {
+      "id": "lf02_tiny_le64_share",
+      "name": "Tiny TLS23 record share",
+      "definition": "records with full TLS record length\u003c=64/all TLS23 records; \u003e=16 records; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": ""
+    },
+    {
+      "id": "lf03_length_concentration",
+      "name": "Whole-flow length concentration",
+      "definition": "1-Shannon(length)/log2(N); \u003e=16 records; exact histogram; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": ""
+    },
+    {
+      "id": "lf04_duplex_byte_balance",
+      "name": "Whole-flow directional byte balance",
+      "definition": "1-abs(upBytes-downBytes)/(upBytes+downBytes); \u003e=16 records, \u003e=4 eachdirection; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": ""
+    },
+    {
+      "id": "lf05_immediate_reply_share",
+      "name": "Whole-flow adjacent reply share",
+      "definition": "up immediately followed bydown in0..10ms/upN; \u003e=16 records, \u003e=8 up; no negative adjacency; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included; abstains when cross-direction ordering is ambiguous under 3bedeecc9596777cf4f858748590a9c3b0380bc78b84de0518fd7a051972ca42",
+      "transport_hypothesis": ""
+    },
+    {
+      "id": "lf06_directional_regularity",
+      "name": "Whole-flow directional regularity",
+      "definition": "max eligible direction1/(1+CVpositive gaps); \u003e=8gaps and200ms span; within actual TCP flow only; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": ""
+    },
+    {
+      "id": "co01_capture_order_alternation",
+      "name": "Capture-order direction alternation",
+      "definition": "Among canonical earliest64 UTC-selected metadata records, order by original unique completion ordinal; direction changes/adjacent pairs, \u003e=16 records. Sensor-conditioned arrival view; no claim of physical/time ordering.; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": ""
+    },
+    {
+      "id": "co02_capture_order_equal_neighbors",
+      "name": "Capture-order equal opposite neighbors",
+      "definition": "Among same UTC-selected metadata records sorted by original completion ordinal, adjacent opposite-direction equal-length pairs/adjacent pairs, \u003e=16 records; no time comparison or invented timestamps.; G04 unit: complete outerTLS23 HEADER availability, declared body length plus5, NOT delivered ciphertext length or body completion; encrypted handshakes included",
+      "transport_hypothesis": ""
+    }
+  ]
+}

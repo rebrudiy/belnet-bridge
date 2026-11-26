@@ -1,0 +1,160 @@
+{
+  "schema": "belnet-g03-qualification/v1",
+  "stage": "Q",
+  "created_utc": "2026-11-19T19:16:55.246Z",
+  "purpose": "One80s collector qualification batch, excluded from calibration and B1/B2 denominators",
+  "test_vault_required": false,
+  "detector_fitting_allowed": false,
+  "primary_seconds": 80,
+  "capture_seconds": 82,
+  "prefix_grace_seconds": 2,
+  "window_offsets_seconds": [
+    0,
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64,
+    72,
+    78
+  ],
+  "window_seconds": 2,
+  "resource_limits": {
+    "max_active_groups": 3,
+    "max_active_native_groups": 1,
+    "capture_bytes_per_group": 268435456
+  },
+  "stages": {
+    "Q": {
+      "splits": [
+        "development"
+      ],
+      "count": 3,
+      "order": [
+        "q-native-rpc",
+        "q-chrome-google",
+        "q-go-idle"
+      ],
+      "batches": [
+        [
+          "q-native-rpc",
+          "q-chrome-google",
+          "q-go-idle"
+        ]
+      ]
+    }
+  },
+  "groups": [
+    {
+      "group_id": "q-native-rpc",
+      "source_workload_id": "q-g03-source-train-rpc-1",
+      "split": "development",
+      "scope": "diagnostic",
+      "measured_seconds": 80,
+      "prefix_grace_seconds": 2,
+      "startup_seconds": 35,
+      "workload_start_seconds": 35,
+      "seed_hex": "000037bf7c4bb35c",
+      "seed_int": 61295563617116,
+      "sealed_seed_ref": null,
+      "nonce": "70151cfc7ce7f055583cd38d97cf54a923c9c0470ef7c3b354c419e0c2edf884",
+      "initial_nonce": "d0c3ac9c7674accb38cc390040b410c2b6cf61003a7bb6f12b455e21a880ac95",
+      "warmup_nonces": [
+        "49e71f6c4cf6c7f12a6d6900a4921cf8eb46b5916aae81b8c85ba2daa85c1f81",
+        "957d4c038a4cba50f5a5d2d144264bb0a63700044d0f16b5b1c9eab1ad3f1314",
+        "dbcf93e2de1f386344e8c9aa961bc117ca3a81bc5f5da2b32e6d21431d84538a"
+      ],
+      "sealed_nonce_ref": null,
+      "class": "belnet",
+      "stratum": "native",
+      "transport": "reality",
+      "family": "rpc",
+      "profile": "native-expiry100-rpc",
+      "client_stack": "native-belnet+sing-box-utls-chrome",
+      "workload_mode": "matched45",
+      "workload_duration_seconds": 45,
+      "target_entries": [
+        1,
+        2
+      ],
+      "max_queue_age_micros": 100000,
+      "application_budget_bytes_per_direction": 4194304,
+      "fresh_native_identity_required": true,
+      "synthetic_application": true,
+      "qualification_source_group_id": "b-train-native-rpc-1"
+    },
+    {
+      "group_id": "q-chrome-google",
+      "source_workload_id": "q-g03-source-train-public-google",
+      "split": "development",
+      "scope": "diagnostic",
+      "measured_seconds": 80,
+      "prefix_grace_seconds": 2,
+      "startup_seconds": 35,
+      "workload_start_seconds": 0,
+      "seed_hex": "0000853fa171ba21",
+      "seed_int": 146508338018849,
+      "sealed_seed_ref": null,
+      "nonce": "c064dc02fea39701d24d1e5b6c7b6984c987971ca1eaf493416de36000f0930b",
+      "initial_nonce": "4c29885aae2de93b54ab9271824867968df024eacadb9a4a4273c8a31bffa748",
+      "warmup_nonces": [
+        "3e45017cb9b8e9aeb363a39a6ce9f2a9dc7428a968a38124d99fb9094579b4a8",
+        "a780cfed6ea35cb8849fa26f7dde160ede7e9b8808fd15c8ae0597a1d1ec0917",
+        "b2e1a145334b12bc502379a16763dd5d4719b7ce3d06fe1b1ab1d8db19a978a0"
+      ],
+      "sealed_nonce_ref": null,
+      "class": "benign",
+      "stratum": "public_browser",
+      "transport": "ordinary-tls",
+      "client_stack": "chrome",
+      "family": "google",
+      "profile": "public-chrome-google",
+      "url": "https://www.google.com/",
+      "workload_mode": "public80",
+      "workload_duration_seconds": 80,
+      "synthetic_application": false,
+      "fresh_profile_required": true,
+      "require_actual_access_evidence": true,
+      "download_directory": "run-artifacts-only",
+      "qualification_source_group_id": "b-train-public-google"
+    },
+    {
+      "group_id": "q-go-idle",
+      "source_workload_id": "q-g03-source-train-long-idle-2",
+      "split": "development",
+      "scope": "diagnostic",
+      "measured_seconds": 80,
+      "prefix_grace_seconds": 2,
+      "startup_seconds": 35,
+      "workload_start_seconds": 0,
+      "seed_hex": "00004a6e80835a65",
+      "seed_int": 81838462949989,
+      "sealed_seed_ref": null,
+      "nonce": "e69401f1d927c3c2d377d9061ab6f299cb4997452bc9ed52dee7749148e1b450",
+      "initial_nonce": "2aa33b4f000cf6691acdd7f5fd266c371d7f600d94ee41f065ecb59656b765de",
+      "warmup_nonces": [
+        "1b40d667b4d7dbac7d00ea63d60168214a017643bdbd661a0ce3d480746a71ad",
+        "4c3222b9b2b74a370a956731982a3ec10e038961db61837ba7d46ed7d39eaf9c",
+        "8f0efb962ac0f255b4c4093e6026763bfd24ad2aa47d5d326c2f7c8d469512d4"
+      ],
+      "sealed_nonce_ref": null,
+      "class": "benign",
+      "stratum": "local_ordinary",
+      "transport": "ordinary-tls",
+      "family": "idle",
+      "profile": "ordinary-long80-idle",
+      "client_stack": "go-wss",
+      "workload_mode": "long80",
+      "workload_duration_seconds": 80,
+      "entry_index": 2,
+      "application_budget_bytes_per_direction": 4194304,
+      "synthetic_application": true,
+      "qualification_source_group_id": "b-train-long-idle-2"
+    }
+  ],
+  "source_assignments_sha256": "23c2edf8de26d58532b479c11cb866afd20869e74e0a5403f72cc472c046d7fb",
+  "generator_sha256": "7830d4d04becfaf3398a580b1f427797c3300baf48899f880bf5ef2981a86d39"
+}

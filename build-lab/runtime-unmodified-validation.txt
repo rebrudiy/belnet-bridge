@@ -1,0 +1,40 @@
+aarch64
+belnet-0.9.8-unknown
+0036805558f8a88494937237d375f13b3a3deabb343ef726836dca0369a50425  /usr/local/bin/belnet
+72b5a10178003b857668d816c987a8991f8e2ecc8a383235e762cd597c9c3960  /usr/local/bin/belnet-bridge
+	linux-vdso.so.1 (0x0000fd37ad0ee000)
+	libunbound.so.8 => /lib/aarch64-linux-gnu/libunbound.so.8 (0x0000fd37aca20000)
+	libuv.so.1 => /lib/aarch64-linux-gnu/libuv.so.1 (0x0000fd37ac9d0000)
+	libspdlog.so.1.12 => /usr/local/lib/belnet/libspdlog.so.1.12 (0x0000fd37ac940000)
+	libfmt.so.10 => /usr/local/lib/belnet/libfmt.so.10 (0x0000fd37ac8f0000)
+	liboxenmq.so.0 => /usr/local/lib/belnet/liboxenmq.so.0 (0x0000fd37ac850000)
+	libsodium.so.23 => /lib/aarch64-linux-gnu/libsodium.so.23 (0x0000fd37ac7f0000)
+	libcrypt.so.1 => /lib/aarch64-linux-gnu/libcrypt.so.1 (0x0000fd37ac7a0000)
+	libstdc++.so.6 => /lib/aarch64-linux-gnu/libstdc++.so.6 (0x0000fd37ac580000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000fd37ac4d0000)
+	libgcc_s.so.1 => /lib/aarch64-linux-gnu/libgcc_s.so.1 (0x0000fd37ac490000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000fd37ac2e0000)
+	libevent-2.1.so.7 => /lib/aarch64-linux-gnu/libevent-2.1.so.7 (0x0000fd37ac260000)
+	libhogweed.so.6 => /lib/aarch64-linux-gnu/libhogweed.so.6 (0x0000fd37ac1f0000)
+	libnettle.so.8 => /lib/aarch64-linux-gnu/libnettle.so.8 (0x0000fd37ac180000)
+	libgmp.so.10 => /lib/aarch64-linux-gnu/libgmp.so.10 (0x0000fd37ac0e0000)
+	/lib/ld-linux-aarch64.so.1 (0x0000fd37ad0b1000)
+	libzmq.so.5 => /lib/aarch64-linux-gnu/libzmq.so.5 (0x0000fd37ac010000)
+	libbsd.so.0 => /lib/aarch64-linux-gnu/libbsd.so.0 (0x0000fd37abfd0000)
+	libpgm-5.3.so.0 => /lib/aarch64-linux-gnu/libpgm-5.3.so.0 (0x0000fd37abf60000)
+	libnorm.so.1 => /lib/aarch64-linux-gnu/libnorm.so.1 (0x0000fd37abe20000)
+	libgssapi_krb5.so.2 => /lib/aarch64-linux-gnu/libgssapi_krb5.so.2 (0x0000fd37abdb0000)
+	libmd.so.0 => /lib/aarch64-linux-gnu/libmd.so.0 (0x0000fd37abd80000)
+	libpthread.so.0 => /lib/aarch64-linux-gnu/libpthread.so.0 (0x0000fd37abd50000)
+	libkrb5.so.3 => /lib/aarch64-linux-gnu/libkrb5.so.3 (0x0000fd37abc60000)
+	libk5crypto.so.3 => /lib/aarch64-linux-gnu/libk5crypto.so.3 (0x0000fd37abc10000)
+	libcom_err.so.2 => /lib/aarch64-linux-gnu/libcom_err.so.2 (0x0000fd37abbe0000)
+	libkrb5support.so.0 => /lib/aarch64-linux-gnu/libkrb5support.so.0 (0x0000fd37abbb0000)
+	libkeyutils.so.1 => /lib/aarch64-linux-gnu/libkeyutils.so.1 (0x0000fd37abb80000)
+	libresolv.so.2 => /lib/aarch64-linux-gnu/libresolv.so.2 (0x0000fd37abb50000)
+/usr/bin/dig
+/usr/bin/openssl
+/usr/sbin/ip
+/usr/sbin/iptables
+/usr/bin/tcpdump
+/usr/bin/curl

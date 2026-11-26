@@ -1,0 +1,11 @@
+diff --git a/llarp/router/outbound_message_handler.cpp b/llarp/router/outbound_message_handler.cpp
+--- a/llarp/router/outbound_message_handler.cpp
++++ b/llarp/router/outbound_message_handler.cpp
+@@ -233,6 +233,7 @@ namespace llarp
+       m_queueStats.queued++;
+       uint32_t queueSize = outboundQueue.size();
+       m_queueStats.queueWatermark = std::max(queueSize, m_queueStats.queueWatermark);
++      _router->TriggerPump();
+     }
+ 
+     return true;

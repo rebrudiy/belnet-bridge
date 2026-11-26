@@ -1,0 +1,8 @@
+{
+  "group_id": "metadata-only-set-per-preregistered-session",
+  "public_authorities": ["www.google.com:443", "*.google.com:443", "*.gstatic.com:443", "www.youtube.com:443", "*.youtube.com:443", "*.googlevideo.com:443", "*.ytimg.com:443", "*.ggpht.com:443", "youtubei.googleapis.com:443"],
+  "lab_mappings": {"decoy.test:443": "10.88.0.11:443"},
+  "max_connections": 32,
+  "dial_timeout_ms": 5000,
+  "max_tunnel_ms": 120000
+}

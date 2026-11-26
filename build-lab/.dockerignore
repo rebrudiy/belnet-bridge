@@ -1,0 +1,9 @@
+**
+!Dockerfile.builder
+!Dockerfile.runtime
+!bin/
+!bin/belnet
+!bin/belnet.queuefix
+!bin/belnet-bridge
+!lib/
+!lib/**

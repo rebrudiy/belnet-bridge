@@ -1,0 +1,12 @@
+# Cross-transport test, 19 November 2026
+
+Freeze our original final-attacker.json (SHA-256 9a9b8ee5d0614075105df36813e7c7edfad2302ea2cb87a78d111fbd12fdc395), original threshold, 2-second/64-record feature window and classifier code. Never call Fit or recalibrate. Freeze Claude's recorded iplist,size,entropy rules; crypto-enabled replay is a separately labelled sensitivity control.
+
+1. Replay each detector on the other implementation's archived wire captures. Exclude missing-SYN TLS prefixes from our forest result. PCAP timing differs from original socket-callback timing; report it as preliminary.
+2. Live Claude transport: unchanged framing/auth/TLS/padding/queues, pad=true, uTLS=true, SPKI verification. Add only the same pre-TLS raw-connection Recorder and frozen model used by our transport. BelNet runtime, service, relays and configured three-hop routes match our lab. The C++ runtime is the disclosed TESTNET queuefix build, not Claude's original one-hop fixture.
+3. Collect eight new shadow-mode sessions per wrapper, one nonce-verified .bdx request per session. Fixed body schedule: 1024,4096,16384,1024,4096,16384,1024,4096 bytes. No profile selection. Our wrapper uses the previously frozen w15-c02 profile; Claude uses its shipped bucket padding. Record incomplete/failed sessions as such; no replacement silently counted as success.
+4. Two additional sessions per wrapper apply actual TCP close on a positive forest decision. Fetch once during the window and once after it; distinguish detection, enforcement, reconnect and application delivery.
+
+Our wrapper needs two first-node connections; Claude aggregates traffic in one TUN connection. Report both connection counts and workload-group counts. Eight groups are exploratory, not an ISP or browser-HTTPS estimate. Archived FPR measurements are historical, not a new cross-test FPR. Preserve all setup/warmup failures and exact binary/source/model hashes. Never publish keys/tokens or modify original recorded runs/imported Claude source.
+
+Supplemental negative controls after fixed cross-positive acquisition: eight new synthetic benign WebSocket groups, seeds 20261119024..20261119031, same original helper/four families and baseline profile, shadow only. They do not change the model, threshold or cross-positive cohort. One planned Claude enforce group had a VM shared-file metadata-read failure; it stays invalid. A separately named additional confirmation writes metadata inside the VM before connecting. No shadow samples replaced.

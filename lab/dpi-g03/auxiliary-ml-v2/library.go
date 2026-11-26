@@ -1,0 +1,3 @@
+package main
+
+const LibrarySourceSHA = "5720ddfe94cc8dbf67217010c0f460fe65331a401444d92d11f96fee25b3e954"

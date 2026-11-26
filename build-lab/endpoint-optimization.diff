@@ -1,0 +1,14 @@
+--- before
+
++++ after
+
+@@ -3209,7 +3209,7 @@
+
+ build llarp/CMakeFiles/belnet-amalgum.dir/service/endpoint.cpp.o: CXX_COMPILER__belnet-amalgum_Release /src/llarp/service/endpoint.cpp || cmake_object_order_depends_target_belnet-amalgum
+   DEFINES = -DFMT_SHARED -DHAVE_CRYPT -DNGTCP2_STATICLIB -DOXEN_LOGGING_SOURCE_ROOTS="" -DOXEN_LOGGING_SOURCE_ROOTS_LEN=0 -DPOSIX -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -DTESTNET -DUNIX
+   DEP_FILE = llarp/CMakeFiles/belnet-amalgum.dir/service/endpoint.cpp.o.d
+-  FLAGS = -O3 -DNDEBUG -fPIC -Wall -Wextra -Wno-unknown-pragmas -Wno-unused-function -Werror=vla -Wno-deprecated-declarations -isystem /usr/include/mit-krb5 -std=c++20
++  FLAGS = -O0 -DNDEBUG -fPIC -Wall -Wextra -Wno-unknown-pragmas -Wno-unused-function -Werror=vla -Wno-deprecated-declarations -isystem /usr/include/mit-krb5 -std=c++20
+   INCLUDES = -I/src/external/cxxopts/include -I/src/external/oxen-encoding -I/src/crypto/libntrup/include -I/src/llarp -I/src/include -I/src -I/src/external/nlohmann/include -I/src/external/oxen-logging/include -I/src/external/oxen-logging/fmt/include -I/src/external/oxen-logging/spdlog/include -I/src/external/uvw/src -I/src/external/oxen-mq -I/src/external/oxen-mq/cppzmq -I/src/external/ngtcp2/lib/includes -I/out/cmake/external/ngtcp2/lib/includes -isystem /usr/include/pgm-5.3 -isystem /usr/include/libxml2
+   OBJECT_DIR = llarp/CMakeFiles/belnet-amalgum.dir
+   OBJECT_FILE_DIR = llarp/CMakeFiles/belnet-amalgum.dir/service

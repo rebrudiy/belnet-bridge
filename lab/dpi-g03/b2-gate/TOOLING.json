@@ -1,0 +1,54 @@
+{
+  "schema": "g03-b2-gate-tooling-v2",
+  "created_utc": "2026-11-19T19:56:02.378450+00:00",
+  "status": "SOURCE_READY_SYNTHETIC_TESTS_ONLY",
+  "node": "v26.3.0",
+  "source_sha256": {
+    "README.md": "160d3a9d6a2934f0194fbe5f1b7d07b6d9f4a624fd63c1d571fd28a63518a4ed",
+    "index.cjs": "acc984c5b1a4823f8eba0f15c0f26e6ca0784b7d7bb444374b2de80d8b23cedd",
+    "index.test.cjs": "337af6eab76a4cf162986fd04ddfdba7ad07993e29fa358c06349d0db9805920",
+    "time.cjs": "697f8bcaf61cccdc24c426040a26ece1030e24855b06497abf6fb2e463228c68"
+  },
+  "checks": {
+    "command": "node --test lab/dpi-g03/b2-gate/index.test.cjs",
+    "passed": 38,
+    "failed": 0,
+    "test_log_sha256": "d68312ad81551e5e55c01b999a5df8e6da7c74ba3466e1c55f5f23422af290ee",
+    "filesystem_scope": "fresh temporary synthetic fixtures removed afterward"
+  },
+  "API": [
+    "validateBeforeUnseal(spec,options) -> opaque single-use receipt",
+    "resolveCommittedTestRows(receipt,options) -> {assignments,resolvedTestRows,audit}",
+    "sha256Canonical(value)",
+    "sha256Bytes(Buffer)"
+  ],
+  "requires_original_primary_B1_groups": 71,
+  "requires_exact_committed_test_groups": 25,
+  "optional_explicit_supplement_groups": 6,
+  "auxiliary": {
+    "explicit_enable_required": true,
+    "separate_projection_descriptor": "auxiliaryProjection",
+    "own_projection_SHA_required": true,
+    "same_group_class_split_source_collector_chain_as_primary": true,
+    "required_matching_policy_projection_freeze_hashes": [
+      "feature_definitions_sha256",
+      "library_source_sha256",
+      "ordering_semantics_sha256"
+    ],
+    "optional_coverage_hash_matching_when_present": true,
+    "disabled_opens_policy_or_projection": false
+  },
+  "vault_bytes_read_during_validate": false,
+  "vault_identity_stat_realpath_during_validate": true,
+  "private_SHA_before_JSON_decode": true,
+  "actual_vault_read": false,
+  "actual_Q_B1_reports_read": false,
+  "fitting_or_Docker_or_acquisition": false,
+  "writes_scope": "lab/dpi-g03/b2-gate/** only",
+  "previous_version": {
+    "path": "revisions/v1",
+    "source_hashes_verified": true,
+    "tests": 26
+  },
+  "integration_status": "Runtime-b2 adapter/source-pin verification/actual collection remain lead ownership"
+}

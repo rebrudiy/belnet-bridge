@@ -1,0 +1,33 @@
+name: bb-evolution
+x-client: &client
+  image: ${BB_IMAGE:-belnet-bridge:native}
+  platform: ${BB_PLATFORM:-linux/amd64}
+  entrypoint: ["/bin/sh", "/lab/evolution/client.sh"]
+  volumes: ["..:/lab"]
+  cap_add: [NET_ADMIN]
+  devices: [/dev/net/tun]
+  stop_grace_period: 5s
+  sysctls:
+    net.ipv4.conf.all.route_localnet: "1"
+    net.ipv4.conf.lo.route_localnet: "1"
+    net.ipv4.conf.all.accept_local: "1"
+    net.ipv4.conf.lo.accept_local: "1"
+    net.ipv4.conf.all.rp_filter: "0"
+    net.ipv4.conf.lo.rp_filter: "0"
+services:
+  train:
+    <<: *client
+    environment: {NODE: train, NODE_IP: 10.88.0.22}
+    networks: {private: {ipv4_address: 10.88.0.22}}
+  validation:
+    <<: *client
+    environment: {NODE: validation, NODE_IP: 10.88.0.23}
+    networks: {private: {ipv4_address: 10.88.0.23}}
+  test:
+    <<: *client
+    environment: {NODE: test, NODE_IP: 10.88.0.24}
+    networks: {private: {ipv4_address: 10.88.0.24}}
+networks:
+  private:
+    external: true
+    name: bb-lab_private

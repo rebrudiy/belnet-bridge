@@ -1,0 +1,40 @@
+✔ G04 header-based classical policies preserve the full measured-pair contract (11.051667ms)
+✔ All15pending rows count0 and open no evidence files (0.078791ms)
+✔ Complete synthetic chain validates but never counts as real iteration (4.87675ms)
+✔ Complete flag without artifacts cannot fabricate a cycle (0.060792ms)
+✔ Later hypotheses cannot be preplanned before prior actual outcome (0.064917ms)
+✔ ML policy or capture repair is not a classical cycle (9.900042ms)
+✔ Timestamp/description-only detector change is not a semantic delta (4.992166ms)
+✔ Changed capture/ordering ABI cannot be claimed as a cycle (4.999166ms)
+✔ Benign denominator shrink or invented FP ratios are rejected (12.514875ms)
+✔ Missing native family or test split cannot complete (11.4545ms)
+✔ Native source/ELF pin mismatch and repeatedidentity reject (10.560041ms)
+✔ UNKNOWN capture cannot become completed bypass evidence (5.947291ms)
+✔ Nonce or service proof mismatch cannot complete (5.629375ms)
+✔ Strong classical attacker must freeze after the fresh native capture (6.647583ms)
+✔ Missing latency or unaccounted loss cannot complete (11.248291ms)
+✔ Rejected measured variant remains a completed attempt without claiming success (4.987ms)
+✔ Actual artifact hash mismatch cannot be hidden by manifest flags (4.06175ms)
+✔ Planner emits onlycurrent cycle native train/validation, allfamilies, one-at-time (0.279208ms)
+✔ Baseline raw index UNKNOWN cannot be hidden by healthy:true (4.478667ms)
+✔ A prepared binary can be selected adaptively later without inventing a new build (7.535709ms)
+✔ A real joint group FP excess blocks acceptance but remains a rejected measured cycle (8.406792ms)
+✔ Engineered formula terms count; description or evidence SHA alone does not (21.324292ms)
+✔ Planner rejects nonce reuse and never plans later pendingcycles (0.302417ms)
+✔ Explicit INCONCLUSIVE joint FP retains actual rejected attempt without certification (9.839084ms)
+✔ R4 bounded1unknown/22 can certify withinjoint group andactualflow5% budgets (6.963584ms)
+✔ R4 bounded2unknown/22 cannot beaccepted but measuredrejection remainsINCONCLUSIVE (7.20275ms)
+✔ R4 same unknown+observedhit group andphysicalflow countonce (5.734125ms)
+✔ R4 affectedflowoutside frozen primaryinventory isrejected (7.303625ms)
+✔ R4 unbounded inventory cannot certify orreplace null worstflowFPR with0 (10.991375ms)
+✔ R4 forgedworstcasecount or missing policycontract cannot certify (10.104875ms)
+✔ Strict policies cannot silently adopt worst-case certification via evidence metadata (6.790667ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 284.836542
+

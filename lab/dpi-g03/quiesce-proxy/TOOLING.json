@@ -1,0 +1,44 @@
+{
+  "schema": "g03-quiesce-proxy-tooling-v1",
+  "created_utc": "2026-11-19T19:00:51.692100+00:00",
+  "status": "SOURCE_READY_NOT_DEPLOYED",
+  "binary": {
+    "path": "/Users/rebrudiy/belnetbridge/belnet-bridge/lab/dpi-g03/quiesce-proxy/bin/connect-proxy-quiesce-v1-linux-arm64-8e1d6c8ada2e",
+    "sha256": "8e1d6c8ada2e85fb2ba11d516b0e133e85d0a17a19d22fda649d0bacf39861c8",
+    "bytes": 8256445,
+    "target": "linux/arm64"
+  },
+  "source_sha256": {
+    "README.md": "5cdd5c11755957a36709b181234f578b33400bbfe13f3574cc598ef0712e8ca0",
+    "admin/admin.go": "728bedd4f46be8e2021b32a28a3d7803647fb6b853b246d3cdc0c71f98322dfc",
+    "admin/admin_test.go": "6797727d291980e32716c477b773a7538815b15ea27c2da3d348ab3db6721dfb",
+    "cmd/connect-proxy/main.go": "7ac0f0f0a631aafddb443e91670f9ecc8abf55a79904b9a70aa3e4d95a82df43",
+    "go.mod": "2e36592cc41c72c37f0e00249d55a9a53be2846ce0239a8a263c24b6c05cf238"
+  },
+  "immutable_dependency_sha256": {
+    "lab/dpi-g03/controls/go.mod": "c30b4670d4e8b517466d7f3bcd1ed1a0b5942864c1f454056988740e44b59f84",
+    "lab/dpi-g03/controls/connectproxy/proxy.go": "5038b76becb2c892ffb784fad5938aa9ac236d94637a2210a29e3d7aff20cb39"
+  },
+  "checks": {
+    "race": "PASS",
+    "vet": "PASS",
+    "race_log_sha256": "aa7c80dfef765cac274dd8b9876e533c3a5a6163edf13a983feda45dceed9036",
+    "vet_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scope": "bounded localhost TCP unit fixtures only"
+  },
+  "toolchain": "go version go1.26.1 darwin/arm64",
+  "build_command": "GOWORK=off GOPROXY=off GOOS=linux GOARCH=arm64 CGO_ENABLED=0 go build -trimpath -o <versioned-binary> ./cmd/connect-proxy",
+  "admin": {
+    "control_flag": "-control 127.0.0.1:8091",
+    "POST": "/quiesce",
+    "GET": "/state",
+    "shutdown_seconds": 3,
+    "request_cancellation_owns_shutdown": false,
+    "stops_listeners_or_process": false,
+    "irreversible": true,
+    "count_semantics": "accepted proxy completion events during quiesce and process lifetime; not independent BelNet disconnects"
+  },
+  "acquisition_or_Docker_run": false,
+  "B1_mutated": false,
+  "pending": "root approval/predeclared B2 integration and actual capture drain validation"
+}

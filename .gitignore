@@ -1,1 +1,14 @@
 docker/belnet-bridge
+out/
+build-lab/output/
+build-lab/cmake/
+build-lab/*.log
+build-lab/bin/
+build-lab/lib/
+build-lab/reproductions/
+.DS_Store
+lab/dpi-g04/*/tooling/*-linux-*
+lab/dpi-g04/*/tooling/*-darwin-*
+lab/dpi-g04/*/tooling/ensemble-linux-arm64
+lab/dpi-g04/*/tooling/longflow-linux-arm64
+lab/dpi-g04/*/tooling/observer-linux-arm64

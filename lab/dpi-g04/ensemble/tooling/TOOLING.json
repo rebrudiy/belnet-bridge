@@ -1,0 +1,83 @@
+{
+  "schema": 4,
+  "version": "g04-header-ensemble-v1",
+  "analysis_contract": "r4-worst-case-benign-fp-v1",
+  "analysis_contract_document": {
+    "path": "lab/dpi-g03/ANALYSIS-R4.md",
+    "sha256": "1a493dd9f88b8625f10fc8acaa13a4d0921a2a8ae1d421e8d818d310bc5c933f"
+  },
+  "status": "SOURCE_READY_SYNTHETIC_TESTED_NO_REAL_FIT",
+  "created_at": "2026-11-19T21:30:57.990Z",
+  "source_sha256": {
+    "lab/dpi-g04/ensemble/README.md": "e4591371c30ca1462d5504b7ea8ff215351b0642ab467f295f72e80aa70028d7",
+    "lab/dpi-g04/ensemble/adaptive_test.go": "3f70e5b1c86749c1b08200acbb2303f1f046e862a8531936d532691fc8f504e1",
+    "lab/dpi-g04/ensemble/build.cjs": "db03a29c8aef830c287c836bfb5824d4f4c817dece7b0e4e98ac46a6d778b9eb",
+    "lab/dpi-g04/ensemble/capture_order.go": "a7ac2f2fa9ec0fd1e396e3d3a4b62fbe5d6769a5c54540a40fcbe86412949c99",
+    "lab/dpi-g04/ensemble/cli.go": "96231710bc796f38edbff4bfedfb4d5bc44ddc990db20161104d4740b0bd813a",
+    "lab/dpi-g04/ensemble/collectors.go": "307a96579a71e98c4a64bdb5a7b8b8cc05d946275abc7894b8b16d3aa2bff8ab",
+    "lab/dpi-g04/ensemble/contract.go": "1e1eb7f58264a9804f1bf0b5f7450e89eba0677956eb24609ff7373ef874d6c2",
+    "lab/dpi-g04/ensemble/coverage.go": "a69c6ebe891fd290fa7889b6eed1a47e70e3647b463d95eb60a5e065abfe4b9d",
+    "lab/dpi-g04/ensemble/coverage_test.go": "1841c3dc42df8824ed85fee53575d5e6b327ea8dfda271021259a32a0510a3ea",
+    "lab/dpi-g04/ensemble/engineered.go": "924eda4417863374bc75fa66a2f0395d5bf8b5fc0bf72762e958b22bb6b69aa6",
+    "lab/dpi-g04/ensemble/header_evidence.go": "63896d322a9a6fa105c243ba0d63b452f9a4ada7260e780a76c4f36b9b2a0ddb",
+    "lab/dpi-g04/ensemble/header_evidence_test.go": "082057cbd7b1ffddc7cc7b2e16537ec5d4f32e9f916194ee9c0be9fc76036ee6",
+    "lab/dpi-g04/ensemble/longflow.go": "3724ff2043a6f4dde78f1154c09dd514fafdf81d5f9d2ae649ea3d4aeff7e4cd",
+    "lab/dpi-g04/ensemble/longflow_test.go": "2ce976d81e00ea22fb65df7fdbd0044e8f3b3f091f5ebc9f54b32f5e7e41e750",
+    "lab/dpi-g04/ensemble/main.go": "0fd732b0b49351ca4c395b99fdc57916eb7200477b130788fe9e192c3ceba503",
+    "lab/dpi-g04/ensemble/main_test.go": "e2fd5990ccf13d821696a8f32f8c4f004721c4788b694f1543324caa017b5752",
+    "lab/dpi-g04/ensemble/ordering.go": "dad6a1dc59e125e5950788f83f8d3c74d9b8793613af949e02a0811aaecb08b0",
+    "lab/dpi-g04/ensemble/ordering_test.go": "4935c30159023acf48d3380fbbc52ce321365d94ad98e1abb052f5ef3dcc7ac2",
+    "lab/dpi-g04/ensemble/uncertainty.go": "2418c2cab0966290cc13fb84225edaf42da4a15796d74a52f93cc2cbe4f53cf4",
+    "lab/dpi-g04/ensemble/uncertainty_test.go": "aa3eafb8cf25e8832f7fed13c077b95873aff4f0b98df8dc84ec650ce862996c"
+  },
+  "source_archive_sha256": {
+    "source-archive/README.md": "e4591371c30ca1462d5504b7ea8ff215351b0642ab467f295f72e80aa70028d7",
+    "source-archive/adaptive_test.go": "3f70e5b1c86749c1b08200acbb2303f1f046e862a8531936d532691fc8f504e1",
+    "source-archive/build.cjs": "db03a29c8aef830c287c836bfb5824d4f4c817dece7b0e4e98ac46a6d778b9eb",
+    "source-archive/capture_order.go": "a7ac2f2fa9ec0fd1e396e3d3a4b62fbe5d6769a5c54540a40fcbe86412949c99",
+    "source-archive/cli.go": "96231710bc796f38edbff4bfedfb4d5bc44ddc990db20161104d4740b0bd813a",
+    "source-archive/collectors.go": "307a96579a71e98c4a64bdb5a7b8b8cc05d946275abc7894b8b16d3aa2bff8ab",
+    "source-archive/contract.go": "1e1eb7f58264a9804f1bf0b5f7450e89eba0677956eb24609ff7373ef874d6c2",
+    "source-archive/coverage.go": "a69c6ebe891fd290fa7889b6eed1a47e70e3647b463d95eb60a5e065abfe4b9d",
+    "source-archive/coverage_test.go": "1841c3dc42df8824ed85fee53575d5e6b327ea8dfda271021259a32a0510a3ea",
+    "source-archive/engineered.go": "924eda4417863374bc75fa66a2f0395d5bf8b5fc0bf72762e958b22bb6b69aa6",
+    "source-archive/header_evidence.go": "63896d322a9a6fa105c243ba0d63b452f9a4ada7260e780a76c4f36b9b2a0ddb",
+    "source-archive/header_evidence_test.go": "082057cbd7b1ffddc7cc7b2e16537ec5d4f32e9f916194ee9c0be9fc76036ee6",
+    "source-archive/longflow.go": "3724ff2043a6f4dde78f1154c09dd514fafdf81d5f9d2ae649ea3d4aeff7e4cd",
+    "source-archive/longflow_test.go": "2ce976d81e00ea22fb65df7fdbd0044e8f3b3f091f5ebc9f54b32f5e7e41e750",
+    "source-archive/main.go": "0fd732b0b49351ca4c395b99fdc57916eb7200477b130788fe9e192c3ceba503",
+    "source-archive/main_test.go": "e2fd5990ccf13d821696a8f32f8c4f004721c4788b694f1543324caa017b5752",
+    "source-archive/ordering.go": "dad6a1dc59e125e5950788f83f8d3c74d9b8793613af949e02a0811aaecb08b0",
+    "source-archive/ordering_test.go": "4935c30159023acf48d3380fbbc52ce321365d94ad98e1abb052f5ef3dcc7ac2",
+    "source-archive/uncertainty.go": "2418c2cab0966290cc13fb84225edaf42da4a15796d74a52f93cc2cbe4f53cf4",
+    "source-archive/uncertainty_test.go": "aa3eafb8cf25e8832f7fed13c077b95873aff4f0b98df8dc84ec650ce862996c"
+  },
+  "source_archive_aggregate_sha256": "0fc1807adc580934b71c863f834e0fcd2754202b9d0f5eeec498cbb7b693ad8f",
+  "binary": {
+    "ensemble": {
+      "sha256": "d0feefcf604a42fa2b1df345cf78ff734841f2efa327bcd6ee486e7b4e46f188",
+      "versioned_path": "lab/dpi-g04/ensemble/tooling/ensemble-g04-header-v1-darwin-arm64-d0feefcf604a"
+    },
+    "ensemble-linux-arm64": {
+      "sha256": "5719bd303fbcef83acc59d0c590bb3f09daf76e9c70db908c579d4af6bc3f6dd",
+      "versioned_path": "lab/dpi-g04/ensemble/tooling/ensemble-g04-header-v1-linux-arm64-5719bd303fbc"
+    }
+  },
+  "score_engine": {
+    "sha256": "c5adef946409fa235fad8248602dac4054b54bf1f9f2f9a41d7c687623c24de0",
+    "versioned_path": "out/dpi-g03/tooling-defender/classical-existing15-darwin-arm64-c5adef946409"
+  },
+  "definitions_sha256": "03a1c01fe0d745b3da6ae161d94a23a1ef22863433c7ca1bf32e0dc475ff09e8",
+  "window_definitions_sha256": "fe5a3d12c958b1d410aa4af5e75fa1fa24fbcc86bc41091ca62e50be6458bd87",
+  "longflow_definitions_sha256": "caab5bbb1020062eb14d59ebf1ed769050143e3a81417fbd8b8db7045553c649",
+  "ordering_semantics_sha256": "3bedeecc9596777cf4f858748590a9c3b0380bc78b84de0518fd7a051972ca42",
+  "coverage_semantics_sha256": "9be744e6aebb9bbd73a0b9b2c861f01f82f30978ec331d366dfa611232f23184",
+  "observer_descriptor_sha256": "036a98d55526d84fe1ed5b98e2dc3dbf29bf6fa066b1a74567937665bbccda9e",
+  "longflow_descriptor_sha256": "33ee3af5c995d46b294cd1a5db9e0c01437134e1c9fb1befbf91bd78f38fadac",
+  "checks": {
+    "race": "PASS race-test.log",
+    "vet": "PASS vet.log",
+    "actual_data_read_or_fitted": false
+  },
+  "go_version": "go version go1.26.1 darwin/arm64"
+}

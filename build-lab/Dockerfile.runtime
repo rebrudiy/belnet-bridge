@@ -1,0 +1,8 @@
+ARG BUILDER_IMAGE=belnet-build:arm64
+FROM ${BUILDER_IMAGE}
+ARG BELNET_BINARY=bin/belnet
+COPY ${BELNET_BINARY} /usr/local/bin/belnet
+COPY bin/belnet-bridge /usr/local/bin/belnet-bridge
+COPY lib/ /usr/local/lib/belnet/
+ENV LD_LIBRARY_PATH=/usr/local/lib/belnet
+WORKDIR /work

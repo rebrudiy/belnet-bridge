@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "role": "source-only-header-view-handoff",
+  "version": "g04-header-observer-v1",
+  "descriptor": {
+    "path": "lab/dpi-g04/observer/tooling/TOOLING.json",
+    "sha256": "036a98d55526d84fe1ed5b98e2dc3dbf29bf6fa066b1a74567937665bbccda9e"
+  },
+  "synthetic_tests_passed": 61,
+  "race": "PASS",
+  "vet": "PASS",
+  "source_and_binaries_integrity": "PASS",
+  "protected_g03_integrity": "PASS",
+  "coverage_semantics_sha256": "9be744e6aebb9bbd73a0b9b2c861f01f82f30978ec331d366dfa611232f23184",
+  "ordering_semantics_sha256": "3bedeecc9596777cf4f858748590a9c3b0380bc78b84de0518fd7a051972ca42",
+  "feature_definitions_sha256": null,
+  "binary": {
+    "observer": {
+      "sha256": "6bb20aef82d22d4641eae4f9600039b94354810e8ff154f7e297a1f94e8e2af4",
+      "versioned_path": "lab/dpi-g04/observer/tooling/observer-g04-header-v1-darwin-arm64-6bb20aef82d2"
+    },
+    "observer-linux-arm64": {
+      "sha256": "d71e553192302d0fd502a209984c8ed7736482bf695d22fdc6680800d90cbacb",
+      "versioned_path": "lab/dpi-g04/observer/tooling/observer-g04-header-v1-linux-arm64-d71e55319230"
+    }
+  },
+  "actual_data_reads": 0,
+  "actual_extraction": 0,
+  "fitting": 0,
+  "Docker": 0,
+  "network_collection": 0,
+  "preliminary_revisions": [
+    "pre-primary-scope",
+    "pre-close-proof"
+  ],
+  "limitations": [
+    "Offline two-pass SHADOW, not online censor",
+    "Declared TLS lengths are not delivered wire bytes",
+    "Header evidence is not a complete TLS session",
+    "Global retained history bound is logical bytes per pass; allocation/working overhead additional",
+    "Raw sensor acquisition, native application proof and final classifier budgets require independent joins"
+  ]
+}

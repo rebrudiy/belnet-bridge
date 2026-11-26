@@ -1,58 +1,45 @@
 # belnet-bridge
 
-Stealth bridges for [BelNet](https://github.com/Beldex-Coin/belnet): carry BelNet's traffic inside an ordinary HTTPS/WebSocket connection so that DPI which fingerprints and throttles LLARP sees only TLS to a normal-looking website.
+Experimental first-node transport:
 
-Motivation: [Beldex-Coin/belnet#34](https://github.com/Beldex-Coin/belnet/issues/34) — ISPs detect LLARP and throttle or block it, and running BelNet on top of a commercial VPN causes routing loops. Censors increasingly block VPN protocols by fingerprint; only traffic that looks like something else survives.
-
-## How it works
-
-```
- censored network                                         open internet
-┌──────────────────────────────┐                 ┌──────────────────────────────┐
-│ belnet ──UDP──► TUN bb0      │                 │                              │
-│                  │           │  TLS :443       │  belnet-bridge server        │
-│ belnet-bridge client ════════╪═════════════════╪═► TUN bb0 ─NAT─► BelNet     │
-│  (IP packets in WebSocket)   │ looks like HTTPS│                    routers   │
-└──────────────────────────────┘                 └──────────────────────────────┘
+```text
+BelNet client → local UDP adapter → verified WSS → first BelNet node → BelNet route
 ```
 
-- **Layer-3 tunnel, not a single proxy.** BelNet talks UDP to many routers at once, so the client routes *all* of BelNet's packets through a TUN interface; one WebSocket message = one IP packet.
-- **Camouflage.** The server is a plain website. Only a request to the secret path with the right bearer token is upgraded; everything else (probes, scanners, wrong token) gets a default "It works!" page — the same idea as Tor's WebTunnel bridges. It can also run behind a real web server or CDN (`-cert` empty = plain HTTP behind a TLS proxy).
-- **Per-client addresses, anti-spoofing.** Each client gets its own tunnel IP; packets with any other source address are dropped.
-- **No new trust in Beldex.** The bridge only sees encrypted LLARP packets, same as the ISP would.
+The receiver runs on the first node and targets its fixed local IWP listener. BelNet retains encryption, identity and routing. Reachable entry addresses are supplied separately.
 
-## Demo (Docker)
+**Results:** a specific IWP filter blocked direct BelNet (0/3), while HTTPS delivered 10/10 steady requests. The subsequent 15-round adaptive experiment **did not achieve concealment**: 75 candidate evaluations, 14 policy changes, zero reductions in detection. Final DPI detected 32/32 BelNet flows; false positives were 12/128 synthetic controls. [Report](docs/EVOLUTION.md).
 
-The compose setup simulates censorship: the client's `eth0` drops **everything** except TCP to the bridge on port 443. BelNet then bootstraps and connects only through the bridge.
+## Build and run
 
-```
-GOWORK=off GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o docker/belnet-bridge .
-docker compose -f docker/compose.yml up --build
+```sh
+go build -o belnet-bridge .
+go test -race ./...
+go vet ./...
 ```
 
-Check what the "ISP" sees on the client's uplink — only TLS to the bridge:
+Set `BRIDGE_TOKEN` in both process environments. On the first node:
 
-```
-docker compose -f docker/compose.yml exec client tcpdump -ni eth0 -c 50
-```
-
-## Usage
-
-```
-# server (Linux, needs TUN + NAT; see docker/server-entrypoint.sh)
-belnet-bridge server -listen :443 -cert cert.pem -key key.pem -token SECRET
-
-# client (Linux; see docker/client-entrypoint.sh for routes)
-belnet-bridge client -url wss://bridge.example/ws -token SECRET
+```sh
+./belnet-bridge udp-server -target NODE_LOCAL_IP:1090 -cert entry.pem -key entry-key.pem
 ```
 
-## Roadmap
+On the client:
 
-1. MVP: tunnel, camouflage, Docker censorship demo (this repo).
-2. Bridge distribution via BNS: publish bridge descriptors as encrypted BNS records, so users get bridges without a central list.
-3. Masternode-hosted bridges and a `belnet --bridge` client mode built into BelNet itself.
-4. Pluggable transports beyond WebSocket (QUIC/HTTP3, domain fronting via CDN).
+```sh
+./belnet-bridge udp-client -listen 127.0.0.1:2090 \
+  -url wss://entry.example/ws -profile profiles/baseline.json
+```
 
-## Status
+Add `-ca lab-ca.pem` for a private CA. Configure first-hop UDP redirection separately. `-profile` enables v2 framing and preserves the server UDP socket across WSS reconnects while both processes remain running. The baseline adds no padding or intentional delay. Full process restart recovery remains unresolved.
 
-MVP. Linux only (TUN). Not yet hardened: no rate limiting, a single shared token per bridge, IPv4 only.
+## Guide
+
+- [Transport and routing](docs/NATIVE_TRANSPORT.md)
+- [Threat model](docs/THREAT_MODEL.md) · [Integration](docs/INTEGRATION_PLAN.md)
+- [Fifteen-round results](docs/EVOLUTION.md) · [Reproduce](lab/evolution/README.md)
+- [Earlier official-release proof](docs/PROOF.md) · [Beldex reply draft](docs/RESPONSE_DRAFT.md)
+- [Beldex grants reply, 20 Nov 2026](docs/BELDEX_REPLY_20261120.md)
+- [Beldex proposal: value + DPI plan](docs/BELDEX_PROPOSAL_20261120.md)
+
+The `client`/`server` TUN modes and `docker/compose.yml` retain the earlier L3 prototype, which uses a different architecture. No mainnet or real-ISP result is claimed.

@@ -1,0 +1,16 @@
+Usage of udp-client:
+  -ca string
+    	optional PEM CA to add to the system trust store
+  -lab-control string
+    	loopback-only experiment control address (lab use)
+  -lab-observe-dir string
+    	optional encrypted-record observations directory (lab use)
+  -listen string
+    	local UDP listen address (default "127.0.0.1:2090")
+  -profile string
+    	v2 shaping profile JSON file; enables retained UDP sessions
+  -token string
+    	access token (or BRIDGE_TOKEN)
+  -url string
+    	first-hop WSS URL
+2026/11/19 04:00:56 flag: help requested

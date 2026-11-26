@@ -1,0 +1,22 @@
+{
+  "source_modified": false,
+  "source_patch_applied": false,
+  "source_commit": "480aafb3c68ac359f0711b2cbd8a07be661703c0",
+  "target": "llarp/CMakeFiles/belnet-amalgum.dir/service/endpoint.cpp.o",
+  "optimization": "-O0",
+  "gc_parameters": [
+    "ggc-min-expand=5",
+    "ggc-min-heapsize=32768"
+  ],
+  "other_objects": "Release -O3 -DNDEBUG",
+  "testnet": true,
+  "memory_bytes": 1153433600,
+  "extra_swap_bytes": 0,
+  "cpus": 1,
+  "result": "success",
+  "started_at": "2026-11-19T03:59:35.820527393Z",
+  "finished_at": "2026-11-19T04:00:33.816041149Z",
+  "oom_kills": 0,
+  "container": "bb-source-resume-o0-gc-1100m",
+  "daemon_sha256": "0036805558f8a88494937237d375f13b3a3deabb343ef726836dca0369a50425"
+}

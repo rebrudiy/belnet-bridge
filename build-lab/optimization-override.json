@@ -1,0 +1,21 @@
+{
+  "source_commit": "480aafb3c68ac359f0711b2cbd8a07be661703c0",
+  "source_modified": false,
+  "source_patch_applied": false,
+  "generated_file": "cmake/build.ninja",
+  "object": "llarp/CMakeFiles/belnet-amalgum.dir/service/endpoint.cpp.o",
+  "old_optimization": "-O3",
+  "new_optimization": "-O0",
+  "other_objects": "Release -O3 -DNDEBUG",
+  "reason": "Reduce compiler peak memory; source semantics unchanged",
+  "testnet": true,
+  "attempt_result": "failed_oom",
+  "container": "bb-source-resume-o0",
+  "container_memory_bytes": 524288000,
+  "container_memory_swap_limit_bytes": 1048576000,
+  "actual_swap_observed_bytes": 0,
+  "container_oom_killed": true,
+  "started_at": "2026-11-19T03:54:33.783115902Z",
+  "finished_at": "2026-11-19T03:55:31.588425925Z",
+  "remaining_ninja_steps": 18
+}

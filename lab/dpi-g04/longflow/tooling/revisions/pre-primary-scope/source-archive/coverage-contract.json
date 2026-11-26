@@ -1,0 +1,12 @@
+{
+  "version": "g04-header-coverage-v1",
+  "evidence_unit": "tls23_header_declared_length",
+  "header_availability": "Emit TLS23 event exactly when all5 valid outer TLS header bytes become contiguous; timestamp=max header constituents and contiguous-prefix availability; ordinal assigned at header callback. Event.bytes is declared length plus5, not delivered ciphertext bytes. Body completion is not required.",
+  "body_progress": "Continue skipping exactly declared body bytes before parsing next header. Open partial body is header-view complete with open_body_in_progress; known abort requires captured FIN for that direction or RST plus verified TCP prefix. No complete TLS-session claim.",
+  "partial_header": "1..4 valid header bytes abstain only with captured direction FIN or connection RST, verified TCP census, no gaps/conflicts/censor and complete provenance; otherwise UNKNOWN. Invalid observed header prefix remains malformed.",
+  "physical_census": "Initial SYN required; payload requires SYNACK. Exact consumed retransmission overlap checked using global retained history bounded by rawPCAP256MiB per pass. Pending gaps/conflicts, malformed/truncated packet/PCAP, close-sequence mismatch and ACK beyond captured contiguous data remain UNKNOWN. FIN sequence+1 and per-direction half-close normalized.",
+  "header_evidence_absent": "Explicit primary start, at least one captured primary initial SYN, all primary flow identities retained, zero primary TLS23 headers and validated census/header parser; handshake22/alert21/pure attempts/verified closed partial headers may have no anchor. Not supported classifier evidence or stealth.",
+  "primary_scope": "80s from prelaunch VM start, initial bootstrap is PRIMARY;11 fixed2s windows and all flow prefixes begun before80;2s capture grace creates no new obligations. Preserve original rawPCAP and source order.",
+  "shadow": "Seekable two-pass discovery true-min anchor and earliest64 per window is an offline SHADOW view, not an online censor.",
+  "ordering": "New header-availability ordering contract; opposite-direction ambiguity masks r05/r06/r10/r15 and LF05; causal errors remain strict."
+}

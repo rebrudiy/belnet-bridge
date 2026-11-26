@@ -1,0 +1,44 @@
+✔ G04 header-based classical policies preserve the full measured-pair contract (11.198042ms)
+✔ All15pending rows count0 and open no evidence files (0.076125ms)
+✔ Complete synthetic chain validates but never counts as real iteration (4.31025ms)
+✔ Complete flag without artifacts cannot fabricate a cycle (0.075958ms)
+✔ Later hypotheses cannot be preplanned before prior actual outcome (0.070541ms)
+✔ ML policy or capture repair is not a classical cycle (11.691416ms)
+✔ Timestamp/description-only detector change is not a semantic delta (5.357333ms)
+✔ Changed capture/ordering ABI cannot be claimed as a cycle (4.874958ms)
+✔ Benign denominator shrink or invented FP ratios are rejected (12.426083ms)
+✔ Missing native family or test split cannot complete (11.432542ms)
+✔ Native source/ELF pin mismatch and repeatedidentity reject (11.431667ms)
+✔ UNKNOWN capture cannot become completed bypass evidence (5.527041ms)
+✔ Nonce or service proof mismatch cannot complete (6.444709ms)
+✔ Strong classical attacker must freeze after the fresh native capture (5.907042ms)
+✔ Missing latency or unaccounted loss cannot complete (12.160125ms)
+✔ Rejected measured variant remains a completed attempt without claiming success (4.639625ms)
+✔ Actual artifact hash mismatch cannot be hidden by manifest flags (4.278458ms)
+✔ Planner emits onlycurrent cycle native train/validation, allfamilies, one-at-time (0.307708ms)
+✔ Baseline raw index UNKNOWN cannot be hidden by healthy:true (5.102291ms)
+✔ A prepared binary can be selected adaptively later without inventing a new build (8.093292ms)
+✔ A real joint group FP excess blocks acceptance but remains a rejected measured cycle (7.23175ms)
+✔ Engineered formula terms count; description or evidence SHA alone does not (13.378708ms)
+✔ Planner rejects nonce reuse and never plans later pendingcycles (0.303333ms)
+✔ Explicit INCONCLUSIVE joint FP retains actual rejected attempt without certification (10.04575ms)
+✔ R4 bounded1unknown/22 can certify withinjoint group andactualflow5% budgets (6.824792ms)
+✔ R4 bounded2unknown/22 cannot beaccepted but measuredrejection remainsINCONCLUSIVE (6.726125ms)
+✔ R4 same unknown+observedhit group andphysicalflow countonce (5.723459ms)
+✔ R4 affectedflowoutside frozen primaryinventory isrejected (7.805708ms)
+✔ R4 unbounded inventory cannot certify orreplace null worstflowFPR with0 (10.15875ms)
+✔ R4 forgedworstcasecount or missing policycontract cannot certify (9.622542ms)
+✔ Strict policies cannot silently adopt worst-case certification via evidence metadata (6.351875ms)
+✔ Actual host detector may be ARM64 Mach-O while deployed wrappers remain ELF (6.352792ms)
+✔ Detector format guard rejects truncated, wrong-architecture and non-executable Mach-O (20.41ms)
+✔ Complete bounded Go nil affected-flow slices are empty without rewriting raw evidence (6.479042ms)
+✔ Mach-O detector requires an exact bounded load-command table (28.829208ms)
+✔ Incomplete decisions cannot replace their affected-flow inventory with null (7.990666ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 350.806875

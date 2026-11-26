@@ -1,0 +1,5 @@
+/cmake/
+/bin/
+/lib/
+/*.log
+/reproductions/

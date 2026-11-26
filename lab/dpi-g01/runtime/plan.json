@@ -1,0 +1,62 @@
+{
+  "schema": "belnet-g01-stage-a-plan/v1",
+  "stage": "A",
+  "seed": 202611192010,
+  "client_ip": "10.88.0.42",
+  "phase_ms": 45000,
+  "warmup_start_ms": [
+    5000,
+    15000,
+    25000
+  ],
+  "warmup_timeout_ms": 8000,
+  "phase_fetch_start_ms": [
+    0,
+    3000,
+    12000,
+    17000,
+    22000,
+    27000,
+    32000,
+    37000
+  ],
+  "phase_fetch_timeout_ms": 5000,
+  "proof_sizes": [
+    4096,
+    16384
+  ],
+  "interruption_start_ms": 10000,
+  "interruption_ms": 2000,
+  "recovery_gate_ms": 10000,
+  "max_recovery_wait_ms": 30000,
+  "pcap_max_bytes": 268435456,
+  "metadata_max_bytes": 16777216,
+  "endpoint": "http://f3839udf9nsefrp3ug8zotg37jh6zcwejrps6hmdt4xstrpfupdy.bdx:8082",
+  "groups": [
+    {
+      "id": "a01-v2",
+      "kind": "v2",
+      "split": "train"
+    },
+    {
+      "id": "a02-framed",
+      "kind": "framed",
+      "split": "train"
+    },
+    {
+      "id": "a03-framed",
+      "kind": "framed",
+      "split": "train"
+    },
+    {
+      "id": "a04-v2",
+      "kind": "v2",
+      "split": "train"
+    }
+  ],
+  "scope": "Engineering development checkpoint, ABBA order, one fresh native identity per group. Train label is API-compatible development metadata; no statistical final test claim.",
+  "baseline_reset": "Private client namespace TCP443 DROP plus POST epoch rotation; remove DROP after2s. Native/Go PIDs and SID retained.",
+  "candidate_reset": "Stop client sing-box core only, keep it absent2s, then start; native/Go PIDs and SID retained.",
+  "capture_scope": "Starts before initial native gate; includes fixed warmup and full45s phase. Phase UTC boundaries stored. Host sink stops at256MiB without overwriting older packets; cap/drop marks incomplete.",
+  "service": "Dedicated own bb-g01-service-helper in existing service namespace, JSON UTC/unix-microsecond nonce logs; no changes to old8081"
+}

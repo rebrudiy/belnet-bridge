@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "seed": 202611190732,
+  "preregistered_at": "2026-11-19T16:37:49.889Z",
+  "reason": "Availability amendment authorized before acquisition: search endpoints returned CAPTCHA; homepage pilot worked. Prior failures retained. New independent sessions, no classifier or threshold tuning, no retry-until-success. Same BBB content as train is an explicit limitation: session holdout only.",
+  "groups": [
+    {
+      "group_id": "real-google-home-train",
+      "family": "google",
+      "url": "https://www.google.com/",
+      "split": "train",
+      "variants": [
+        "tcp"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-google-home-validation",
+      "family": "google",
+      "url": "https://www.google.com/",
+      "split": "validation",
+      "variants": [
+        "default"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-google-home-test",
+      "family": "google",
+      "url": "https://www.google.com/",
+      "split": "test",
+      "variants": [
+        "tcp"
+      ],
+      "seconds": 15
+    },
+    {
+      "group_id": "real-youtube-bbb-validation",
+      "family": "youtube",
+      "url": "https://www.youtube.com/watch?v=aqz-KE-bpKQ&autoplay=1&hl=en",
+      "split": "validation",
+      "variants": [
+        "tcp"
+      ],
+      "seconds": 30
+    },
+    {
+      "group_id": "real-youtube-bbb-test",
+      "family": "youtube",
+      "url": "https://www.youtube.com/watch?v=aqz-KE-bpKQ&autoplay=1&hl=en",
+      "split": "test",
+      "variants": [
+        "tcp"
+      ],
+      "seconds": 30
+    }
+  ]
+}
